@@ -1,6 +1,9 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:ansu_ui/buttons/as_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'example_scaffold.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,12 +12,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
       home: _ScreenAdapter(),
     );
   }
@@ -24,7 +23,7 @@ class _ScreenAdapter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
-        designSize: Size(750, 1334), allowFontScaling: false);
+        designSize: Size(375, 812), allowFontScaling: false);
     return MyHomePage();
   }
 }
@@ -47,6 +46,11 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           ASButton(),
           SizedBox(height: 12.w),
+          TextButton(
+              onPressed: () {
+                Get.to(ExampleScaffold());
+              },
+              child: Text('SCAFFOLD')),
         ],
       ),
     );
