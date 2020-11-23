@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: [
-          ASButton(),
+          ASButton.gray('删除订单', (){}),
           SizedBox(height: 12.w),
           TextButton(
               onPressed: () {
