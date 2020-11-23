@@ -44,21 +44,21 @@ class ASButton extends StatefulWidget {
     @required this.onpressed,
   }) : super(key: key);
 
-  ASButton.red(this.title, this.onpressed,
+  ASButton.warn(this.title, this.onpressed,
       {Key key, this.textStyle, this.padding, this.radius, this.color})
       : outline = true,
         outlineColor = Color(0xFFE50112),
         textColor = Color(0xFFE50112),
         super(key: key);
 
-  ASButton.gray(this.title, this.onpressed,
+  ASButton.info(this.title, this.onpressed,
       {Key key, this.color, this.radius, this.textStyle, this.padding})
       : outline = true,
         outlineColor = Color(0x73000000),
         textColor = Color(0xD9000000),
         super(key: key);
 
-  ASButton.yellow(this.title, this.onpressed,
+  ASButton.delete(this.title, this.onpressed,
       {Key key, this.radius, this.outlineColor, this.textStyle, this.padding})
       : color = Color(0xFFFFB600),
         textColor = Color(0xD9FFFFFF),
