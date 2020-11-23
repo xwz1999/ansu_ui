@@ -1,3 +1,4 @@
+import 'package:ansu_ui/ansu_ui.dart';
 import 'package:ansu_ui/buttons/as_button.dart';
 import 'package:flutter/material.dart';
 
@@ -6,9 +7,10 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context,
+        designSize: Size(750, 1334), allowFontScaling: false);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -60,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         children: [
           ASButton(),
+          SizedBox(height: 12.w),
         ],
       ),
     );
