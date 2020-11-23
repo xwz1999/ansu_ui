@@ -9,7 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///
 ///`title`,`body`
 ///
-///`leading`
+///`leading`,`bottomNavigationBar`,`appBarBottom`
 class ASScaffold extends StatefulWidget {
   ///标题，可为`String`或`Text`
   final dynamic title;
@@ -19,11 +19,19 @@ class ASScaffold extends StatefulWidget {
 
   /// `Scaffold` leading
   final Widget leading;
+
+  /// `Scaffold` bottomNavigationBar
+  final Widget bottomNavigationBar;
+
+  /// `AppBar` appBarBottom
+  final PreferredSizeWidget appBarBottom;
   ASScaffold({
     Key key,
     @required this.title,
     this.leading,
     this.body,
+    this.bottomNavigationBar,
+    this.appBarBottom,
   }) : super(key: key);
 
   @override
@@ -35,6 +43,7 @@ class _ASScaffoldState extends State<ASScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
+      bottomNavigationBar: widget.bottomNavigationBar,
       appBar: AppBar(
         backgroundColor: kForegroundColor,
         elevation: 0,
@@ -48,6 +57,7 @@ class _ASScaffoldState extends State<ASScaffold> {
           ),
           child: widget.title is String ? Text(widget.title) : widget.title,
         ),
+        bottom: widget.appBarBottom,
       ),
       body: widget.body,
     );
