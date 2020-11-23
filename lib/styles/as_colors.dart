@@ -6,6 +6,8 @@ const Color kDarkColor = Color(0xFF333333);
 ///文本默认颜色
 const Color kTextColor = kDarkColor;
 
+const Color kTextSubColor = Color.fromRGBO(0, 0, 0, 0.65);
+
 ///主题色
 const Color kPrimaryColor = Color(0xFFF6B72D);
 
