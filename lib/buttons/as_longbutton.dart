@@ -29,7 +29,7 @@ class ASLongButton extends StatefulWidget {
   final Color outlineColor;
 
   ///点击事件
-  final VoidCallback onpressed;
+  final VoidCallback onPressed;
 
   ///宽度
   final double width;
@@ -44,7 +44,7 @@ class ASLongButton extends StatefulWidget {
       this.padding,
       this.outline = false,
       this.outlineColor,
-      this.onpressed,
+      this.onPressed,
       this.width})
       : super(key: key);
 
@@ -55,7 +55,7 @@ class ASLongButton extends StatefulWidget {
     this.outlineColor,
     this.radius,
     @required this.title,
-    this.onpressed,
+    this.onPressed,
     this.width,
   })  : bgColor = Color(0xFFF6B72D),
         textColor = Color(0xFFFFFFFF),
@@ -66,7 +66,7 @@ class ASLongButton extends StatefulWidget {
       this.radius,
       this.textStyle,
       this.padding,
-      this.onpressed,
+      this.onPressed,
       @required this.title,
       this.width})
       : bgColor = Color(0xFFFFFFFF),
@@ -85,7 +85,7 @@ class _ASLongButtonState extends State<ASLongButton> {
       minWidth: widget.width ?? 280.w,
       disabledColor: Color(0xFFC1BDB5),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      onPressed: widget.onpressed,
+      onPressed: widget.onPressed,
       child: widget.title is String
           ? Text(widget.title,
               style: widget.textStyle ??

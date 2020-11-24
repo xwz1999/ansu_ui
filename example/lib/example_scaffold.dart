@@ -1,6 +1,5 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ExampleScaffold extends StatefulWidget {
   ExampleScaffold({Key key}) : super(key: key);

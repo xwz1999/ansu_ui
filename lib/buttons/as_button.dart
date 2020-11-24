@@ -30,7 +30,7 @@ class ASButton extends StatefulWidget {
   final EdgeInsets padding;
 
   ///点击事件
-  final VoidCallback onpressed;
+  final VoidCallback onPressed;
 
   ///宽度
   final double width;
@@ -44,7 +44,7 @@ class ASButton extends StatefulWidget {
     this.textStyle,
     this.padding,
     @required this.title,
-    this.onpressed,
+    this.onPressed,
     this.width,
   }) : super(key: key);
 
@@ -54,7 +54,7 @@ class ASButton extends StatefulWidget {
       this.padding,
       this.radius,
       this.bgcolor,
-      this.onpressed,
+      this.onPressed,
       @required this.title,
       this.width})
       : outline = true,
@@ -69,7 +69,7 @@ class ASButton extends StatefulWidget {
       this.textStyle,
       this.padding,
       @required this.title,
-      this.onpressed,
+      this.onPressed,
       this.width})
       : outline = true,
         outlineColor = Color(0x73000000),
@@ -83,7 +83,7 @@ class ASButton extends StatefulWidget {
       this.textStyle,
       this.padding,
       @required this.title,
-      this.onpressed,
+      this.onPressed,
       this.width})
       : bgcolor = Color(0xFFFFB600),
         textColor = Color(0xD9FFFFFF),
@@ -96,7 +96,7 @@ class ASButton extends StatefulWidget {
       this.textStyle,
       this.padding,
       @required this.title,
-      this.onpressed,
+      this.onPressed,
       this.width})
       : bgcolor = Color(0xFFF2F2F2),
         textColor = Color(0xD9000000),
@@ -113,7 +113,7 @@ class _ASButtonState extends State<ASButton> {
     return MaterialButton(
       minWidth: widget.width ?? 75.w,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      onPressed: widget.onpressed,
+      onPressed: widget.onPressed,
       child: widget.title is String
           ? Text(widget.title,
               style: widget.textStyle ??

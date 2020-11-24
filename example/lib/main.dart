@@ -42,8 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
       title: '安速组件',
       body: ListView(
         children: [
-          ASButton.info(title:'Button',onpressed: () => Get.to(ExampleButton())),
-          ASButton.info(title:'Scaffold', onpressed:() => Get.to(ExampleScaffold())),
+          ASButton.info(title:'Button',onPressed: () => Get.to(ExampleButton())),
+          ASButton.info(title:'Scaffold', onPressed:() => Get.to(ExampleScaffold())),
         ],
       ),
     );
