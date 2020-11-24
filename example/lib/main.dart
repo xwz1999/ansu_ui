@@ -3,8 +3,12 @@ import 'package:example/example_bottom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'example_numeric_button.dart';
 import 'example_scaffold.dart';
 import 'example_button.dart';
+import 'example_tab_bar.dart';
+import 'example_numeric_button.dart';
+import 'example_tab_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,10 +46,21 @@ class _MyHomePageState extends State<MyHomePage> {
     return ASScaffold(
       title: '安速组件',
       body: ListView(
+        padding: EdgeInsets.all(16.w),
         children: [
-          ASButton.info(title:'Button',onPressed: () => Get.to(ExampleButton())),
-          ASButton.info(title:'Scaffold', onPressed:() => Get.to(ExampleScaffold())),
-          ASButton.info(title: 'BottomBottun',onPressed: () => Get.to(ExampleBottomButton()),),
+          ASButton.info(
+              title: '按钮 Button', onPressed: () => Get.to(ExampleButton())),
+          ASButton.info(
+              title: 'Scaffold', onPressed: () => Get.to(ExampleScaffold())),
+          ASButton.info(
+              title: 'Tabbar', onPressed: () => Get.to(ExampleTabBar())),
+          ASButton.info(
+              title: '数量选择器NumericButton',
+              onPressed: () => Get.to(ExampleNumericButton())),
+          ASButton.info(
+            title: '底部按钮 BottomButton',
+            onPressed: () => Get.to(ExampleBottomButton()),
+          )
         ],
       ),
     );

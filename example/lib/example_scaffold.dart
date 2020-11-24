@@ -26,7 +26,7 @@ class _ExampleScaffoldState extends State<ExampleScaffold>
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
-      title: '标题 SCaffold',
+      title: '标题 Scaffold',
       appBarBottom: ASTabBar(
         items: tabs,
         isScrollable: true,
