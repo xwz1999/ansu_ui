@@ -45,13 +45,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: [
-          ASButton.delete('删除订单', () {}),
-          ASButton.info('删除订单', () {}),
-          ASButton.warn('删除订单', () {}),
-          ASButton.opration('删除订单', (){}),
+          ASButton.delete(title: '删除订单',onpressed: (){},),
+          ASButton.info(title: '删除订单',onpressed: (){},),
+          ASButton.warn(title: '删除订单',onpressed: (){},),
+          ASButton.opration(title: '删除订单',onpressed: (){},),
           SizedBox(height: 12.w),
-          ASLongButton.solid('确认', () {}),
-          ASLongButton.hollow('确认', () {}),
+          ASLongButton.solid(title: '确认',onpressed: (){},),
+          ASLongButton.hollow(title: '确认',onpressed: (){},),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 100.w),
+            child: ASLongButton.solid(title: 'null',onpressed:(){} ),
+          ),
+          
           TextButton(
               onPressed: () {
                 Get.to(ExampleScaffold());

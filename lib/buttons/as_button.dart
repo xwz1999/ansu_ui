@@ -32,6 +32,8 @@ class ASButton extends StatefulWidget {
   ///点击事件
   final VoidCallback onpressed;
 
+  ///宽度
+  final double width;
   ASButton({
     Key key,
     this.bgcolor,
@@ -42,31 +44,60 @@ class ASButton extends StatefulWidget {
     this.textStyle,
     this.padding,
     @required this.title,
-    @required this.onpressed,
+    this.onpressed,
+    this.width,
   }) : super(key: key);
 
-  ASButton.warn(this.title, this.onpressed,
-      {Key key, this.textStyle, this.padding, this.radius, this.bgcolor})
+  ASButton.warn(
+      {Key key,
+      this.textStyle,
+      this.padding,
+      this.radius,
+      this.bgcolor,
+      this.onpressed,
+      @required this.title,
+      this.width})
       : outline = true,
         outlineColor = Color(0xFFE50112),
         textColor = Color(0xFFE50112),
         super(key: key);
 
-  ASButton.info(this.title, this.onpressed,
-      {Key key, this.bgcolor, this.radius, this.textStyle, this.padding})
+  ASButton.info(
+      {Key key,
+      this.bgcolor,
+      this.radius,
+      this.textStyle,
+      this.padding,
+      @required this.title,
+      this.onpressed,
+      this.width})
       : outline = true,
         outlineColor = Color(0x73000000),
         textColor = Color(0xD9000000),
         super(key: key);
 
-  ASButton.delete(this.title, this.onpressed,
-      {Key key, this.radius, this.outlineColor, this.textStyle, this.padding})
+  ASButton.delete(
+      {Key key,
+      this.radius,
+      this.outlineColor,
+      this.textStyle,
+      this.padding,
+      @required this.title,
+      this.onpressed,
+      this.width})
       : bgcolor = Color(0xFFFFB600),
         textColor = Color(0xD9FFFFFF),
         outline = false,
         super(key: key);
-  ASButton.opration(this.title, this.onpressed,
-      {Key key, this.radius, this.outlineColor, this.textStyle, this.padding})
+  ASButton.opration(
+      {Key key,
+      this.radius,
+      this.outlineColor,
+      this.textStyle,
+      this.padding,
+      @required this.title,
+      this.onpressed,
+      this.width})
       : bgcolor = Color(0xFFF2F2F2),
         textColor = Color(0xD9000000),
         outline = false,
@@ -80,6 +111,7 @@ class _ASButtonState extends State<ASButton> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      minWidth: widget.width ?? 75.w,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: widget.onpressed,
       child: widget.title is String
@@ -89,8 +121,7 @@ class _ASButtonState extends State<ASButton> {
                       color: widget.textColor ?? Color(0xFFFFB600),
                       fontSize: 13.sp))
           : widget.title,
-      padding: widget.padding ??
-          EdgeInsets.symmetric(vertical: 6.w, horizontal: 12.w),
+      padding: widget.padding ?? EdgeInsets.symmetric(vertical: 6.w),
       shape: RoundedRectangleBorder(
           side: widget.outline
               ? BorderSide(color: widget.outlineColor, width: 0.5.w)

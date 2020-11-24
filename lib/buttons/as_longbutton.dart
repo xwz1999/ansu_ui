@@ -31,6 +31,9 @@ class ASLongButton extends StatefulWidget {
   ///点击事件
   final VoidCallback onpressed;
 
+  ///宽度
+  final double width;
+
   ASLongButton(
       {Key key,
       @required this.title,
@@ -41,23 +44,31 @@ class ASLongButton extends StatefulWidget {
       this.padding,
       this.outline = false,
       this.outlineColor,
-      @required this.onpressed})
+      this.onpressed,
+      this.width})
       : super(key: key);
 
-  ASLongButton.solid(
-    this.title,
-    this.onpressed, {
+  ASLongButton.solid({
     Key key,
     this.textStyle,
     this.padding,
     this.outlineColor,
     this.radius,
+    @required this.title,
+    this.onpressed,
+    this.width,
   })  : bgColor = Color(0xFFF6B72D),
         textColor = Color(0xFFFFFFFF),
         outline = false,
         super(key: key);
-  ASLongButton.hollow(this.title, this.onpressed,
-      {Key key, this.radius, this.textStyle, this.padding})
+  ASLongButton.hollow(
+      {Key key,
+      this.radius,
+      this.textStyle,
+      this.padding,
+      this.onpressed,
+      @required this.title,
+      this.width})
       : bgColor = Color(0xFFFFFFFF),
         textColor = Color(0xFFF6B72D),
         outline = true,
@@ -71,6 +82,8 @@ class _ASLongButtonState extends State<ASLongButton> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      minWidth: widget.width ?? 280.w,
+      disabledColor: Color(0xFFC1BDB5),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: widget.onpressed,
       child: widget.title is String
@@ -80,8 +93,7 @@ class _ASLongButtonState extends State<ASLongButton> {
                       color: widget.textColor ?? Color(0xFFFFFFFF),
                       fontSize: 20.sp))
           : widget.title,
-      padding: widget.padding ??
-          EdgeInsets.symmetric(vertical: 8.w, horizontal: 112.w),
+      padding: widget.padding ?? EdgeInsets.symmetric(vertical: 8.w),
       shape: RoundedRectangleBorder(
           side: widget.outline
               ? BorderSide(color: widget.outlineColor, width: 1.w)
