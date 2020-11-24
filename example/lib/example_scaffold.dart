@@ -1,5 +1,6 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ExampleScaffold extends StatefulWidget {
   ExampleScaffold({Key key}) : super(key: key);
@@ -26,11 +27,28 @@ class _ExampleScaffoldState extends State<ExampleScaffold>
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
-      title: '标题',
+      title: '标题 SCaffold',
       appBarBottom: ASTabBar(
         items: tabs,
         isScrollable: true,
         controller: _tabController,
+      ),
+      endDrawer: ASDrawer(
+        child: Text('DRAWER'),
+      ),
+      body: ListView(
+        children: [
+          Builder(
+            builder: (context) {
+              return TextButton(
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+                child: Text('open drawer'),
+              );
+            },
+          )
+        ],
       ),
     );
   }
