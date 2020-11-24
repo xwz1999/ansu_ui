@@ -2,6 +2,11 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+///安速返回按钮
+///
+///ASBackButton 黑色返回按钮
+///
+///ASBackButton.white 白色返回按钮
 class ASBackButton extends StatelessWidget {
   final Color color;
   const ASBackButton({Key key, this.color = kDarkColor}) : super(key: key);

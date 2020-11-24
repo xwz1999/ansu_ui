@@ -2,6 +2,11 @@ import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/tabbar/as_tab_indicator.dart';
 import 'package:flutter/material.dart';
 
+/// ## 安速Tabbar
+///
+/// [items]
+///
+/// [controller] see more TabController
 class ASTabBar extends StatefulWidget implements PreferredSizeWidget {
   final List<String> items;
   final TabController controller;
