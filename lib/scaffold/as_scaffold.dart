@@ -25,6 +25,11 @@ class ASScaffold extends StatefulWidget {
 
   /// `AppBar` appBarBottom
   final PreferredSizeWidget appBarBottom;
+
+  /// `EndDrawer` endDrawer
+  /// 
+  /// 右方向的抽屉
+  final Widget endDrawer;
   ASScaffold({
     Key key,
     @required this.title,
@@ -32,6 +37,7 @@ class ASScaffold extends StatefulWidget {
     this.body,
     this.bottomNavigationBar,
     this.appBarBottom,
+    this.endDrawer,
   }) : super(key: key);
 
   @override
@@ -42,6 +48,7 @@ class _ASScaffoldState extends State<ASScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: widget.endDrawer,
       backgroundColor: kBackgroundColor,
       bottomNavigationBar: widget.bottomNavigationBar,
       appBar: AppBar(
