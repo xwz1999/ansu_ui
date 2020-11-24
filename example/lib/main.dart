@@ -1,5 +1,6 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:ansu_ui/buttons/as_button.dart';
+import 'package:ansu_ui/buttons/as_longbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,8 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: [
-          ASButton.delete('删除订单', (){}),
+          ASButton.delete('删除订单', () {}),
+          ASButton.info('删除订单', () {}),
+          ASButton.warn('删除订单', () {}),
+          ASButton.opration('删除订单', (){}),
           SizedBox(height: 12.w),
+          ASLongButton.solid('确认', () {}),
+          ASLongButton.hollow('确认', () {}),
           TextButton(
               onPressed: () {
                 Get.to(ExampleScaffold());

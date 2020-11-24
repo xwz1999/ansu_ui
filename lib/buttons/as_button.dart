@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///安速按钮
 class ASButton extends StatefulWidget {
   ///按钮颜色
-  final Color color;
+  final Color bgcolor;
 
   ///按钮文字
   ///动态类型，可以是string或者widget
@@ -20,6 +20,7 @@ class ASButton extends StatefulWidget {
   final Color outlineColor;
 
   ///按钮文字颜色
+  ///若已定义文字风格则此属性不生效
   final Color textColor;
 
   ///按钮文字格式
@@ -33,7 +34,7 @@ class ASButton extends StatefulWidget {
 
   ASButton({
     Key key,
-    this.color,
+    this.bgcolor,
     this.radius,
     this.outline = false,
     this.outlineColor,
@@ -45,14 +46,14 @@ class ASButton extends StatefulWidget {
   }) : super(key: key);
 
   ASButton.warn(this.title, this.onpressed,
-      {Key key, this.textStyle, this.padding, this.radius, this.color})
+      {Key key, this.textStyle, this.padding, this.radius, this.bgcolor})
       : outline = true,
         outlineColor = Color(0xFFE50112),
         textColor = Color(0xFFE50112),
         super(key: key);
 
   ASButton.info(this.title, this.onpressed,
-      {Key key, this.color, this.radius, this.textStyle, this.padding})
+      {Key key, this.bgcolor, this.radius, this.textStyle, this.padding})
       : outline = true,
         outlineColor = Color(0x73000000),
         textColor = Color(0xD9000000),
@@ -60,8 +61,14 @@ class ASButton extends StatefulWidget {
 
   ASButton.delete(this.title, this.onpressed,
       {Key key, this.radius, this.outlineColor, this.textStyle, this.padding})
-      : color = Color(0xFFFFB600),
+      : bgcolor = Color(0xFFFFB600),
         textColor = Color(0xD9FFFFFF),
+        outline = false,
+        super(key: key);
+  ASButton.opration(this.title, this.onpressed,
+      {Key key, this.radius, this.outlineColor, this.textStyle, this.padding})
+      : bgcolor = Color(0xFFF2F2F2),
+        textColor = Color(0xD9000000),
         outline = false,
         super(key: key);
 
@@ -73,23 +80,23 @@ class _ASButtonState extends State<ASButton> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: widget.onpressed,
       child: widget.title is String
-          ? Text(
-              widget.title,
-              style: widget.textStyle == null
-                  ? TextStyle(color: widget.textColor, fontSize: 13.sp)
-                  : widget.textStyle,
-            )
+          ? Text(widget.title,
+              style: widget.textStyle ??
+                  TextStyle(
+                      color: widget.textColor ?? Color(0xFFFFB600),
+                      fontSize: 13.sp))
           : widget.title,
       padding: widget.padding ??
           EdgeInsets.symmetric(vertical: 6.w, horizontal: 12.w),
       shape: RoundedRectangleBorder(
           side: widget.outline
-              ? BorderSide(color: widget.outlineColor, width: 0.5)
+              ? BorderSide(color: widget.outlineColor, width: 0.5.w)
               : BorderSide.none,
           borderRadius: BorderRadius.circular(widget.radius ?? 15.5.w)),
-      color: widget.color ?? Color(0xFFFFFFFF),
+      color: widget.bgcolor ?? Color(0xFFFFFFFF),
       elevation: 0,
     );
   }
