@@ -45,15 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         padding: EdgeInsets.all(16.w),
         children: [
-          ASButton.info(
-              title: 'Button', onpressed: () => Get.to(ExampleButton())),
-          ASButton.info(
-              title: 'Scaffold', onpressed: () => Get.to(ExampleScaffold())),
-          ASButton.info(
-              title: 'TabBar', onpressed: () => Get.to(ExampleTabBar())),
-          ASButton.info(
-              title: '数量选择器 NumericButton',
-              onpressed: () => Get.to(ExampleNumericButton())),
+          ASButton.info(title:'Button',onPressed: () => Get.to(ExampleButton())),
+          ASButton.info(title:'Scaffold', onPressed:() => Get.to(ExampleScaffold())),
         ],
       ),
     );
