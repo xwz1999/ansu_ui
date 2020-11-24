@@ -1,13 +1,12 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:example/example_bottom_button.dart';
+import 'package:example/example_tag.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'example_numeric_button.dart';
 import 'example_scaffold.dart';
 import 'example_button.dart';
-import 'example_tab_bar.dart';
-import 'example_numeric_button.dart';
 import 'example_tab_bar.dart';
 
 void main() {
@@ -60,7 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ASButton.info(
             title: '底部按钮 BottomButton',
             onPressed: () => Get.to(ExampleBottomButton()),
-          )
+          ),
+          ASButton.info(title: '标签 TAG',onPressed: () => Get.to(ExampleTag()),),
         ],
       ),
     );
