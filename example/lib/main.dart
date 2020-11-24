@@ -9,6 +9,7 @@ import 'example_scaffold.dart';
 import 'example_button.dart';
 import 'example_tab_bar.dart';
 import 'example_picker.dart';
+import 'example_style_color.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,6 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Image.asset('assets/logo.webp', height: 50),
           SizedBox(height: 16.w),
+          ASButton.info(
+              title: '颜色 Style Color',
+              onPressed: () => Get.to(ExampleStyleColor())),
           ASButton.info(
               title: '按钮 Button', onPressed: () => Get.to(ExampleButton())),
           ASButton.info(
