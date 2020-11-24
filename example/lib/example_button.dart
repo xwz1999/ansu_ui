@@ -10,6 +10,7 @@ class ExampleButton extends StatefulWidget {
 }
 
 class _ExampleButtonState extends State<ExampleButton> {
+  TextEditingController _EditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
@@ -60,6 +61,19 @@ class _ExampleButtonState extends State<ExampleButton> {
                 onPressed: () {},
               ),
             ],
+          ),
+          ASLongButton.hollow(
+            title: '确认',
+            onPressed: () {},
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 100.w),
+            child: ASLongButton.solid(title: 'null', onPressed: () {}),
+          ),
+          ASNumericButton(
+            initValue: 1,
+            suffix: '个',
+            onChange: (value) {},
           ),
           Row(
             children: [
