@@ -34,6 +34,12 @@ class ASLongButton extends StatefulWidget {
   ///宽度
   final double width;
 
+  ///不可点击颜色
+  final Color disableColor;
+
+  ///不可点击文字颜色
+  final Color disableTextColor;
+
   ASLongButton(
       {Key key,
       @required this.title,
@@ -45,7 +51,9 @@ class ASLongButton extends StatefulWidget {
       this.outline = false,
       this.outlineColor,
       this.onPressed,
-      this.width})
+      this.width,
+      this.disableColor,
+      this.disableTextColor})
       : super(key: key);
 
   ASLongButton.solid({
@@ -57,9 +65,11 @@ class ASLongButton extends StatefulWidget {
     @required this.title,
     this.onPressed,
     this.width,
+    this.disableTextColor,
   })  : bgColor = Color(0xFFF6B72D),
         textColor = Color(0xFFFFFFFF),
         outline = false,
+        disableColor = Color(0xFFC1BDB5),
         super(key: key);
   ASLongButton.hollow(
       {Key key,
@@ -68,7 +78,9 @@ class ASLongButton extends StatefulWidget {
       this.padding,
       this.onPressed,
       @required this.title,
-      this.width})
+      this.width,
+      this.disableColor,
+      this.disableTextColor})
       : bgColor = Color(0xFFFFFFFF),
         textColor = Color(0xFFF6B72D),
         outline = true,
@@ -83,15 +95,14 @@ class _ASLongButtonState extends State<ASLongButton> {
   Widget build(BuildContext context) {
     return MaterialButton(
       minWidth: widget.width ?? 280.w,
-      disabledColor: Color(0xFFC1BDB5),
+      disabledColor: widget.disableColor ?? widget.bgColor,
+      textColor: widget.textColor ?? Color(0xFFFFFFFF),
+      disabledTextColor: widget.disableTextColor ?? Color(0x73000000),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: widget.onPressed,
       child: widget.title is String
           ? Text(widget.title,
-              style: widget.textStyle ??
-                  TextStyle(
-                      color: widget.textColor ?? Color(0xFFFFFFFF),
-                      fontSize: 20.sp))
+              style: widget.textStyle ?? TextStyle(fontSize: 20.sp))
           : widget.title,
       padding: widget.padding ?? EdgeInsets.symmetric(vertical: 8.w),
       shape: RoundedRectangleBorder(
@@ -101,6 +112,9 @@ class _ASLongButtonState extends State<ASLongButton> {
           borderRadius: BorderRadius.circular(widget.radius ?? 22.5.w)),
       color: widget.bgColor ?? Color(0xFFFFFFFF),
       elevation: 0,
+      // // focusElevation: 0,
+      // // hoverElevation: 0,
+      highlightElevation: 0,
     );
   }
 }
