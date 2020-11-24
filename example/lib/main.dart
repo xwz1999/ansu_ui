@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 
 import 'example_scaffold.dart';
 import 'example_button.dart';
+import 'example_tab_bar.dart';
+import 'example_numeric_button.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,9 +43,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return ASScaffold(
       title: '安速组件',
       body: ListView(
+        padding: EdgeInsets.all(16.w),
         children: [
-          ASButton.info(title:'Button',onpressed: () => Get.to(ExampleButton())),
-          ASButton.info(title:'Scaffold', onpressed:() => Get.to(ExampleScaffold())),
+          ASButton.info(
+              title: 'Button', onpressed: () => Get.to(ExampleButton())),
+          ASButton.info(
+              title: 'Scaffold', onpressed: () => Get.to(ExampleScaffold())),
+          ASButton.info(
+              title: 'TabBar', onpressed: () => Get.to(ExampleTabBar())),
+          ASButton.info(
+              title: '数量选择器 NumericButton',
+              onpressed: () => Get.to(ExampleNumericButton())),
         ],
       ),
     );

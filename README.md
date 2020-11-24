@@ -2,9 +2,20 @@
 
 ## dep
 
-![flutter_screenutil](https://img.shields.io/badge/flutter__screenutil-%203.2.0-brightgreen)
+![flutter_screenutil](https://img.shields.io/badge/flutter__screenutil-3.2.0-brightgreen)
+![camera](https://img.shields.io/badge/camera-0.5.8+11-brightgreen)
 
 ## Getting Started
+
+### 安装ansu_ui
+
+#### Android
+
+Change the minimum Android sdk version to 21 (or higher) in your `android/app/build.gradle` file.
+
+```gradle
+minSdkVersion 21
+```
 
 ## 贡献
 

@@ -96,6 +96,12 @@ class _ASNumericButtonState extends State<ASNumericButton> {
   }
 
   @override
+  void dispose() {
+    _controller?.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -125,9 +131,11 @@ class _ASNumericButtonState extends State<ASNumericButton> {
             alignment: Alignment.center,
             child: IntrinsicWidth(
               child: TextField(
+                keyboardType: TextInputType.number,
                 controller: _controller,
                 onChanged: (text) {
                   setState(() {});
+                  //TODO input check
                 },
                 focusNode: _focusNode,
                 style: TextStyle(
