@@ -1,4 +1,5 @@
 import 'package:ansu_ui/ansu_ui.dart';
+import 'package:example/example_bottom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           ASButton.info(title:'Button',onPressed: () => Get.to(ExampleButton())),
           ASButton.info(title:'Scaffold', onPressed:() => Get.to(ExampleScaffold())),
+          ASButton.info(title: 'BottomBottun',onPressed: () => Get.to(ExampleBottomButton()),),
         ],
       ),
     );
