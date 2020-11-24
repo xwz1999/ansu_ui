@@ -2,12 +2,14 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:example/example_bottom_button.dart';
 import 'package:example/example_tag.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
 import 'example_numeric_button.dart';
 import 'example_scaffold.dart';
 import 'example_button.dart';
 import 'example_tab_bar.dart';
+import 'example_picker.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +21,14 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       home: _ScreenAdapter(),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('zh'),
+      ],
     );
   }
 }
@@ -47,6 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         padding: EdgeInsets.all(16.w),
         children: [
+          Image.asset('assets/logo.webp', height: 50),
+          SizedBox(height: 16.w),
           ASButton.info(
               title: '按钮 Button', onPressed: () => Get.to(ExampleButton())),
           ASButton.info(
@@ -56,6 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ASButton.info(
               title: '数量选择器NumericButton',
               onPressed: () => Get.to(ExampleNumericButton())),
+          ASButton.info(
+              title: '选择器 Pickers', onPressed: () => Get.to(ExamplePicker())),
           ASButton.info(
             title: '底部按钮 BottomButton',
             onPressed: () => Get.to(ExampleBottomButton()),
