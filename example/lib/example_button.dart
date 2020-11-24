@@ -9,21 +9,46 @@ class ExampleButton extends StatefulWidget {
 }
 
 class _ExampleButtonState extends State<ExampleButton> {
+  TextEditingController _EditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
       title: 'Button',
       body: ListView(
-        children: [  ASButton.delete(title: '删除订单',onpressed: (){},),
-          ASButton.info(title: '删除订单',onpressed: (){},),
-          ASButton.warn(title: '删除订单',onpressed: (){},),
-          ASButton.opration(title: '删除订单',onpressed: (){},),
+        children: [
+          ASButton.delete(
+            title: '删除订单',
+            onpressed: () {},
+          ),
+          ASButton.info(
+            title: '删除订单',
+            onpressed: () {},
+          ),
+          ASButton.warn(
+            title: '删除订单',
+            onpressed: () {},
+          ),
+          ASButton.opration(
+            title: '删除订单',
+            onpressed: () {},
+          ),
           SizedBox(height: 12.w),
-          ASLongButton.solid(title: '确认',onpressed: (){},),
-          ASLongButton.hollow(title: '确认',onpressed: (){},),
+          ASLongButton.solid(
+            title: '确认',
+            onpressed: () {},
+          ),
+          ASLongButton.hollow(
+            title: '确认',
+            onpressed: () {},
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 100.w),
-            child: ASLongButton.solid(title: 'null',onpressed:(){} ),
+            child: ASLongButton.solid(title: 'null', onpressed: () {}),
+          ),
+          ASNumericButton(
+            initValue: 1,
+            suffix: '个',
+            onChange: (value) {},
           ),
         ],
       ),
