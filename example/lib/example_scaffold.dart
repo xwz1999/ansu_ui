@@ -8,11 +8,30 @@ class ExampleScaffold extends StatefulWidget {
   _ExampleScaffoldState createState() => _ExampleScaffoldState();
 }
 
-class _ExampleScaffoldState extends State<ExampleScaffold> {
+class _ExampleScaffoldState extends State<ExampleScaffold>
+    with TickerProviderStateMixin {
+  TabController _tabController;
+  List<String> tabs;
+
+  @override
+  void initState() {
+    super.initState();
+    tabs = List.generate(10, (index) => 'Tab $index');
+    _tabController = TabController(
+      length: tabs.length,
+      vsync: this,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
       title: '标题',
+      appBarBottom: ASTabBar(
+        items: tabs,
+        isScrollable: true,
+        controller: _tabController,
+      ),
     );
   }
 }
