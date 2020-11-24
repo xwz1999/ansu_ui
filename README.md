@@ -3,7 +3,6 @@
 ## dep
 
 ![flutter_screenutil](https://img.shields.io/badge/flutter__screenutil-3.2.0-brightgreen)
-![camera](https://img.shields.io/badge/camera-0.5.8+11-brightgreen)
 
 ## Getting Started
 
