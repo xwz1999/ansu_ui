@@ -1,4 +1,5 @@
 import 'package:ansu_ui/ansu_ui.dart';
+import 'package:example/example_bottom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
@@ -68,6 +69,10 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () => Get.to(ExampleNumericButton())),
           ASButton.info(
               title: '选择器 Pickers', onPressed: () => Get.to(ExamplePicker())),
+          ASButton.info(
+            title: '底部按钮 BottomButton',
+            onPressed: () => Get.to(ExampleBottomButton()),
+          )
         ],
       ),
     );

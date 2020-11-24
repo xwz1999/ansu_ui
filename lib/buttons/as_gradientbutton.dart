@@ -65,8 +65,8 @@ class ASGradientButton extends StatefulWidget {
         radius = 19.w,
         colors = [Color(0xFFF89B14), Color(0xFFF86B14)],
         width = 100.w,
-        begin = Alignment.centerLeft,
-        end = Alignment.centerRight,
+        begin = Alignment.topCenter,
+        end = Alignment.bottomCenter,
         padding = EdgeInsets.symmetric(vertical: 8.w),
         super(key: key);
 
@@ -100,16 +100,16 @@ class _ASGradientButtonState extends State<ASGradientButton> {
       width: widget.width ?? 110.w,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: widget.begin ?? Alignment.centerLeft,
-          end: widget.end ?? Alignment.centerRight,
+          begin: widget.begin ?? Alignment.topCenter,
+          end: widget.end ?? Alignment.bottomCenter,
           colors: widget.colors ?? [Color(0xFFFFA700), Color(0xFFFFBD00)],
         ),
         borderRadius: BorderRadius.circular(widget.radius ?? 20.w),
       ),
       child: MaterialButton(
-        disabledColor: widget.disableColor ?? Colors.grey,
+        disabledColor: widget.disableColor,
         textColor: widget.textColor ?? Color(0xD9FFFFFF),
-        disabledTextColor: widget.disableTextColor ?? Color(0x73000000),
+        disabledTextColor: widget.disableTextColor,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         onPressed: widget.onPressed,
         child: widget.title is String

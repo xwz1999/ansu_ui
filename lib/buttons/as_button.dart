@@ -125,15 +125,13 @@ class ASButton extends StatefulWidget {
     this.outlineColor,
     this.width,
   })  : bgcolor = Color(0xFFFFBD32),
-        textColor=Color(0xFF0000000),
-        textStyle = TextStyle(
-            fontSize: 14.sp,
-            fontWeight: FontWeight.bold),
+        textColor = Color(0xFF0000000),
+        textStyle = TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
         radius = 5.w,
         outline = false,
         disableColor = Color(0xFFFFDF9B),
         disableTextColor = Color(0x73000000),
-        padding=EdgeInsets.symmetric(vertical: 8.w),
+        padding = EdgeInsets.symmetric(vertical: 8.w),
         super(key: key);
 
   @override
@@ -144,17 +142,15 @@ class _ASButtonState extends State<ASButton> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      disabledColor: widget.disableColor ?? widget.bgcolor,
-      disabledTextColor: widget.disableTextColor ?? Color(0x73000000),
+      disabledColor: widget.disableColor,
+      disabledTextColor: widget.disableTextColor,
       textColor: widget.textColor ?? Color(0xFFFFB600),
       minWidth: widget.width ?? 75.w,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: widget.onPressed,
       child: widget.title is String
           ? Text(widget.title,
-              style: widget.textStyle ??
-                  TextStyle(
-                      fontSize: 13.sp))
+              style: widget.textStyle ?? TextStyle(fontSize: 13.sp))
           : widget.title,
       padding: widget.padding ?? EdgeInsets.symmetric(vertical: 6.w),
       shape: RoundedRectangleBorder(

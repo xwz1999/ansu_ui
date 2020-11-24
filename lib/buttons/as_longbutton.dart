@@ -95,9 +95,9 @@ class _ASLongButtonState extends State<ASLongButton> {
   Widget build(BuildContext context) {
     return MaterialButton(
       minWidth: widget.width ?? 280.w,
-      disabledColor: widget.disableColor ?? widget.bgColor,
+      disabledColor: widget.disableColor,
       textColor: widget.textColor ?? Color(0xFFFFFFFF),
-      disabledTextColor: widget.disableTextColor ?? Color(0x73000000),
+      disabledTextColor: widget.disableTextColor,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: widget.onPressed,
       child: widget.title is String
