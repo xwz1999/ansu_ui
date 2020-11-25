@@ -8,7 +8,10 @@ import 'package:flutter/material.dart';
 ///
 /// [controller] see more TabController
 class ASTabBar extends StatefulWidget implements PreferredSizeWidget {
+  ///items
   final List<String> items;
+
+  /// TabController
   final TabController controller;
 
   ///可滚动
@@ -30,22 +33,25 @@ class ASTabBar extends StatefulWidget implements PreferredSizeWidget {
 class _ASTabBarState extends State<ASTabBar> {
   @override
   Widget build(BuildContext context) {
-    return TabBar(
-      isScrollable: widget.isScrollable,
-      controller: widget.controller,
-      tabs: widget.items.map((e) => Tab(text: e)).toList(),
-      labelStyle: TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.bold,
+    return Align(
+      alignment: Alignment.center,
+      child: TabBar(
+        isScrollable: widget.isScrollable,
+        controller: widget.controller,
+        tabs: widget.items.map((e) => Tab(text: e)).toList(),
+        labelStyle: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+        ),
+        unselectedLabelStyle: TextStyle(
+          fontWeight: FontWeight.normal,
+        ),
+        labelColor: kTextColor,
+        unselectedLabelColor: kTextSubColor,
+        indicatorSize: TabBarIndicatorSize.label,
+        indicatorPadding: EdgeInsets.zero,
+        indicator: ASTabIndicator(),
       ),
-      unselectedLabelStyle: TextStyle(
-        fontWeight: FontWeight.normal,
-      ),
-      labelColor: kTextColor,
-      unselectedLabelColor: kTextSubColor,
-      indicatorSize: TabBarIndicatorSize.label,
-      indicatorPadding: EdgeInsets.zero,
-      indicator: ASTabIndicator(),
     );
   }
 }
