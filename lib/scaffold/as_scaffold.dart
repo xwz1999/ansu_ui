@@ -7,9 +7,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///
 ///made with Scaffold from `Material`
 ///
-///`title`,`body`
 ///
-///`leading`,`bottomNavigationBar`,`appBarBottom`
+///
+///`title`,`body`,`leading`,`bottomNavigationBar`,`appBarBottom`,`appBar`
+///
+///title 和 AppBar 均为 `null`时不显示scaffold的AppBar
 class ASScaffold extends StatefulWidget {
   ///标题，可为`String`或`Text`
   final dynamic title;
@@ -55,25 +57,27 @@ class _ASScaffoldState extends State<ASScaffold> {
       endDrawer: widget.endDrawer,
       backgroundColor: kBackgroundColor,
       bottomNavigationBar: widget.bottomNavigationBar,
-      appBar: widget.appBar ??
-          AppBar(
-            brightness: Brightness.light,
-            backgroundColor: kForegroundColor,
-            elevation: 0,
-            leading: widget.leading ?? ASBackButton(),
-            centerTitle: true,
-            title: DefaultTextStyle(
-              style: TextStyle(
-                color: kTextColor,
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
+      appBar: widget.title == null && widget.appBar == null
+          ? null
+          : widget.appBar ??
+              AppBar(
+                brightness: Brightness.light,
+                backgroundColor: kForegroundColor,
+                elevation: 0,
+                leading: widget.leading ?? ASBackButton(),
+                centerTitle: true,
+                title: DefaultTextStyle(
+                  style: TextStyle(
+                    color: kTextColor,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  child: widget.title is String
+                      ? Text(widget.title)
+                      : widget.title ?? SizedBox(),
+                ),
+                bottom: widget.appBarBottom,
               ),
-              child: widget.title is String
-                  ? Text(widget.title)
-                  : widget.title ?? SizedBox(),
-            ),
-            bottom: widget.appBarBottom,
-          ),
       body: widget.body,
     );
   }
