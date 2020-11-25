@@ -26,14 +26,16 @@ class _ExampleScaffoldState extends State<ExampleScaffold>
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
-      title: '标题 Scaffold',
+      title: '框架 Scaffold',
       appBarBottom: ASTabBar(
         items: tabs,
         isScrollable: true,
         controller: _tabController,
       ),
       endDrawer: ASDrawer(
-        child: Text('DRAWER'),
+        children: [
+          Text('DRAWER'),
+        ],
       ),
       body: ListView(
         children: [

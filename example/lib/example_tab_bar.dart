@@ -32,7 +32,7 @@ class _ExampleTabBarState extends State<ExampleTabBar>
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
-      title: 'TabBar',
+      title: '选项卡 TabBar',
       appBarBottom: PreferredSize(
         child: Column(
           children: [

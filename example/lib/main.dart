@@ -1,5 +1,6 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:example/example_bottom_button.dart';
+import 'package:example/example_drawer.dart';
 import 'package:example/example_tag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -66,9 +67,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ASButton.info(
               title: '按钮 Button', onPressed: () => Get.to(ExampleButton())),
           ASButton.info(
-              title: 'Scaffold', onPressed: () => Get.to(ExampleScaffold())),
+              title: '框架 Scaffold', onPressed: () => Get.to(ExampleScaffold())),
           ASButton.info(
-              title: 'Tabbar', onPressed: () => Get.to(ExampleTabBar())),
+              title: '选项卡 Tabbar', onPressed: () => Get.to(ExampleTabBar())),
           ASButton.info(
               title: '数量选择器NumericButton',
               onPressed: () => Get.to(ExampleNumericButton())),
@@ -78,7 +79,14 @@ class _MyHomePageState extends State<MyHomePage> {
             title: '底部按钮 BottomButton',
             onPressed: () => Get.to(ExampleBottomButton()),
           ),
-          ASButton.info(title: '标签 TAG',onPressed: () => Get.to(ExampleTag()),),
+          ASButton.info(
+            title: '标签 TAG',
+            onPressed: () => Get.to(ExampleTag()),
+          ),
+          ASButton.info(
+            title: '抽屉 DRAWER',
+            onPressed: () => Get.to(ExampleDrawer()),
+          ),
         ],
       ),
     );
