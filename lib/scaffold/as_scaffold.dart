@@ -52,6 +52,7 @@ class _ASScaffoldState extends State<ASScaffold> {
       backgroundColor: kBackgroundColor,
       bottomNavigationBar: widget.bottomNavigationBar,
       appBar: AppBar(
+        brightness: Brightness.light,
         backgroundColor: kForegroundColor,
         elevation: 0,
         leading: widget.leading ?? ASBackButton(),
