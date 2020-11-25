@@ -13,17 +13,17 @@ class _ExampleBottomButtonState extends State<ExampleBottomButton> {
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
-      title: 'BottomButton',
+      title: 'ASBottomButton',
       body: Center(),
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           ASBottomButton.infinity(
-            title: 'null',
+            title: '无渐变infinity',
             onPressed: () {},
           ),
           ASBottomButton.gradient(
-            title: '新增地址',
+            title: '有渐变gradient',
             onPressed: () {},
           ),
           Row(
@@ -31,13 +31,13 @@ class _ExampleBottomButtonState extends State<ExampleBottomButton> {
               SizedBox(
                 width: 112.w,
                 child: ASBottomButton.shortWhite(
-                  title: 'null',
+                  title: 'shortwhite',
                   onPressed: () {},
                 ),
               ),
               Expanded(
                   child: ASBottomButton.gradient(
-                title: 'null',
+                title: '有渐变gradient',
                 onPressed: () {},
               ))
             ],
