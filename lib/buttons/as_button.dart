@@ -1,3 +1,4 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,6 +41,8 @@ class ASButton extends StatefulWidget {
 
   ///不可点击时文字颜色
   final Color disableTextColor;
+
+  final Color splashColor;
   ASButton({
     Key key,
     this.bgcolor,
@@ -54,22 +57,24 @@ class ASButton extends StatefulWidget {
     this.width,
     this.disableColor,
     this.disableTextColor,
+    this.splashColor,
   }) : super(key: key);
 
-  ASButton.warn(
-      {Key key,
-      this.textStyle,
-      this.padding,
-      this.radius,
-      this.bgcolor,
-      this.onPressed,
-      @required this.title,
-      this.width,
-      this.disableColor,
-      this.disableTextColor})
-      : outline = true,
-        outlineColor = Color(0xFFE50112),
-        textColor = Color(0xFFE50112),
+  ASButton.danger({
+    Key key,
+    this.textStyle,
+    this.padding,
+    this.radius,
+    this.bgcolor,
+    this.onPressed,
+    @required this.title,
+    this.width,
+    this.disableColor,
+    this.disableTextColor,
+  })  : outline = true,
+        outlineColor = kDangerColor,
+        textColor = kDangerColor,
+        splashColor = kDangerColor.withOpacity(0.2),
         super(key: key);
 
   ASButton.info(
@@ -82,13 +87,14 @@ class ASButton extends StatefulWidget {
       this.onPressed,
       this.width,
       this.disableColor,
-      this.disableTextColor})
+      this.disableTextColor,
+      this.splashColor})
       : outline = true,
         outlineColor = Color(0x73000000),
         textColor = Color(0xD9000000),
         super(key: key);
 
-  ASButton.delete(
+  ASButton.warn(
       {Key key,
       this.radius,
       this.outlineColor,
@@ -98,12 +104,13 @@ class ASButton extends StatefulWidget {
       this.onPressed,
       this.width,
       this.disableColor,
-      this.disableTextColor})
+      this.disableTextColor,
+      this.splashColor})
       : bgcolor = Color(0xFFFFB600),
         textColor = Color(0xD9FFFFFF),
         outline = false,
         super(key: key);
-  ASButton.opration(
+  ASButton.operation(
       {Key key,
       this.radius,
       this.outlineColor,
@@ -113,7 +120,8 @@ class ASButton extends StatefulWidget {
       this.onPressed,
       this.width,
       this.disableColor,
-      this.disableTextColor})
+      this.disableTextColor,
+      this.splashColor})
       : bgcolor = Color(0xFFF2F2F2),
         textColor = Color(0xD9000000),
         outline = false,
@@ -124,6 +132,7 @@ class ASButton extends StatefulWidget {
     this.onPressed,
     this.outlineColor,
     this.width,
+    this.splashColor,
   })  : bgcolor = Color(0xFFFFBD32),
         textColor = Color(0xFF0000000),
         textStyle = TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
@@ -158,7 +167,9 @@ class _ASButtonState extends State<ASButton> {
               ? BorderSide(color: widget.outlineColor, width: 0.5.w)
               : BorderSide.none,
           borderRadius: BorderRadius.circular(widget.radius ?? 15.5.w)),
-      color: widget.bgcolor ?? Color(0xFFFFFFFF),
+      color: widget.bgcolor ?? kForegroundColor,
+      splashColor: widget.splashColor,
+      highlightColor: widget.splashColor,
       elevation: 0,
       focusElevation: 0,
       highlightElevation: 0,

@@ -17,3 +17,6 @@ const Color kForegroundColor = Color(0xFFFFFFFF);
 
 ///背景色
 const Color kBackgroundColor = Color(0xFFF6F6F6);
+
+///危险色
+const Color kDangerColor = Color(0xFFE50112);

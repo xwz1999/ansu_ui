@@ -16,20 +16,20 @@ class _ExampleButtonState extends State<ExampleButton> {
       title: 'Button',
       body: ListView(
         children: [
-          ASButton.delete(
-            title: '删除订单',
+          ASButton.danger(
+            title: '危险按钮',
             onPressed: () {},
           ),
           ASButton.info(
-            title: '删除订单',
+            title: '提示按钮',
             onPressed: () {},
           ),
           ASButton.warn(
-            title: '删除订单',
+            title: '警告按钮',
             onPressed: () {},
           ),
-          ASButton.opration(
-            title: '删除订单',
+          ASButton.operation(
+            title: '操作按钮',
             onPressed: () {},
           ),
           SizedBox(height: 12.w),
@@ -51,7 +51,7 @@ class _ExampleButtonState extends State<ExampleButton> {
                 title: '支付',
                 onPressed: () {},
               ),
-              ASButton.delete(
+              ASButton.danger(
                 title: '删除',
                 onPressed: () {},
               ),
