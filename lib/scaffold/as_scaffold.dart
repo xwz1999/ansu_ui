@@ -35,7 +35,7 @@ class ASScaffold extends StatefulWidget {
   final Widget appBar;
   ASScaffold({
     Key key,
-    @required this.title,
+    this.title,
     this.leading,
     this.body,
     this.bottomNavigationBar,
@@ -68,7 +68,9 @@ class _ASScaffoldState extends State<ASScaffold> {
                 fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
               ),
-              child: widget.title is String ? Text(widget.title) : widget.title,
+              child: widget.title is String
+                  ? Text(widget.title)
+                  : widget.title ?? SizedBox(),
             ),
             bottom: widget.appBarBottom,
           ),
