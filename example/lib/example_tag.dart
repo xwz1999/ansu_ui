@@ -17,53 +17,37 @@ class _ExampaleTagState extends State<ExampleTag> {
         title: 'ASTag',
         body: Column(
           children: [
-            Row(
-              children: [
-                Text('yellowSolid'),
-                Spacer(),
-                ASTag.yellowSolid('带电'),
-              ],
+            ListTile(
+              title: Text('yellowSolid'),
+              trailing: ASTag.yellowSolid('带电'),
             ),
-            Row(
-              children: [
-                Text('redHollow'),
-                Spacer(),
-                ASTag.redHollow('带磁'),
-              ],
+            ListTile(
+              title: Text('redHollow'),
+              trailing: ASTag.redHollow('带磁'),
             ),
-            Row(
-              children: [
-                Text('yellowHollow'),
-                Spacer(),
-                ASTag.yellowHollow('选填'),
-              ],
+            ListTile(
+              title: Text('yellowHollow'),
+              trailing: ASTag.yellowHollow('选填'),
             ),
-            Row(
-              children: [
-                Text('redHollow  width:45.w'),
-                Spacer(),
-                ASTag.redHollow(
-                  '未付款',
-                  width: 45.w,
-                ),
-              ],
+            ListTile(
+              title: Text('redHollow'),
+              subtitle: Text('width:45.w'),
+              trailing: ASTag.redHollow(
+                '未付款',
+                width: 45.w,
+              ),
             ),
-            Row(
-              children: [
-                Text('yellowHollowS  width:45.w'),
-                Spacer(),
-                ASTag.yellowHollowS(
-                  '已付款',
-                  width: 45.w,
-                ),
-              ],
+            ListTile(
+              title: Text('yellowHollowS'),
+              subtitle: Text('width:45.w'),
+              trailing: ASTag.yellowHollowS(
+                '已付款',
+                width: 45.w,
+              ),
             ),
-            Row(
-              children: [
-                Text('transport'),
-                Spacer(),
-                ASTag.transport('海运'),
-              ],
+            ListTile(
+              title: Text('transport'),
+              trailing: ASTag.transport('海运'),
             ),
           ],
         ));
