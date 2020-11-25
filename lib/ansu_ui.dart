@@ -10,6 +10,7 @@ export 'bar/as_tabbar.dart';
 export 'drawer/as_drawer.dart';
 export 'pickers/as_date_picker.dart';
 export 'pickers/as_picker_box.dart';
+export 'dialog/as_dialog.dart';
 
 export 'utils/screen_adapter.dart';
 

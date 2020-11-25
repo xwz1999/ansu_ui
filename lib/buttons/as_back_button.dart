@@ -1,7 +1,6 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 ///安速返回按钮
 ///
@@ -18,7 +17,7 @@ class ASBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return navigator.canPop()
+    return Navigator.canPop(context)
         ? IconButton(
             icon: Icon(
               CupertinoIcons.chevron_back,

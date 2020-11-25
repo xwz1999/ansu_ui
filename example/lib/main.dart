@@ -1,5 +1,6 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:example/example_bottom_button.dart';
+import 'package:example/example_dialog.dart';
 import 'package:example/example_drawer.dart';
 import 'package:example/example_tag.dart';
 import 'package:flutter/material.dart';
@@ -92,6 +93,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ASButton.info(
             title: '抽屉 DRAWER',
             onPressed: () => Get.to(ExampleDrawer()),
+          ),
+          ASButton.info(
+            title: '对话框 Dialog',
+            onPressed: () => Get.to(ExampleDialog()),
           ),
         ],
       ),
