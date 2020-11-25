@@ -2,6 +2,7 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:example/example_bottom_button.dart';
 import 'package:example/example_dialog.dart';
 import 'package:example/example_drawer.dart';
+import 'package:example/example_listtile.dart';
 import 'package:example/example_tag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -98,6 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
             title: '对话框 Dialog',
             onPressed: () => Get.to(ExampleDialog()),
           ),
+          ASButton.info(title:'列表内容项 ListTile',
+          onPressed: () => Get.to(ExampleListTile()),
+          )
         ],
       ),
     );
