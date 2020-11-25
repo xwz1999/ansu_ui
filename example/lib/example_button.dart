@@ -18,9 +18,9 @@ class _ExampleButtonState extends State<ExampleButton> {
         children: [
           Row(
             children: [
-              Text('delete'),
+              Text('danger'),
               Spacer(),
-              ASButton.delete(
+              ASButton.danger(
                 title: '删除订单',
                 onPressed: () {},
               ),
@@ -48,9 +48,9 @@ class _ExampleButtonState extends State<ExampleButton> {
           ),
           Row(
             children: [
-              Text('opration'),
+              Text('operation'),
               Spacer(),
-              ASButton.opration(
+              ASButton.operation(
                 title: '删除订单',
                 onPressed: () {},
               ),

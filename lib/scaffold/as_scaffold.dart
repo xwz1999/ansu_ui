@@ -27,7 +27,7 @@ class ASScaffold extends StatefulWidget {
   final PreferredSizeWidget appBarBottom;
 
   /// `EndDrawer` endDrawer
-  /// 
+  ///
   /// 右方向的抽屉
   final Widget endDrawer;
   ASScaffold({
@@ -54,7 +54,7 @@ class _ASScaffoldState extends State<ASScaffold> {
       appBar: AppBar(
         backgroundColor: kForegroundColor,
         elevation: 0,
-        leading: ASBackButton(),
+        leading: widget.leading ?? ASBackButton(),
         centerTitle: true,
         title: DefaultTextStyle(
           style: TextStyle(

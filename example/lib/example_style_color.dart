@@ -15,6 +15,14 @@ class _ExampleStyleColorState extends State<ExampleStyleColor> {
       children: [
         Text(object.name),
         Text(object.codeName),
+        Text(
+          object.color.toString(),
+          style: TextStyle(
+            color: object.color,
+            backgroundColor:
+                object.color.value > 0xFFAAAAAA ? Colors.black : Colors.white,
+          ),
+        ),
         Card(
           color: object.color,
           child: SizedBox(height: 50.w, width: double.infinity),
