@@ -41,7 +41,7 @@ class ASTag extends StatefulWidget {
       this.radius})
       : super(key: key);
 
-  ASTag.dangerousItem(this.text,
+  ASTag.yellowSolid(this.text,
       {Key key,
       this.width,
       this.height,
@@ -53,6 +53,43 @@ class ASTag extends StatefulWidget {
         outline = false,
         super(key: key);
 
+  ASTag.redHollow(
+    this.text, {
+    Key key,
+    this.width,
+    this.height,
+    this.textStyle,
+    this.radius,
+  })  : bgColor = Color(0xFFFFFFFF),
+        textColor = Color(0xFFE50112),
+        outline = true,
+        outlineColor = Color(0xFFE50112),
+        super(key: key);
+
+  ASTag.yellowHollow(this.text,
+      {Key key, this.width, this.height, this.textStyle, this.radius})
+      : bgColor = Color(0xFFFFFFFF),
+        textColor = Color(0xFFFFBD32),
+        outline = true,
+        outlineColor = Color(0xFFFFBD32),
+        super(key: key);
+
+  ASTag.yellowHollowS(this.text,
+      {Key key, this.width, this.height, this.textStyle, this.radius})
+      : bgColor = Color(0xFFFFFFFF),
+        textColor = Color(0xFFF69A2D),
+        outline = true,
+        outlineColor = Color(0xFFF69A2D),
+        super(key: key);
+  ASTag.transport(this.text, {Key key, this.textStyle})
+      : bgColor = Color(0xFFFFFFFF),
+        textColor = Color(0xFF00B0FF),
+        outline = true,
+        outlineColor = Color(0xFF00B0FF),
+        radius = 3.w,
+        width = 38.w,
+        height = 19.w,
+        super(key: key);
   @override
   _ASTagState createState() => _ASTagState();
 }
@@ -68,6 +105,7 @@ class _ASTagState extends State<ASTag> {
           color: widget.bgColor ?? Color(0xFFF69A2D),
           border: widget.outline
               ? Border.all(
+                  width: 1.w,
                   color: widget.outlineColor ?? Color(0xFFE50112),
                 )
               : Border.fromBorderSide(BorderSide.none),
