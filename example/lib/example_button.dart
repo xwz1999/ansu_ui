@@ -16,56 +16,46 @@ class _ExampleButtonState extends State<ExampleButton> {
       title: 'ASButton',
       body: ListView(
         children: [
-          Row(
-            children: [
-              Text('danger'),
-              Spacer(),
-              ASButton.danger(
-                title: '删除订单',
-                onPressed: () {},
-              ),
-            ],
+          ListTile(
+            title: Text('danger'),
+            trailing: ASButton.danger(
+              title: '删除订单',
+              onPressed: () {},
+            ),
           ),
-          Row(
-            children: [
-              Text('info'),
-              Spacer(),
-              ASButton.info(
-                title: '删除订单',
-                onPressed: () {},
-              ),
-            ],
+          ListTile(
+            title: Text('info'),
+            trailing: ASButton.info(
+              title: '删除订单',
+              onPressed: () {},
+            ),
           ),
-          Row(
-            children: [
-              Text('warn'),
-              Spacer(),
-              ASButton.warn(
-                title: '删除订单',
-                onPressed: () {},
-              ),
-            ],
+          ListTile(
+            title: Text('warn'),
+            trailing: ASButton.warn(
+              title: '删除订单',
+              onPressed: () {},
+            ),
           ),
-          Row(
-            children: [
-              Text('operation'),
-              Spacer(),
-              ASButton.operation(
-                title: '删除订单',
-                onPressed: () {},
-              ),
-            ],
+          ListTile(
+            title: Text('operation'),
+            trailing: ASButton.operation(
+              title: '删除订单',
+              onPressed: () {},
+            ),
           ),
-          Row(
-            children: [
-              Text('order'),
-              Spacer(),
-              ASButton.order(
+          ListTile(
+              title: Text('order'),
+              trailing: ASButton.order(
                 title: '立即下单',
                 onPressed: () {},
-              )
-            ],
-          ),
+              )),
+           ListTile(
+              title: Text('order'),
+              subtitle: Text('null function'),
+              trailing: ASButton.order(
+                title: '立即下单',
+              )),
           SizedBox(height: 12.w),
           Row(
             children: [
@@ -80,29 +70,25 @@ class _ExampleButtonState extends State<ExampleButton> {
           SizedBox(
             height: 12.w,
           ),
-          Row(
-            children: [
-              Text('solid'),
-              Spacer(),
-              ASLongButton.solid(
-                title: '确认',
-                onPressed: () {},
-              ),
-            ],
+          ListTile(
+            title: Text('solid'),
+            trailing: ASLongButton.solid(
+              title: '确认',
+              onPressed: () {},
+            ),
           ),
-          Row(
-            children: [
-              Text('hollow'),
-              Spacer(),
-              ASLongButton.hollow(
-                title: '确认',
-                onPressed: () {},
-              ),
-            ],
+          ListTile(
+            title: Text('hollow'),
+            trailing: ASLongButton.hollow(
+              title: '确认',
+              onPressed: () {},
+            ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 100.w),
-            child: ASLongButton.solid(title: 'adaptable', onPressed: () {}),
+          ListTile(
+            trailing: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 100.w),
+              child: ASLongButton.solid(title: 'adaptable', onPressed: () {}),
+            ),
           ),
           SizedBox(
             height: 12.w,
@@ -120,25 +106,19 @@ class _ExampleButtonState extends State<ExampleButton> {
           SizedBox(
             height: 12.w,
           ),
-          Row(
-            children: [
-              Text('pay'),
-              Spacer(),
-              ASGradientButton.pay(
-                title: '支付',
-                onPressed: () {},
-              ),
-            ],
+          ListTile(
+            title: Text('pay'),
+            trailing: ASGradientButton.pay(
+              title: '支付',
+              onPressed: () {},
+            ),
           ),
-          Row(
-            children: [
-              Text('opration'),
-              Spacer(),
-              ASGradientButton.operation(
-                title: '自动拆票',
-                onPressed: () {},
-              ),
-            ],
+          ListTile(
+            title: Text('opration'),
+            trailing: ASGradientButton.operation(
+              title: '自动拆票',
+              onPressed: () {},
+            ),
           ),
         ],
       ),
