@@ -30,6 +30,9 @@ class ASScaffold extends StatefulWidget {
   ///
   /// 右方向的抽屉
   final Widget endDrawer;
+
+  /// `AppBar` appBar
+  final Widget appBar;
   ASScaffold({
     Key key,
     @required this.title,
@@ -38,6 +41,7 @@ class ASScaffold extends StatefulWidget {
     this.bottomNavigationBar,
     this.appBarBottom,
     this.endDrawer,
+    this.appBar,
   }) : super(key: key);
 
   @override
@@ -51,22 +55,23 @@ class _ASScaffoldState extends State<ASScaffold> {
       endDrawer: widget.endDrawer,
       backgroundColor: kBackgroundColor,
       bottomNavigationBar: widget.bottomNavigationBar,
-      appBar: AppBar(
-        brightness: Brightness.light,
-        backgroundColor: kForegroundColor,
-        elevation: 0,
-        leading: widget.leading ?? ASBackButton(),
-        centerTitle: true,
-        title: DefaultTextStyle(
-          style: TextStyle(
-            color: kTextColor,
-            fontSize: 18.sp,
-            fontWeight: FontWeight.bold,
+      appBar: widget.appBar ??
+          AppBar(
+            brightness: Brightness.light,
+            backgroundColor: kForegroundColor,
+            elevation: 0,
+            leading: widget.leading ?? ASBackButton(),
+            centerTitle: true,
+            title: DefaultTextStyle(
+              style: TextStyle(
+                color: kTextColor,
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
+              ),
+              child: widget.title is String ? Text(widget.title) : widget.title,
+            ),
+            bottom: widget.appBarBottom,
           ),
-          child: widget.title is String ? Text(widget.title) : widget.title,
-        ),
-        bottom: widget.appBarBottom,
-      ),
       body: widget.body,
     );
   }
