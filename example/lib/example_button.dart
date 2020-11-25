@@ -13,70 +13,133 @@ class _ExampleButtonState extends State<ExampleButton> {
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
-      title: 'Button',
+      title: 'ASButton',
       body: ListView(
         children: [
-          ASButton.delete(
-            title: '删除订单',
-            onPressed: () {},
-          ),
-          ASButton.info(
-            title: '删除订单',
-            onPressed: () {},
-          ),
-          ASButton.warn(
-            title: '删除订单',
-            onPressed: () {},
-          ),
-          ASButton.opration(
-            title: '删除订单',
-            onPressed: () {},
-          ),
-          SizedBox(height: 12.w),
-          ASLongButton.solid(
-            title: '确认',
-            onPressed: () {},
-          ),
-          ASLongButton.hollow(
-            title: '确认',
-            onPressed: () {},
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 100.w),
-            child: ASLongButton.solid(title: 'null', onPressed: () {}),
-          ),
           Row(
             children: [
-              ASGradientButton.pay(
-                title: '支付',
-                onPressed: () {},
-              ),
+              Text('delete'),
+              Spacer(),
               ASButton.delete(
-                title: '删除',
-                onPressed: () {},
-              ),
-              ASGradientButton.operation(
-                title: 'null',
+                title: '删除订单',
                 onPressed: () {},
               ),
             ],
           ),
-          ASLongButton.hollow(
-            title: '确认',
-            onPressed: () {},
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 100.w),
-            child: ASLongButton.solid(title: 'null', onPressed: () {}),
+          Row(
+            children: [
+              Text('info'),
+              Spacer(),
+              ASButton.info(
+                title: '删除订单',
+                onPressed: () {},
+              ),
+            ],
           ),
           Row(
             children: [
+              Text('warn'),
+              Spacer(),
+              ASButton.warn(
+                title: '删除订单',
+                onPressed: () {},
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text('opration'),
+              Spacer(),
+              ASButton.opration(
+                title: '删除订单',
+                onPressed: () {},
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text('order'),
+              Spacer(),
               ASButton.order(
                 title: '立即下单',
                 onPressed: () {},
               )
             ],
-          )
+          ),
+          SizedBox(height: 12.w),
+          Row(
+            children: [
+              Spacer(),
+              Text(
+                'ASLongButton',
+                style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
+              ),
+              Spacer(),
+            ],
+          ),
+          SizedBox(
+            height: 12.w,
+          ),
+          Row(
+            children: [
+              Text('solid'),
+              Spacer(),
+              ASLongButton.solid(
+                title: '确认',
+                onPressed: () {},
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text('hollow'),
+              Spacer(),
+              ASLongButton.hollow(
+                title: '确认',
+                onPressed: () {},
+              ),
+            ],
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 100.w),
+            child: ASLongButton.solid(title: 'adaptable', onPressed: () {}),
+          ),
+          SizedBox(
+            height: 12.w,
+          ),
+          Row(
+            children: [
+              Spacer(),
+              Text(
+                'ASGradientButton',
+                style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
+              ),
+              Spacer(),
+            ],
+          ),
+          SizedBox(
+            height: 12.w,
+          ),
+          Row(
+            children: [
+              Text('pay'),
+              Spacer(),
+              ASGradientButton.pay(
+                title: '支付',
+                onPressed: () {},
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text('opration'),
+              Spacer(),
+              ASGradientButton.operation(
+                title: '自动拆票',
+                onPressed: () {},
+              ),
+            ],
+          ),
         ],
       ),
     );
