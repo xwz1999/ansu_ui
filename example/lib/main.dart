@@ -55,6 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
+      leading: navigator.canPop()
+          ? IconButton(
+              icon: Icon(Icons.backpack, color: Colors.black),
+              onPressed: () {},
+            )
+          : SizedBox(),
       title: '安速组件',
       body: ListView(
         padding: EdgeInsets.all(16.w),

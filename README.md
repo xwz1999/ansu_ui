@@ -1,8 +1,9 @@
 # ansu_ui 安速物流移动组件
 
-## dep
+## dep 依赖
 
 ![flutter_screenutil](https://img.shields.io/badge/flutter__screenutil-3.2.0-brightgreen)
+![get](https://img.shields.io/badge/get-3.17.1-brightgreen)
 
 ## Getting Started
 
