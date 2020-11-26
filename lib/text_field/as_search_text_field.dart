@@ -11,6 +11,7 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
     this.onChanged,
     this.focusNode,
     this.onSubmitted,
+    this.margin,
   }) : super(key: key);
 
   ///控制器
@@ -27,6 +28,9 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
 
   ///焦点
   final FocusNode focusNode;
+
+  ///margin
+  final EdgeInsets margin;
 
   @override
   _ASSearchTextFieldState createState() => _ASSearchTextFieldState();
@@ -47,10 +51,11 @@ class _ASSearchTextFieldState extends State<ASSearchTextField> {
   Widget build(BuildContext context) {
     return Container(
       height: 42.w,
-      padding: EdgeInsets.symmetric(
-        horizontal: 15.w,
-        vertical: 3.w,
-      ),
+      padding: widget.margin ??
+          EdgeInsets.symmetric(
+            horizontal: 15.w,
+            vertical: 3.w,
+          ),
       child: TextField(
         controller: widget.controller,
         onChanged: widget.onChanged,
