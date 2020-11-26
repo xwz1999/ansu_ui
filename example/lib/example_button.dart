@@ -50,7 +50,7 @@ class _ExampleButtonState extends State<ExampleButton> {
                 title: '立即下单',
                 onPressed: () {},
               )),
-           ListTile(
+          ListTile(
               title: Text('order'),
               subtitle: Text('null function'),
               trailing: ASButton.order(
@@ -84,11 +84,9 @@ class _ExampleButtonState extends State<ExampleButton> {
               onPressed: () {},
             ),
           ),
-          ListTile(
-            trailing: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 100.w),
-              child: ASLongButton.solid(title: 'adaptable', onPressed: () {}),
-            ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 100.w),
+            child: ASLongButton.solid(title: 'adaptable', onPressed: () {}),
           ),
           SizedBox(
             height: 12.w,

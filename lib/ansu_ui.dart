@@ -17,6 +17,7 @@ export 'pickers/as_picker_box.dart';
 export 'dialog/as_dialog.dart';
 export 'divider/as_divider.dart';
 export 'tag/as_tag.dart';
+export 'text_field/as_search_text_field.dart';
 
 export 'utils/screen_adapter.dart';
 

@@ -15,6 +15,8 @@ class _ExampleNumericButtonState extends State<ExampleNumericButton> {
     );
   }
 
+  int _pickedValue = 0;
+
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
@@ -23,17 +25,25 @@ class _ExampleNumericButtonState extends State<ExampleNumericButton> {
         builder: (context) {
           return ListView(
             children: [
-              ASNumericButton(
-                initValue: 0,
-                maxValue: 10,
-                onChange: (value) {},
-                reachMax: (value) {
-                  _showSnack(context, 'reach max');
-                },
-                reachMin: (value) {
-                  _showSnack(context, 'reach min');
-                },
-              )
+              ListTile(
+                title: Text(_pickedValue.toString()),
+                subtitle: Text('一般用法'),
+                trailing: ASNumericButton(
+                  initValue: _pickedValue,
+                  maxValue: 10,
+                  onChange: (value) {
+                    setState(() {
+                      _pickedValue = value;
+                    });
+                  },
+                  reachMax: (value) {
+                    _showSnack(context, 'reach max');
+                  },
+                  reachMin: (value) {
+                    _showSnack(context, 'reach min');
+                  },
+                ),
+              ),
             ],
           );
         },

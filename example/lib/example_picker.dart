@@ -16,21 +16,29 @@ class _ExamplePickerState extends State<ExamplePicker> {
       title: '选择器',
       body: ListView(
         children: [
-          ASButton(
-            title: '日期选择器 DatePicker',
-            onPressed: () async {
-              DateTime date = await asDatePicker(context);
-              Get.snackbar(date.toString(), 'MESSAGE');
-            },
+          ListTile(
+            title: Text('日期选择器'),
+            subtitle: Text('DatePicker'),
+            trailing: ASButton(
+              title: '日期选择器',
+              onPressed: () async {
+                DateTime date = await asDatePicker(context);
+                Get.snackbar(date.toString(), 'MESSAGE');
+              },
+            ),
           ),
-          ASButton(
-            title: '自定义选择器',
-            onPressed: () async {
-              Get.bottomSheet(ASPickerBox(
-                title: '自定义选择器',
-                child: Text('CHILD'),
-              ));
-            },
+          ListTile(
+            title: Text('自定义选择器'),
+            subtitle: Text('CustomPicker'),
+            trailing: ASButton(
+              title: '自定义选择器',
+              onPressed: () async {
+                Get.bottomSheet(ASPickerBox(
+                  title: '自定义选择器',
+                  child: Text('CHILD'),
+                ));
+              },
+            ),
           ),
         ],
       ),
