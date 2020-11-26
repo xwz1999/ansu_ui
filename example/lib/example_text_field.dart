@@ -18,6 +18,13 @@ class _ExampleTextFiledState extends State<ExampleTextFiled> {
         controller: _controller,
         hintText: '搜索',
       ),
+      body: ListView(
+        children: [
+          ASSearchTextField.button(
+            hintText: '搜索',
+          ),
+        ],
+      ),
     );
   }
 }
