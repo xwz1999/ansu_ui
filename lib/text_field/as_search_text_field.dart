@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///TextFiled
-class ASSearchTextField extends StatefulWidget {
+class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
   ASSearchTextField({
     Key key,
     this.controller,
@@ -54,6 +54,9 @@ class ASSearchTextField extends StatefulWidget {
 
   @override
   _ASSearchTextFieldState createState() => _ASSearchTextFieldState();
+
+  @override
+  Size get preferredSize => Size.fromHeight(42.w);
 }
 
 class _ASSearchTextFieldState extends State<ASSearchTextField> {
@@ -73,10 +76,10 @@ class _ASSearchTextFieldState extends State<ASSearchTextField> {
             vertical: 3.w,
           ),
       child: MaterialButton(
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         padding: EdgeInsets.zero,
         color: Color(0xFFF8F8F8),
         elevation: 0,
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(21.w),
           side: BorderSide(
