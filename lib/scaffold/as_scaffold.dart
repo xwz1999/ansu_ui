@@ -76,7 +76,11 @@ class _ASScaffoldState extends State<ASScaffold> {
                       ? Text(widget.title)
                       : widget.title ?? SizedBox(),
                 ),
-                bottom: widget.appBarBottom,
+                bottom: widget.appBarBottom ??
+                    PreferredSize(
+                      child: SizedBox(),
+                      preferredSize: Size.fromHeight(0),
+                    ),
               ),
       body: widget.body,
     );

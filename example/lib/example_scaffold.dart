@@ -1,5 +1,6 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ExampleScaffold extends StatefulWidget {
   ExampleScaffold({Key key}) : super(key: key);
@@ -48,7 +49,18 @@ class _ExampleScaffoldState extends State<ExampleScaffold>
                 child: Text('open drawer'),
               );
             },
-          )
+          ),
+          TextButton(
+            onPressed: () {
+              Get.dialog(
+                ASScaffold(
+                  title: '框架 Scaffold',
+                ),
+                useSafeArea: false,
+              );
+            },
+            child: Text('open drawer'),
+          ),
         ],
       ),
     );
