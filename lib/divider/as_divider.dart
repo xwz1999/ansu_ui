@@ -37,9 +37,9 @@ class ASVDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Divider(
+    return VerticalDivider(
       color: color,
-      height: height,
+      width: height,
       thickness: height,
       indent: indent,
       endIndent: endIndent,
