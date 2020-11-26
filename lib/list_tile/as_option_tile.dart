@@ -7,10 +7,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///菜单按钮Tile
 class ASOptionTile extends StatelessWidget {
-
   ///应使用 ASOptionTileItem
   final List<Widget> items;
-  const ASOptionTile({Key key, @required this.items}) : super(key: key);
+
+  ///单个Widget
+  final Widget item;
+  ASOptionTile({Key key, this.items, this.item}) : super(key: key);
+
+  ASOptionTile.single({Key key, @required this.item})
+      : items = [],
+        super(key: key);
 
   int get length => items.length;
 
@@ -21,15 +27,16 @@ class ASOptionTile extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5.w),
       ),
-      child: Column(
-        children: List.generate(length * 2 - 1, (index) {
-          final displayIndex = index ~/ 2;
-          if (index.isEven)
-            return items[displayIndex];
-          else
-            return ASDivider();
-        }),
-      ),
+      child: item ??
+          Column(
+            children: List.generate(length * 2 - 1, (index) {
+              final displayIndex = index ~/ 2;
+              if (index.isEven)
+                return items[displayIndex];
+              else
+                return ASDivider(indent: 14.w, endIndent: 14.w);
+            }),
+          ),
     );
   }
 }

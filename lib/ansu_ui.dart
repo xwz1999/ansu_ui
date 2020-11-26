@@ -14,8 +14,11 @@ export 'drawer/as_drawer.dart';
 export 'pickers/as_date_picker.dart';
 export 'pickers/as_picker_box.dart';
 export 'dialog/as_dialog.dart';
+
 export 'list_tile/as_list_tile.dart';
 export 'list_tile/as_option_tile.dart';
+export 'list_tile/as_edit_tile.dart';
+
 export 'tag/as_tag.dart';
 export 'divider/as_divider.dart';
 export 'text_field/as_search_text_field.dart';
