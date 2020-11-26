@@ -11,24 +11,13 @@ class ExampleStyleColor extends StatefulWidget {
 
 class _ExampleStyleColorState extends State<ExampleStyleColor> {
   _buildCard(ColorObject object) {
-    return Column(
-      children: [
-        Text(object.name),
-        Text(object.codeName),
-        Text(
-          object.color.toString(),
-          style: TextStyle(
-            color: object.color,
-            backgroundColor:
-                object.color.value > 0xFFAAAAAA ? Colors.black : Colors.white,
-          ),
-        ),
-        Card(
-          color: object.color,
-          child: SizedBox(height: 50.w, width: double.infinity),
-        ),
-        SizedBox(height: 16.w),
-      ],
+    return ListTile(
+      title: Text('${object.name} ${object.color.toString().substring(6, 16)}'),
+      subtitle: Text(object.codeName),
+      trailing: Card(
+        color: object.color,
+        child: SizedBox(height: 50.w, width: 50.w),
+      ),
     );
   }
 

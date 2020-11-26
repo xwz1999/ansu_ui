@@ -7,9 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///
 ///made with Scaffold from `Material`
 ///
-///`title`,`body`
 ///
-///`leading`,`bottomNavigationBar`,`appBarBottom`
+///
+///`title`,`body`,`leading`,`bottomNavigationBar`,`appBarBottom`,`appBar`
+///
+///title , AppBar 和 AppBarBottom 均为 `null`时不显示scaffold的AppBar
+///
+///只有AppBarBottom时只显示AppBarBottom中的内容
 class ASScaffold extends StatefulWidget {
   ///标题，可为`String`或`Text`
   final dynamic title;
@@ -30,14 +34,18 @@ class ASScaffold extends StatefulWidget {
   ///
   /// 右方向的抽屉
   final Widget endDrawer;
+
+  /// `AppBar` appBar
+  final Widget appBar;
   ASScaffold({
     Key key,
-    @required this.title,
+    this.title,
     this.leading,
     this.body,
     this.bottomNavigationBar,
     this.appBarBottom,
     this.endDrawer,
+    this.appBar,
   }) : super(key: key);
 
   @override
@@ -51,22 +59,36 @@ class _ASScaffoldState extends State<ASScaffold> {
       endDrawer: widget.endDrawer,
       backgroundColor: kBackgroundColor,
       bottomNavigationBar: widget.bottomNavigationBar,
-      appBar: AppBar(
-        brightness: Brightness.light,
-        backgroundColor: kForegroundColor,
-        elevation: 0,
-        leading: widget.leading ?? ASBackButton(),
-        centerTitle: true,
-        title: DefaultTextStyle(
-          style: TextStyle(
-            color: kTextColor,
-            fontSize: 18.sp,
-            fontWeight: FontWeight.bold,
-          ),
-          child: widget.title is String ? Text(widget.title) : widget.title,
-        ),
-        bottom: widget.appBarBottom,
-      ),
+      appBar: widget.title == null &&
+              widget.appBar == null &&
+              widget.appBarBottom == null
+          ? null
+          : widget.appBar ??
+              AppBar(
+                brightness: Brightness.light,
+                backgroundColor: kForegroundColor,
+                elevation: 0,
+                toolbarHeight: widget.title == null && widget.appBar == null
+                    ? widget.appBarBottom.preferredSize.height + 2.0
+                    : null,
+                leading: widget.leading ?? ASBackButton(),
+                centerTitle: true,
+                title: DefaultTextStyle(
+                  style: TextStyle(
+                    color: kTextColor,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  child: widget.title is String
+                      ? Text(widget.title)
+                      : widget.title ?? SizedBox(),
+                ),
+                bottom: widget.appBarBottom ??
+                    PreferredSize(
+                      child: SizedBox(),
+                      preferredSize: Size.fromHeight(0),
+                    ),
+              ),
       body: widget.body,
     );
   }

@@ -24,7 +24,7 @@ List<ColorObject> colorObjects = [
     codeName: 'kTextColor',
   ),
   ColorObject(
-    color: Color.fromRGBO(0, 0, 0, 0.65),
+    color: Color(0xFF999999),
     name: '次文本颜色',
     codeName: 'kTextSubColor',
   ),
