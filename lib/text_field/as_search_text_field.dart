@@ -73,6 +73,7 @@ class _ASSearchTextFieldState extends State<ASSearchTextField> {
             vertical: 3.w,
           ),
       child: MaterialButton(
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         padding: EdgeInsets.zero,
         color: Color(0xFFF8F8F8),
         elevation: 0,
