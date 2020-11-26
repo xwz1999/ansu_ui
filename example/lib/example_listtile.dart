@@ -1,6 +1,5 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:ansu_ui/divider/as_divider.dart';
-import 'package:ansu_ui/widget/as_listtile.dart';
 import 'package:flutter/material.dart';
 
 class ExampleListTile extends StatefulWidget {
@@ -17,7 +16,9 @@ class _ExampleListTileState extends State<ExampleListTile> {
       title: 'ASListTile',
       body: ListView(
         children: [
-          SizedBox(height: 8.w,),
+          SizedBox(
+            height: 8.w,
+          ),
           Container(
             color: Color(0xFFFFFFFF),
             padding: EdgeInsets.symmetric(horizontal: 8.w),
@@ -36,6 +37,17 @@ class _ExampleListTileState extends State<ExampleListTile> {
                   trail: Icon(Icons.ac_unit_outlined),
                 ),
               ],
+            ),
+          ),
+          20.hb,
+          ASOptionTile(
+            items: List.generate(
+              3,
+              (index) => ASOptionTileItem(
+                leading: Icon(Icons.verified),
+                title: Text('Test'),
+                onPressed: () {},
+              ),
             ),
           ),
         ],

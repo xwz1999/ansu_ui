@@ -56,7 +56,7 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
   _ASSearchTextFieldState createState() => _ASSearchTextFieldState();
 
   @override
-  Size get preferredSize => Size.fromHeight(42.w);
+  Size get preferredSize => Size.fromHeight(42);
 }
 
 class _ASSearchTextFieldState extends State<ASSearchTextField> {
