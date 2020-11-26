@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///TextFiled
-class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
+class ASSearchTextField extends StatefulWidget {
   ASSearchTextField({
     Key key,
     this.controller,
@@ -54,9 +54,6 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
 
   @override
   _ASSearchTextFieldState createState() => _ASSearchTextFieldState();
-
-  @override
-  Size get preferredSize => Size.fromHeight(42.w);
 }
 
 class _ASSearchTextFieldState extends State<ASSearchTextField> {

@@ -14,12 +14,13 @@ class _ExampleTextFiledState extends State<ExampleTextFiled> {
   Widget build(BuildContext context) {
     return ASScaffold(
       title: '文本框 TextFiled',
-      appBarBottom: ASSearchTextField(
-        controller: _controller,
-        hintText: '搜索',
-      ),
+      backgroundColor: kForegroundColor,
       body: ListView(
         children: [
+          ASSearchTextField(
+            controller: _controller,
+            hintText: '搜索',
+          ),
           ASSearchTextField.button(
             hintText: '搜索',
             onPressed: () {},

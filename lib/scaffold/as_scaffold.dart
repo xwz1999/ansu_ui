@@ -37,6 +37,9 @@ class ASScaffold extends StatefulWidget {
 
   /// `AppBar` appBar
   final Widget appBar;
+
+  ///背景色
+  final Color backgroundColor;
   ASScaffold({
     Key key,
     this.title,
@@ -46,6 +49,7 @@ class ASScaffold extends StatefulWidget {
     this.appBarBottom,
     this.endDrawer,
     this.appBar,
+    this.backgroundColor = kBackgroundColor,
   }) : super(key: key);
 
   @override
@@ -57,7 +61,7 @@ class _ASScaffoldState extends State<ASScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: widget.endDrawer,
-      backgroundColor: kBackgroundColor,
+      backgroundColor: widget.backgroundColor,
       bottomNavigationBar: widget.bottomNavigationBar,
       appBar: widget.title == null &&
               widget.appBar == null &&
@@ -68,9 +72,6 @@ class _ASScaffoldState extends State<ASScaffold> {
                 brightness: Brightness.light,
                 backgroundColor: kForegroundColor,
                 elevation: 0,
-                toolbarHeight: widget.title == null && widget.appBar == null
-                    ? widget.appBarBottom.preferredSize.height + 2.0
-                    : null,
                 leading: widget.leading ?? ASBackButton(),
                 centerTitle: true,
                 title: DefaultTextStyle(
