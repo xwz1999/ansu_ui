@@ -11,7 +11,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///
 ///`title`,`body`,`leading`,`bottomNavigationBar`,`appBarBottom`,`appBar`
 ///
-///title 和 AppBar 均为 `null`时不显示scaffold的AppBar
+///title , AppBar 和 AppBarBottom 均为 `null`时不显示scaffold的AppBar
+///
+///只有AppBarBottom时只显示AppBarBottom中的内容
 class ASScaffold extends StatefulWidget {
   ///标题，可为`String`或`Text`
   final dynamic title;
@@ -57,13 +59,18 @@ class _ASScaffoldState extends State<ASScaffold> {
       endDrawer: widget.endDrawer,
       backgroundColor: kBackgroundColor,
       bottomNavigationBar: widget.bottomNavigationBar,
-      appBar: widget.title == null && widget.appBar == null
+      appBar: widget.title == null &&
+              widget.appBar == null &&
+              widget.appBarBottom == null
           ? null
           : widget.appBar ??
               AppBar(
                 brightness: Brightness.light,
                 backgroundColor: kForegroundColor,
                 elevation: 0,
+                toolbarHeight: widget.title == null && widget.appBar == null
+                    ? widget.appBarBottom.preferredSize.height + 2.0
+                    : null,
                 leading: widget.leading ?? ASBackButton(),
                 centerTitle: true,
                 title: DefaultTextStyle(
