@@ -22,6 +22,7 @@ class _ExampleTextFiledState extends State<ExampleTextFiled> {
         children: [
           ASSearchTextField.button(
             hintText: '搜索',
+            onPressed: () {},
           ),
         ],
       ),

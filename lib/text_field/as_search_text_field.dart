@@ -78,6 +78,7 @@ class _ASSearchTextFieldState extends State<ASSearchTextField> {
       child: MaterialButton(
         padding: EdgeInsets.zero,
         color: Color(0xFFF8F8F8),
+        elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(21.w),
           side: BorderSide(
