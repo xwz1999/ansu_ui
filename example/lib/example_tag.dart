@@ -19,15 +19,15 @@ class _ExampaleTagState extends State<ExampleTag> {
           children: [
             ListTile(
               title: Text('yellowSolid'),
-              trailing: ASTag.yellowSolid('带电'),
+              trailing: ASTag.yellowSolid('带电',),
             ),
             ListTile(
               title: Text('redHollow'),
-              trailing: ASTag.redHollow('带磁'),
+              trailing: ASTag.redHollow('带磁',width: 36.w,),
             ),
             ListTile(
               title: Text('yellowHollow'),
-              trailing: ASTag.yellowHollow('选填'),
+              trailing: ASTag.yellowHollow('选填',width: 36.w,),
             ),
             ListTile(
               title: Text('redHollow'),

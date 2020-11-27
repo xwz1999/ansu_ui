@@ -115,10 +115,9 @@ class _ASTagState extends State<ASTag> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: widget.padding ?? EdgeInsets.symmetric(horizontal: 6.w),
-      alignment: Alignment.center,
+      padding: widget.padding ?? EdgeInsets.symmetric(horizontal: 6.w,vertical: 2.w),
       width: widget.width,
-      height: widget.height ?? 18.w,
+      height: widget.height,
       decoration: BoxDecoration(
           color: widget.bgColor ?? kDarkPrimaryColor,
           border: widget.outline
