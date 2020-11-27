@@ -50,6 +50,11 @@ class _ExampleListTileState extends State<ExampleListTile> {
               ),
             ),
           ),
+          ASOptionTile.single(
+            item: ASEditTile(
+              title: Text('TEST'),
+            ),
+          ),
         ],
       ),
     );
