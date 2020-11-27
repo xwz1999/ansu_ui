@@ -1,3 +1,4 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -53,8 +54,8 @@ class ASTag extends StatefulWidget {
       this.outlineColor,
       this.radius,
       this.padding})
-      : bgColor = Color(0xFFF69A2D),
-        textColor = Color(0xFFFFFFFF),
+      : bgColor = kDarkPrimaryColor,
+        textColor = kLightTextColor,
         outline = false,
         super(key: key);
 
@@ -66,10 +67,10 @@ class ASTag extends StatefulWidget {
     this.textStyle,
     this.radius,
     this.padding,
-  })  : bgColor = Color(0xFFFFFFFF),
-        textColor = Color(0xFFE50112),
+  })  : bgColor = kForegroundColor,
+        textColor = kSecondaryColor,
         outline = true,
-        outlineColor = Color(0xFFE50112),
+        outlineColor = kSecondaryColor,
         super(key: key);
 
   ASTag.yellowHollow(this.text,
@@ -79,10 +80,10 @@ class ASTag extends StatefulWidget {
       this.textStyle,
       this.radius,
       this.padding})
-      : bgColor = Color(0xFFFFFFFF),
-        textColor = Color(0xFFFFBD32),
+      : bgColor = kForegroundColor,
+        textColor = kPrimaryColor,
         outline = true,
-        outlineColor = Color(0xFFFFBD32),
+        outlineColor = kPrimaryColor,
         super(key: key);
 
   ASTag.yellowHollowS(this.text,
@@ -92,13 +93,13 @@ class ASTag extends StatefulWidget {
       this.textStyle,
       this.radius,
       this.padding})
-      : bgColor = Color(0xFFFFFFFF),
-        textColor = Color(0xFFF69A2D),
+      : bgColor = kForegroundColor,
+        textColor = kDarkPrimaryColor,
         outline = true,
-        outlineColor = Color(0xFFF69A2D),
+        outlineColor = kDarkPrimaryColor,
         super(key: key);
   ASTag.transport(this.text, {Key key, this.textStyle, this.padding})
-      : bgColor = Color(0xFFFFFFFF),
+      : bgColor = kForegroundColor,
         textColor = Color(0xFF00B0FF),
         outline = true,
         outlineColor = Color(0xFF00B0FF),
@@ -119,11 +120,11 @@ class _ASTagState extends State<ASTag> {
       width: widget.width,
       height: widget.height ?? 18.w,
       decoration: BoxDecoration(
-          color: widget.bgColor ?? Color(0xFFF69A2D),
+          color: widget.bgColor ?? kDarkPrimaryColor,
           border: widget.outline
               ? Border.all(
                   width: 1.w,
-                  color: widget.outlineColor ?? Color(0xFFE50112),
+                  color: widget.outlineColor ?? kSecondaryColor,
                 )
               : Border.fromBorderSide(BorderSide.none),
           borderRadius: BorderRadius.circular(widget.radius ?? 9.w)),
