@@ -43,4 +43,8 @@ List<ColorObject> colorObjects = [
     name: '背景色',
     codeName: 'kBackgroundColor',
   ),
+  ColorObject(
+      color: Color(0xFFF69A2D), name: '暗主题色', codeName: 'kDarkPrimaryColor'),
+  ColorObject(
+      color: Color(0xFFFFB600), name: '亮主题色', codeName: 'kLightPrimaryColor'),
 ];

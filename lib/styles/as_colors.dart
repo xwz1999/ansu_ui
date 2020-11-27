@@ -20,3 +20,10 @@ const Color kBackgroundColor = Color(0xFFF6F6F6);
 
 ///危险色
 const Color kDangerColor = Color(0xFFE50112);
+
+///暗主题色
+const Color kDarkPrimaryColor = Color(0xFFF69A2D);
+
+///亮主题色
+const Color kLightPrimaryColor = Color(0xFFFFB600);
+
