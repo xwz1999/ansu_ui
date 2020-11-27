@@ -99,7 +99,7 @@ class _ASTagState extends State<ASTag> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: widget.width ?? 36.w,
+      width: widget.width,
       height: widget.height ?? 18.w,
       decoration: BoxDecoration(
           color: widget.bgColor ?? Color(0xFFF69A2D),
