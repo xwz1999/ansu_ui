@@ -122,7 +122,7 @@ class ASButton extends StatefulWidget {
       this.disableColor,
       this.disableTextColor,
       this.splashColor})
-      : bgcolor = kForegroundColor,
+      : bgcolor = Color(0xFFF2F2F2),
         textColor =kTextColor,
         outline = false,
         super(key: key);
