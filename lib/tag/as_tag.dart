@@ -28,6 +28,9 @@ class ASTag extends StatefulWidget {
 
   ///圆角
   final double radius;
+
+  ///内边距
+  final EdgeInsetsGeometry padding;
   ASTag(
       {Key key,
       this.width,
@@ -38,7 +41,8 @@ class ASTag extends StatefulWidget {
       this.textStyle,
       this.outline = false,
       this.outlineColor,
-      this.radius})
+      this.radius,
+      this.padding})
       : super(key: key);
 
   ASTag.yellowSolid(this.text,
@@ -47,7 +51,8 @@ class ASTag extends StatefulWidget {
       this.height,
       this.textStyle,
       this.outlineColor,
-      this.radius})
+      this.radius,
+      this.padding})
       : bgColor = Color(0xFFF69A2D),
         textColor = Color(0xFFFFFFFF),
         outline = false,
@@ -60,6 +65,7 @@ class ASTag extends StatefulWidget {
     this.height,
     this.textStyle,
     this.radius,
+    this.padding,
   })  : bgColor = Color(0xFFFFFFFF),
         textColor = Color(0xFFE50112),
         outline = true,
@@ -67,7 +73,12 @@ class ASTag extends StatefulWidget {
         super(key: key);
 
   ASTag.yellowHollow(this.text,
-      {Key key, this.width, this.height, this.textStyle, this.radius})
+      {Key key,
+      this.width,
+      this.height,
+      this.textStyle,
+      this.radius,
+      this.padding})
       : bgColor = Color(0xFFFFFFFF),
         textColor = Color(0xFFFFBD32),
         outline = true,
@@ -75,13 +86,18 @@ class ASTag extends StatefulWidget {
         super(key: key);
 
   ASTag.yellowHollowS(this.text,
-      {Key key, this.width, this.height, this.textStyle, this.radius})
+      {Key key,
+      this.width,
+      this.height,
+      this.textStyle,
+      this.radius,
+      this.padding})
       : bgColor = Color(0xFFFFFFFF),
         textColor = Color(0xFFF69A2D),
         outline = true,
         outlineColor = Color(0xFFF69A2D),
         super(key: key);
-  ASTag.transport(this.text, {Key key, this.textStyle})
+  ASTag.transport(this.text, {Key key, this.textStyle, this.padding})
       : bgColor = Color(0xFFFFFFFF),
         textColor = Color(0xFF00B0FF),
         outline = true,
@@ -98,6 +114,7 @@ class _ASTagState extends State<ASTag> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: widget.padding ?? EdgeInsets.symmetric(horizontal: 6.w),
       alignment: Alignment.center,
       width: widget.width,
       height: widget.height ?? 18.w,
