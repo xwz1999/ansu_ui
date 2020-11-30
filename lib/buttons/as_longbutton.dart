@@ -67,8 +67,8 @@ class ASLongButton extends StatefulWidget {
     this.onPressed,
     this.width,
     this.disableTextColor,
-  })  : bgColor = kDarkPrimaryColor,
-        textColor = kTextColor,
+    this.bgColor = kDarkPrimaryColor,
+  })  : textColor = kTextColor,
         outline = false,
         disableColor = Color(0xFFC1BDB5),
         super(key: key);
