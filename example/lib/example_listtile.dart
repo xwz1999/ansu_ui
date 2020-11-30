@@ -15,6 +15,7 @@ class _ExampleListTileState extends State<ExampleListTile> {
     return ASScaffold(
       title: 'ASListTile',
       body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 12.w),
         children: [
           SizedBox(
             height: 8.w,
@@ -34,7 +35,7 @@ class _ExampleListTileState extends State<ExampleListTile> {
                   title: '订单编号',
                   text:
                       'DDAWMFOAGNAIOWNGOANIWOGNAOWIDJAWIOHFA92474Y2798489TY892YH8G67TGT2UBF29GB8298H42897YH472H',
-                  trail: Icon(Icons.ac_unit_outlined),
+                  // trail: Icon(Icons.ac_unit_outlined),
                 ),
               ],
             ),
@@ -50,9 +51,17 @@ class _ExampleListTileState extends State<ExampleListTile> {
               ),
             ),
           ),
+          20.hb,
           ASOptionTile.single(
             item: ASEditTile(
               title: Text('TEST'),
+            ),
+          ),
+          20.hb,
+          ASOptionTile.single(
+            item: ASVerticalTileItem(
+              title: 'AS Vertical Tile',
+              child: TextField(),
             ),
           ),
         ],

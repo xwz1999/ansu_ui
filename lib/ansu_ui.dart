@@ -18,6 +18,8 @@ export 'dialog/as_dialog.dart';
 export 'list_tile/as_list_tile.dart';
 export 'list_tile/as_option_tile.dart';
 export 'list_tile/as_edit_tile.dart';
+export 'list_tile/as_option_tile_item.dart';
+export 'list_tile/as_vertical_tile_item.dart';
 
 export 'tag/as_tag.dart';
 export 'divider/as_divider.dart';

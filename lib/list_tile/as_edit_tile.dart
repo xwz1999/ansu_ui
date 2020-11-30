@@ -11,7 +11,7 @@ class ASEditTile extends StatefulWidget {
     this.title,
     this.node,
     this.hintText,
-    @required this.controller,
+    this.controller,
   }) : super(key: key);
 
   @override
