@@ -3,6 +3,7 @@ import 'package:example/example_bottom_button.dart';
 import 'package:example/example_dialog.dart';
 import 'package:example/example_drawer.dart';
 import 'package:example/example_listtile.dart';
+import 'package:example/example_refresh.dart';
 import 'package:example/example_tag.dart';
 import 'package:example/example_text_field.dart';
 import 'package:flutter/material.dart';
@@ -116,6 +117,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ASButton.info(
             title: '文本框 TextField',
             onPressed: () => Get.to(ExampleTextFiled()),
+          ),
+          ASButton.info(
+            title: '刷新组件 Refresh',
+            onPressed: () => Get.to(ExampleRefresh()),
           ),
         ],
       ),
