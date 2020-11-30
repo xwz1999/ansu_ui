@@ -1,3 +1,4 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -66,8 +67,8 @@ class ASLongButton extends StatefulWidget {
     this.onPressed,
     this.width,
     this.disableTextColor,
-  })  : bgColor = Color(0xFFF6B72D),
-        textColor = Color(0xFFFFFFFF),
+  })  : bgColor = kDarkPrimaryColor,
+        textColor = kTextColor,
         outline = false,
         disableColor = Color(0xFFC1BDB5),
         super(key: key);
@@ -81,10 +82,10 @@ class ASLongButton extends StatefulWidget {
       this.width,
       this.disableColor,
       this.disableTextColor})
-      : bgColor = Color(0xFFFFFFFF),
-        textColor = Color(0xFFF6B72D),
+      : bgColor = kForegroundColor,
+        textColor = kDarkPrimaryColor,
         outline = true,
-        outlineColor = Color(0xFFF6B72D),
+        outlineColor = kDarkPrimaryColor,
         super(key: key);
   @override
   _ASLongButtonState createState() => _ASLongButtonState();
@@ -96,7 +97,7 @@ class _ASLongButtonState extends State<ASLongButton> {
     return MaterialButton(
       minWidth: widget.width ?? 280.w,
       disabledColor: widget.disableColor,
-      textColor: widget.textColor ?? Color(0xFFFFFFFF),
+      textColor: widget.textColor ?? kLightTextColor,
       disabledTextColor: widget.disableTextColor,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: widget.onPressed,
@@ -110,7 +111,7 @@ class _ASLongButtonState extends State<ASLongButton> {
               ? BorderSide(color: widget.outlineColor, width: 1.w)
               : BorderSide.none,
           borderRadius: BorderRadius.circular(widget.radius ?? 22.5.w)),
-      color: widget.bgColor ?? Color(0xFFFFFFFF),
+      color: widget.bgColor ?? kForegroundColor,
       elevation: 0,
       // // focusElevation: 0,
       // // hoverElevation: 0,

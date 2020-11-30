@@ -1,3 +1,4 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,6 +29,9 @@ class ASTag extends StatefulWidget {
 
   ///圆角
   final double radius;
+
+  ///内边距
+  final EdgeInsetsGeometry padding;
   ASTag(
       {Key key,
       this.width,
@@ -38,7 +42,8 @@ class ASTag extends StatefulWidget {
       this.textStyle,
       this.outline = false,
       this.outlineColor,
-      this.radius})
+      this.radius,
+      this.padding})
       : super(key: key);
 
   ASTag.yellowSolid(this.text,
@@ -47,9 +52,10 @@ class ASTag extends StatefulWidget {
       this.height,
       this.textStyle,
       this.outlineColor,
-      this.radius})
-      : bgColor = Color(0xFFF69A2D),
-        textColor = Color(0xFFFFFFFF),
+      this.radius,
+      this.padding})
+      : bgColor = kDarkPrimaryColor,
+        textColor = kLightTextColor,
         outline = false,
         super(key: key);
 
@@ -60,29 +66,40 @@ class ASTag extends StatefulWidget {
     this.height,
     this.textStyle,
     this.radius,
-  })  : bgColor = Color(0xFFFFFFFF),
-        textColor = Color(0xFFE50112),
+    this.padding,
+  })  : bgColor = kForegroundColor,
+        textColor = kSecondaryColor,
         outline = true,
-        outlineColor = Color(0xFFE50112),
+        outlineColor = kSecondaryColor,
         super(key: key);
 
   ASTag.yellowHollow(this.text,
-      {Key key, this.width, this.height, this.textStyle, this.radius})
-      : bgColor = Color(0xFFFFFFFF),
-        textColor = Color(0xFFFFBD32),
+      {Key key,
+      this.width,
+      this.height,
+      this.textStyle,
+      this.radius,
+      this.padding})
+      : bgColor = kForegroundColor,
+        textColor = kPrimaryColor,
         outline = true,
-        outlineColor = Color(0xFFFFBD32),
+        outlineColor = kPrimaryColor,
         super(key: key);
 
   ASTag.yellowHollowS(this.text,
-      {Key key, this.width, this.height, this.textStyle, this.radius})
-      : bgColor = Color(0xFFFFFFFF),
-        textColor = Color(0xFFF69A2D),
+      {Key key,
+      this.width,
+      this.height,
+      this.textStyle,
+      this.radius,
+      this.padding})
+      : bgColor = kForegroundColor,
+        textColor = kDarkPrimaryColor,
         outline = true,
-        outlineColor = Color(0xFFF69A2D),
+        outlineColor = kDarkPrimaryColor,
         super(key: key);
-  ASTag.transport(this.text, {Key key, this.textStyle})
-      : bgColor = Color(0xFFFFFFFF),
+  ASTag.transport(this.text, {Key key, this.textStyle, this.padding})
+      : bgColor = kForegroundColor,
         textColor = Color(0xFF00B0FF),
         outline = true,
         outlineColor = Color(0xFF00B0FF),
@@ -98,15 +115,15 @@ class _ASTagState extends State<ASTag> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
-      width: widget.width ?? 36.w,
-      height: widget.height ?? 18.w,
+      padding: widget.padding ?? EdgeInsets.symmetric(horizontal: 6.w,vertical: 2.w),
+      width: widget.width,
+      height: widget.height,
       decoration: BoxDecoration(
-          color: widget.bgColor ?? Color(0xFFF69A2D),
+          color: widget.bgColor ?? kDarkPrimaryColor,
           border: widget.outline
               ? Border.all(
                   width: 1.w,
-                  color: widget.outlineColor ?? Color(0xFFE50112),
+                  color: widget.outlineColor ?? kSecondaryColor,
                 )
               : Border.fromBorderSide(BorderSide.none),
           borderRadius: BorderRadius.circular(widget.radius ?? 9.w)),

@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 ///主要暗色
 const Color kDarkColor = Color(0xFF333333);
 
+///次暗色
+const Color kSubDarkColor = Color(0x73000000);
+
 ///文本默认颜色
 const Color kTextColor = kDarkColor;
 
@@ -20,3 +23,15 @@ const Color kBackgroundColor = Color(0xFFF6F6F6);
 
 ///危险色
 const Color kDangerColor = Color(0xFFE50112);
+
+///暗主题色
+const Color kDarkPrimaryColor = Color(0xFFF69A2D);
+
+///亮主题色
+const Color kLightPrimaryColor = Color(0xFFFFB600);
+
+///文本亮颜色
+const Color kLightTextColor = Color(0xD9FFFFFF);
+
+///次主题色
+const Color kSecondaryColor = Color(0xFFE50112);

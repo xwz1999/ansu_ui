@@ -1,3 +1,4 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -82,7 +83,7 @@ class ASBottomButton extends StatefulWidget {
       this.begin,
       this.end})
       : colors = [Color(0xFFFFA700), Color(0xFFFFBD00)],
-        textColor = Color(0xFFFFFFFF),
+        textColor = kLightTextColor,
         width = double.infinity,
         super(key: key);
   ASBottomButton.shortWhite({
@@ -97,7 +98,7 @@ class ASBottomButton extends StatefulWidget {
     this.begin,
     this.end,
   })  : colors = [Color(0xFFFBFBFB), Color(0xFFFFFFFF)],
-        textColor = Color(0xFFFFB800),
+        textColor = kPrimaryColor,
         width = double.infinity,
         super(key: key);
 
@@ -119,7 +120,7 @@ class _ASBottomButtonState extends State<ASBottomButton> {
       ),
       child: MaterialButton(
         onPressed: widget.onPressed,
-        textColor: widget.textColor ?? Color(0xFFFFFFFF),
+        textColor: widget.textColor ?? kLightTextColor,
         disabledColor: widget.disableColor,
         disabledTextColor: widget.disableTextColor,
         padding: widget.padding ??

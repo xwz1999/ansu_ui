@@ -1,3 +1,4 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -61,7 +62,7 @@ class ASGradientButton extends StatefulWidget {
     this.onPressed,
     this.disableColor,
     this.disableTextColor,
-  })  : textColor = Color(0xD9FFFFFF),
+  })  : textColor = kLightTextColor,
         radius = 19.w,
         colors = [Color(0xFFF89B14), Color(0xFFF86B14)],
         width = 100.w,
@@ -102,7 +103,7 @@ class _ASGradientButtonState extends State<ASGradientButton> {
         gradient: LinearGradient(
           begin: widget.begin ?? Alignment.topCenter,
           end: widget.end ?? Alignment.bottomCenter,
-          colors: widget.colors ?? [Color(0xFFFFA700), Color(0xFFFFBD00)],
+          colors: widget.colors ?? [kDarkPrimaryColor, kLightPrimaryColor],
         ),
         borderRadius: BorderRadius.circular(widget.radius ?? 20.w),
       ),

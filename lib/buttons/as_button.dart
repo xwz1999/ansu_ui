@@ -90,8 +90,8 @@ class ASButton extends StatefulWidget {
       this.disableTextColor,
       this.splashColor})
       : outline = true,
-        outlineColor = Color(0x73000000),
-        textColor = Color(0xD9000000),
+        outlineColor = kDarkColor,
+        textColor = kTextColor,
         super(key: key);
 
   ASButton.warn(
@@ -106,8 +106,8 @@ class ASButton extends StatefulWidget {
       this.disableColor,
       this.disableTextColor,
       this.splashColor})
-      : bgcolor = Color(0xFFFFB600),
-        textColor = Color(0xD9FFFFFF),
+      : bgcolor = kLightPrimaryColor,
+        textColor = kLightTextColor,
         outline = false,
         super(key: key);
   ASButton.operation(
@@ -123,7 +123,7 @@ class ASButton extends StatefulWidget {
       this.disableTextColor,
       this.splashColor})
       : bgcolor = Color(0xFFF2F2F2),
-        textColor = Color(0xD9000000),
+        textColor =kTextColor,
         outline = false,
         super(key: key);
   ASButton.order({
@@ -133,13 +133,13 @@ class ASButton extends StatefulWidget {
     this.outlineColor,
     this.width,
     this.splashColor,
-  })  : bgcolor = Color(0xFFFFBD32),
-        textColor = Color(0xFF0000000),
+  })  : bgcolor = kLightPrimaryColor,
+        textColor = kTextColor,
         textStyle = TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
         radius = 5.w,
         outline = false,
         disableColor = Color(0xFFFFDF9B),
-        disableTextColor = Color(0x73000000),
+        disableTextColor = kTextSubColor,
         padding = EdgeInsets.symmetric(vertical: 8.w),
         super(key: key);
 
@@ -153,7 +153,7 @@ class _ASButtonState extends State<ASButton> {
     return MaterialButton(
       disabledColor: widget.disableColor,
       disabledTextColor: widget.disableTextColor,
-      textColor: widget.textColor ?? Color(0xFFFFB600),
+      textColor: widget.textColor ?? kLightPrimaryColor,
       minWidth: widget.width ?? 75.w,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: widget.onPressed,

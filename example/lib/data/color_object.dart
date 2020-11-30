@@ -19,6 +19,11 @@ List<ColorObject> colorObjects = [
     codeName: 'kDarkColor',
   ),
   ColorObject(
+    color: Color(0x73000000),
+    name: '次暗色',
+    codeName: 'kSubDarkColor',
+  ),
+  ColorObject(
     color: kDarkColor,
     name: '文本默认颜色',
     codeName: 'kTextColor',
@@ -27,6 +32,11 @@ List<ColorObject> colorObjects = [
     color: Color(0xFF999999),
     name: '次文本颜色',
     codeName: 'kTextSubColor',
+  ),
+  ColorObject(
+    color: Color(0xD9FFFFFF),
+    name: '亮文本颜色',
+    codeName: 'kLightTextColor',
   ),
   ColorObject(
     color: Color(0xFFF6B72D),
@@ -42,5 +52,20 @@ List<ColorObject> colorObjects = [
     color: Color(0xFFF6F6F6),
     name: '背景色',
     codeName: 'kBackgroundColor',
+  ),
+  ColorObject(
+    color: Color(0xFFF69A2D),
+    name: '暗主题色',
+    codeName: 'kDarkPrimaryColor',
+  ),
+  ColorObject(
+    color: Color(0xFFFFB600),
+    name: '亮主题色',
+    codeName: 'kLightPrimaryColor',
+  ),
+  ColorObject(
+    color: Color(0xFFE50112),
+    name: '次主题色',
+    codeName: 'kSecondaryColor',
   ),
 ];

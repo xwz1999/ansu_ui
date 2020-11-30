@@ -1,3 +1,4 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -41,7 +42,7 @@ class _ASListTileState extends State<ASListTile> {
               maxLines: 1,
               overflow: TextOverflow.visible,
               softWrap: false,
-              style: TextStyle(color: Color(0xD9000000), fontSize: 14.sp),
+              style: TextStyle(color: kTextColor, fontSize: 14.sp),
             ),
           ),
           Expanded(
@@ -49,7 +50,7 @@ class _ASListTileState extends State<ASListTile> {
                 ? Text(
                     widget.text,
                     maxLines: 2,
-                    style: TextStyle(color: Color(0xA6000000), fontSize: 14.sp),
+                    style: TextStyle(color: kTextSubColor, fontSize: 14.sp),
                   )
                 : widget.text,
           ),
