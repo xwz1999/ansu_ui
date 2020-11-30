@@ -7,12 +7,18 @@ class ASRefresh extends StatefulWidget {
   final Future Function() onLoad;
   final Future Function() onRefresh;
   final EasyRefreshController controller;
+  final bool firstRefresh;
+  final Widget emptyWidget;
+  final Widget firstRefreshWidget;
   ASRefresh({
     Key key,
     @required this.child,
     this.onLoad,
     this.onRefresh,
     this.controller,
+    this.firstRefresh = true,
+    this.emptyWidget,
+    this.firstRefreshWidget,
   }) : super(key: key);
 
   @override
@@ -27,6 +33,9 @@ class _ASRefreshState extends State<ASRefresh> {
       onRefresh: widget.onRefresh,
       onLoad: widget.onLoad,
       controller: widget.controller,
+      firstRefresh: widget.firstRefresh,
+      emptyWidget: widget.emptyWidget,
+      firstRefreshWidget: widget.firstRefreshWidget,
       header: MaterialHeader(
         valueColor: AlwaysStoppedAnimation(kPrimaryColor),
       ),
