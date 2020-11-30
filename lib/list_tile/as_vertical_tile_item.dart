@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ASVerticalTileItem extends StatelessWidget {
   ///标题
-  final String title;
+  final Widget title;
 
   ///child
   final Widget child;
@@ -32,12 +32,12 @@ class ASVerticalTileItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            title,
+          DefaultTextStyle(
             style: TextStyle(
               color: kTextSubColor,
               fontSize: 14.sp,
             ),
+            child: title,
           ),
           13.hb,
           ASDivider(),

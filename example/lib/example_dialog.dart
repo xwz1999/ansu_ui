@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ExampleDialog extends StatefulWidget {
-  ExampleDialog({Key key}) : super(key: key);
-
   @override
   _ExampleDialogState createState() => _ExampleDialogState();
 }
@@ -19,7 +17,20 @@ class _ExampleDialogState extends State<ExampleDialog> {
           ASButton.info(
               title: '打开对话框',
               onPressed: () {
-                Get.dialog(ASDialog());
+                Get.dialog(ASDialog(
+                  close: true,
+                  child: Text('确认吗'),
+                  items: [
+                    ASDialogButton.outline(
+                      title: '确认',
+                      onPressed: () {},
+                    ),
+                    ASDialogButton(
+                      title: '确认',
+                      onPressed: () {},
+                    ),
+                  ],
+                ));
               }),
         ],
       ),

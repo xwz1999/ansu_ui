@@ -113,8 +113,6 @@ class _ASLongButtonState extends State<ASLongButton> {
           borderRadius: BorderRadius.circular(widget.radius ?? 22.5.w)),
       color: widget.bgColor ?? kForegroundColor,
       elevation: 0,
-      // // focusElevation: 0,
-      // // hoverElevation: 0,
       highlightElevation: 0,
     );
   }

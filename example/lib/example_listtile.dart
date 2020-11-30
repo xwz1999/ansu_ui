@@ -60,7 +60,7 @@ class _ExampleListTileState extends State<ExampleListTile> {
           20.hb,
           ASOptionTile.single(
             item: ASVerticalTileItem(
-              title: 'AS Vertical Tile',
+              title: Text('AS Vertical Tile'),
               child: TextField(),
             ),
           ),

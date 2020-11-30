@@ -13,7 +13,9 @@ export 'bar/as_tabbar.dart';
 export 'drawer/as_drawer.dart';
 export 'pickers/as_date_picker.dart';
 export 'pickers/as_picker_box.dart';
+
 export 'dialog/as_dialog.dart';
+export 'dialog/as_dialog_button.dart';
 
 export 'list_tile/as_list_tile.dart';
 export 'list_tile/as_option_tile.dart';
