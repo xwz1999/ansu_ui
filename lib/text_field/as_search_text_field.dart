@@ -13,6 +13,7 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
     this.onSubmitted,
     this.margin,
     this.onPressed,
+    this.width,
   })  : button = false,
         super(key: key);
 
@@ -26,6 +27,7 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
     this.onSubmitted,
     this.margin,
     this.onPressed,
+    this.width,
   })  : button = true,
         super(key: key);
 
@@ -52,6 +54,9 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
 
   final VoidCallback onPressed;
 
+  ///高度
+  final double width;
+
   @override
   _ASSearchTextFieldState createState() => _ASSearchTextFieldState();
 
@@ -76,6 +81,7 @@ class _ASSearchTextFieldState extends State<ASSearchTextField> {
             vertical: 3.w,
           ),
       child: MaterialButton(
+        minWidth: widget.width,
         padding: EdgeInsets.zero,
         color: Color(0xFFF8F8F8),
         elevation: 0,
