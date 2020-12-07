@@ -42,3 +42,4 @@ export 'extension/separate_extension.dart';
 
 //`BOTTOM` is external lib
 export 'package:flutter_screenutil/flutter_screenutil.dart';
+export 'package:flutter_easyrefresh/easy_refresh.dart';
