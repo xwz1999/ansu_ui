@@ -1,5 +1,6 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:example/example_bottom_button.dart';
+import 'package:example/example_box.dart';
 import 'package:example/example_dialog.dart';
 import 'package:example/example_drawer.dart';
 import 'package:example/example_listtile.dart';
@@ -121,6 +122,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ASButton.info(
             title: '刷新组件 Refresh',
             onPressed: () => Get.to(ExampleRefresh()),
+          ),
+          ASButton.info(
+            title: '选框 Box',
+            onPressed: () => Get.to(ExampleBox()),
           ),
         ],
       ),
