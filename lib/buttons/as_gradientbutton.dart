@@ -95,6 +95,18 @@ class ASGradientButton extends StatefulWidget {
 }
 
 class _ASGradientButtonState extends State<ASGradientButton> {
+  bool get isNullFunc => widget.onPressed == null;
+  List<Color> get colors {
+    if (widget.colors == null)
+      return null;
+    else {
+      return List.generate(
+        widget.colors.length,
+        (index) => widget.colors[index].withOpacity(isNullFunc ? 0.5 : 1),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -103,7 +115,11 @@ class _ASGradientButtonState extends State<ASGradientButton> {
         gradient: LinearGradient(
           begin: widget.begin ?? Alignment.topCenter,
           end: widget.end ?? Alignment.bottomCenter,
-          colors: widget.colors ?? [kDarkPrimaryColor, kLightPrimaryColor],
+          colors: colors ??
+              [
+                kDarkPrimaryColor.withOpacity(isNullFunc ? 0.5 : 1),
+                kLightPrimaryColor.withOpacity(isNullFunc ? 0.5 : 1),
+              ],
         ),
         borderRadius: BorderRadius.circular(widget.radius ?? 20.w),
       ),

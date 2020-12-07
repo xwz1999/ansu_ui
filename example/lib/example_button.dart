@@ -112,6 +112,13 @@ class _ExampleButtonState extends State<ExampleButton> {
             ),
           ),
           ListTile(
+            title: Text('pay'),
+            trailing: ASGradientButton.pay(
+              title: '支付',
+              onPressed: null,
+            ),
+          ),
+          ListTile(
             title: Text('opration'),
             trailing: ASGradientButton.operation(
               title: '自动拆票',
