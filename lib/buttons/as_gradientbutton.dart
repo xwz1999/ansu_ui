@@ -109,7 +109,9 @@ class _ASGradientButtonState extends State<ASGradientButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      curve: Curves.easeInOutCirc,
+      duration: Duration(milliseconds: 300),
       width: widget.width ?? 110.w,
       decoration: BoxDecoration(
         gradient: LinearGradient(
