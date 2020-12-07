@@ -25,6 +25,16 @@ class _ExampleBoxState extends State<ExampleBox> {
               });
             },
           ),
+          ListTile(
+            leading: ASCheckBox.checkStyle(value: _state),
+            title: Text('CheckBox'),
+            subtitle: Text('with styled'),
+            onTap: () {
+              setState(() {
+                _state = !_state;
+              });
+            },
+          ),
         ],
       ),
     );
