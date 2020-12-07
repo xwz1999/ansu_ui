@@ -38,6 +38,7 @@ export 'text_field/as_search_text_field.dart';
 export 'utils/screen_adapter.dart';
 
 export 'extension/sizedbox_extension.dart';
+export 'extension/separate_extension.dart';
 
 //`BOTTOM` is external lib
 export 'package:flutter_screenutil/flutter_screenutil.dart';
