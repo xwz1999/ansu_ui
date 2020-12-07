@@ -94,21 +94,21 @@ class ASButton extends StatefulWidget {
         textColor = kTextColor,
         super(key: key);
 
-  ASButton.warn(
-      {Key key,
-      this.radius,
-      this.outlineColor,
-      this.textStyle,
-      this.padding,
-      @required this.title,
-      this.onPressed,
-      this.width,
-      this.disableColor,
-      this.disableTextColor,
-      this.splashColor})
-      : bgcolor = kLightPrimaryColor,
+  ASButton.warn({
+    Key key,
+    this.radius,
+    this.outlineColor,
+    this.textStyle,
+    this.padding,
+    @required this.title,
+    this.onPressed,
+    this.width,
+    this.disableColor,
+    this.disableTextColor,
+  })  : bgcolor = kLightPrimaryColor,
         textColor = kLightTextColor,
         outline = false,
+        this.splashColor = ColorTool.getSplashColor(kPrimaryColor),
         super(key: key);
   ASButton.operation(
       {Key key,
@@ -169,7 +169,7 @@ class _ASButtonState extends State<ASButton> {
           borderRadius: BorderRadius.circular(widget.radius ?? 15.5.w)),
       color: widget.bgcolor ?? kForegroundColor,
       splashColor: widget.splashColor,
-      highlightColor: widget.splashColor,
+      highlightColor: widget.splashColor?.withOpacity(0.3),
       elevation: 0,
       focusElevation: 0,
       highlightElevation: 0,

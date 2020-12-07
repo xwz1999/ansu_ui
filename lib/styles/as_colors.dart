@@ -35,3 +35,22 @@ const Color kLightTextColor = Color(0xD9FFFFFF);
 
 ///次主题色
 const Color kSecondaryColor = Color(0xFFE50112);
+
+class ColorTool {
+  static Color getSplashColor(Color color) {
+    int r = color.red;
+    int g = color.green;
+    int b = color.blue;
+
+    return Color.fromRGBO(
+      colorM50Less0(r),
+      colorM50Less0(g),
+      colorM50Less0(b),
+      1,
+    );
+  }
+
+  static int colorM50Less0(int light) {
+    return (light - 50) < 0 ? 0 : (light - 50);
+  }
+}

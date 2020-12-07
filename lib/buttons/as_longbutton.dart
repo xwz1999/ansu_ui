@@ -114,6 +114,7 @@ class _ASLongButtonState extends State<ASLongButton> {
       color: widget.bgColor ?? kForegroundColor,
       elevation: 0,
       highlightElevation: 0,
+      splashColor: ColorTool.getSplashColor(widget.bgColor),
     );
   }
 }
