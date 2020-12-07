@@ -9,7 +9,11 @@ export 'buttons/as_gradientbutton.dart';
 export 'scaffold/as_scaffold.dart';
 
 export 'styles/as_colors.dart';
+
 export 'bar/as_tabbar.dart';
+export 'bar/as_navigation_bar.dart';
+export 'bar/as_navigation_item.dart';
+
 export 'drawer/as_drawer.dart';
 export 'pickers/as_date_picker.dart';
 export 'pickers/as_picker_box.dart';
