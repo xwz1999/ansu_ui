@@ -14,12 +14,16 @@ class ASListTile extends StatefulWidget {
 
   ///宽度，默认332px
   final double width;
+
+  ///对齐方式
+  final CrossAxisAlignment crossAxisAlignment;
   ASListTile({
     Key key,
     this.title,
     this.text,
     this.trail,
     this.width,
+    this.crossAxisAlignment,
   }) : super(key: key);
 
   @override
@@ -30,10 +34,11 @@ class _ASListTileState extends State<ASListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8.w),
+      margin: EdgeInsets.symmetric(vertical: 8.w,horizontal: 10.w),
       alignment: Alignment.centerLeft,
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment:
+            widget.crossAxisAlignment ?? CrossAxisAlignment.start,
         children: [
           Container(
             width: 85.w,
