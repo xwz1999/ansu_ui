@@ -27,24 +27,23 @@ class ASOptionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: this.padding ?? EdgeInsets.fromLTRB(10.w, 10.w, 10.w, 0),
-      child: Material(
+    return Material(
         color: kForegroundColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.w),
         ),
-        child: item ??
-            Column(
-              children: List.generate(length * 2 - 1, (index) {
-                final displayIndex = index ~/ 2;
-                if (index.isEven)
-                  return items[displayIndex];
-                else
-                  return ASDivider(indent: 14.w, endIndent: 14.w);
-              }),
-            ),
-      ),
-    );
+        child: Padding(
+          padding: this.padding ?? EdgeInsets.fromLTRB(10.w, 10.w, 10.w, 0),
+          child: item ??
+              Column(
+                children: List.generate(length * 2 - 1, (index) {
+                  final displayIndex = index ~/ 2;
+                  if (index.isEven)
+                    return items[displayIndex];
+                  else
+                    return ASDivider(indent: 14.w, endIndent: 14.w);
+                }),
+              ),
+        ));
   }
 }
