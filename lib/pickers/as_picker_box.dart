@@ -8,6 +8,7 @@ class ASPickerBox extends StatelessWidget {
   final String confirmString;
   final String title;
   final Widget child;
+
   const ASPickerBox(
       {Key key,
       this.onPressed,
