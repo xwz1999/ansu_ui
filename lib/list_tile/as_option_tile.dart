@@ -33,7 +33,7 @@ class ASOptionTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(5.w),
         ),
         child: Padding(
-          padding: this.padding ?? EdgeInsets.fromLTRB(10.w, 10.w, 10.w, 0),
+          padding: this.padding ?? EdgeInsets.zero,
           child: item ??
               Column(
                 children: List.generate(length * 2 - 1, (index) {
@@ -41,7 +41,9 @@ class ASOptionTile extends StatelessWidget {
                   if (index.isEven)
                     return items[displayIndex];
                   else
-                    return ASDivider(indent: 14.w, endIndent: 14.w);
+                    return this.padding == null
+                        ? ASDivider(indent: 10.w, endIndent: 10.w)
+                        : ASDivider();
                 }),
               ),
         ));
