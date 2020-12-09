@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ansu_ui/extension/sizedbox_extension.dart';
+import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASOptionTileItem extends StatelessWidget {
   final Widget leading;
