@@ -12,8 +12,8 @@ class ASListTile extends StatefulWidget {
   ///内容
   final Widget trail;
 
-  ///宽度，默认332px
-  final double width;
+  ///高度，默认32px
+  final double height;
 
   ///对齐方式
   final CrossAxisAlignment crossAxisAlignment;
@@ -22,10 +22,17 @@ class ASListTile extends StatefulWidget {
     this.title,
     this.text,
     this.trail,
-    this.width,
+    this.height,
     this.crossAxisAlignment,
   }) : super(key: key);
-
+  ASListTile.option({
+    Key key,
+    this.title,
+    this.text,
+    this.trail,
+  })  : height = 32.w,
+        crossAxisAlignment = CrossAxisAlignment.center,
+        super(key: key);
   @override
   _ASListTileState createState() => _ASListTileState();
 }
@@ -34,7 +41,10 @@ class _ASListTileState extends State<ASListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8.w, horizontal: 10.w),
+      margin: widget.height == null
+          ? EdgeInsets.symmetric(vertical: 8.w, horizontal: 10.w)
+          : EdgeInsets.symmetric(horizontal: 10.w),
+      height: widget.height,
       alignment: Alignment.centerLeft,
       child: Row(
         crossAxisAlignment:
