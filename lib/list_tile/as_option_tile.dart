@@ -57,6 +57,7 @@ class ASOptionTile extends StatelessWidget {
           padding: this.padding ?? EdgeInsets.zero,
           child: item ??
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: List.generate(length * 2 - 1, (index) {
                   final displayIndex = index ~/ 2;
                   if (index.isEven)
