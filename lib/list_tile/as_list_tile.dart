@@ -59,7 +59,7 @@ class _ASListTileState extends State<ASListTile> {
                   )
                 : widget.text,
           ),
-          widget.trail ?? SizedBox(),
+          SizedBox(width: 20.w,height: 20.w,child: widget.trail ,)
         ],
       ),
     );

@@ -25,7 +25,7 @@ class _ExampleListTileState extends State<ExampleListTile> {
               ASListTile(
                   title: '转单号(UPS)',
                   text: 'DFADN2329TNAGA',
-                  trail: Icon(Icons.ac_unit_rounded),
+                  trail: Placeholder(),
                 ),
                   ASListTile(
                   title: '订单编号',
