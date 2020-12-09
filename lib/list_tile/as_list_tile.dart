@@ -61,13 +61,15 @@ class _ASListTileState extends State<ASListTile> {
             ),
           ),
           Expanded(
-            child: widget.text is String
-                ? Text(
-                    widget.text,
-                    maxLines: 2,
-                    style: TextStyle(color: kTextSubColor, fontSize: 14.sp),
-                  )
-                : widget.text,
+            child: widget.text == null
+                ? Text('')
+                : widget.text is String
+                    ? Text(
+                        widget.text,
+                        maxLines: 2,
+                        style: TextStyle(color: kTextSubColor, fontSize: 14.sp),
+                      )
+                    : widget.text,
           ),
           widget.trail ?? SizedBox()
         ],
