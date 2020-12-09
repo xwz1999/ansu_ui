@@ -40,6 +40,16 @@ class _ExamplePickerState extends State<ExamplePicker> {
               },
             ),
           ),
+          ListTile(
+            title: Text('城市选择器'),
+            subtitle: Text('CityPicker'),
+            trailing: ASButton(
+              title: '城市选择器',
+              onPressed: () async {
+                print((await showCityPicker(context))?.name);
+              },
+            ),
+          ),
         ],
       ),
     );

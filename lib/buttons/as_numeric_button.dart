@@ -134,8 +134,10 @@ class _ASNumericButtonState extends State<ASNumericButton> {
                 keyboardType: TextInputType.number,
                 controller: _controller,
                 onChanged: (text) {
+                  int value = int.tryParse(text);
+                  _displayValue = value ?? widget.initValue;
                   setState(() {});
-                  //TODO input check
+                  widget.onChange(_displayValue);
                 },
                 focusNode: _focusNode,
                 style: TextStyle(
