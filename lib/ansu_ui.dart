@@ -23,6 +23,7 @@ export 'pickers/as_show_city_picker.dart';
 
 export 'dialog/as_dialog.dart';
 export 'dialog/as_dialog_button.dart';
+export 'dialog/as_delete_dialog.dart';
 
 export 'list_tile/as_list_tile.dart';
 export 'list_tile/as_option_tile.dart';
