@@ -34,7 +34,7 @@ class _ASListTileState extends State<ASListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8.w,horizontal: 10.w),
+      margin: EdgeInsets.symmetric(vertical: 8.w, horizontal: 10.w),
       alignment: Alignment.centerLeft,
       child: Row(
         crossAxisAlignment:
@@ -59,7 +59,7 @@ class _ASListTileState extends State<ASListTile> {
                   )
                 : widget.text,
           ),
-          SizedBox(width: 20.w,height: 20.w,child: widget.trail ,)
+          widget.trail ?? SizedBox()
         ],
       ),
     );
