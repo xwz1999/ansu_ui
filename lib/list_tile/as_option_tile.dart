@@ -14,19 +14,40 @@ class ASOptionTile extends StatelessWidget {
   ///内边距
   final EdgeInsetsGeometry padding;
 
+  ///标题
+  final dynamic leading;
+
   ///item 推荐使用`ASOptionTileItem`,`ASVerticalTileItem`,`ASListTile`
-  ASOptionTile({Key key, this.items, this.item, this.padding})
+  ASOptionTile({Key key, this.items, this.item, this.padding, this.leading})
       : super(key: key);
 
   ///单个子组件的Tile
-  ASOptionTile.single({Key key, @required this.item, this.padding})
+  ASOptionTile.single(
+      {Key key, @required this.item, this.padding, this.leading})
       : items = [],
         super(key: key);
-
   int get length => items.length;
 
   @override
   Widget build(BuildContext context) {
+    if (this.leading != null) {
+      this.items.insert(
+        0,
+        Container(
+          padding: EdgeInsets.fromLTRB(10.w, 10.w, 10.w, 10.w),
+          alignment: Alignment.centerLeft,
+          child: this.leading is String
+              ? Text(
+                  this.leading,
+                  style: TextStyle(
+                      color: kTextColor,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.bold),
+                )
+              : this.leading,
+        ),
+      );
+    }
     return Material(
         color: kForegroundColor,
         shape: RoundedRectangleBorder(
