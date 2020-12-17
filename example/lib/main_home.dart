@@ -3,7 +3,6 @@ import 'package:example/example_bottom_button.dart';
 import 'package:example/example_box.dart';
 import 'package:example/example_dialog.dart';
 import 'package:example/example_drawer.dart';
-import 'package:example/example_extension.dart';
 import 'package:example/example_listtile.dart';
 import 'package:example/example_refresh.dart';
 import 'package:example/example_tag.dart';
@@ -78,10 +77,6 @@ class _MainHomeState extends State<MainHome> {
         ASButton.info(
           title: '选框 Box',
           onPressed: () => Get.to(ExampleBox()),
-        ),
-        ASButton.info(
-          title: '插件 Extension',
-          onPressed: () => Get.to(ExampleExtension()),
         ),
       ],
     );

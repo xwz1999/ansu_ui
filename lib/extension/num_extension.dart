@@ -13,8 +13,10 @@ extension NumExt on num {
   BorderRadius get radius => BorderRadius.circular(this.w);
 
   ///每三位数加逗号
-  String  comma ({int fixed}){
-    String _num = this.toStringAsFixed(fixed??2);
+  String comma({int fixed = 2}) {
+    bool notUseFixedFlag = fixed == -1;
+    String _num =
+        notUseFixedFlag ? this.toString() : this.toStringAsFixed(fixed);
     String str = '';
     int count = 0;
     if (_num.indexOf('.') == -1) {
@@ -29,14 +31,14 @@ extension NumExt on num {
       return str;
     } else {
       for (var i = _num.indexOf('.') - 1; i >= 0; i--) {
-        if (count % 3 == 0 && count!= 0) {
+        if (count % 3 == 0 && count != 0) {
           str = _num.substring(i, i + 1) + ',' + str;
         } else {
           str = _num.substring(i, i + 1) + str;
         }
         count++;
       }
-      str=str+(_num.substring(_num.indexOf('.'),_num.length));
+      str = str + (_num.substring(_num.indexOf('.'), _num.length));
       return str;
     }
   }
