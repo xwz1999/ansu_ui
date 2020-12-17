@@ -21,7 +21,7 @@ class _MainExtentionState extends State<MainExtention> {
       onPressed: onPressed,
       child: Row(
         children: [
-          Expanded(child: icon),
+          Expanded(child: icon ?? SizedBox()),
           child,
           Spacer(),
         ],

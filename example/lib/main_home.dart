@@ -25,6 +25,23 @@ class MainHome extends StatefulWidget {
 }
 
 class _MainHomeState extends State<MainHome> {
+  _innerButton({
+    VoidCallback onPressed,
+    String title,
+    IconData icon,
+  }) {
+    return TextButton(
+      onPressed: onPressed,
+      child: Row(
+        children: [
+          Expanded(child: Icon(icon) ?? SizedBox()),
+          Text(title),
+          Spacer(),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -32,49 +49,53 @@ class _MainHomeState extends State<MainHome> {
       children: [
         Image.asset('assets/logo.webp', height: 50),
         SizedBox(height: 16.w),
-        ASButton.info(
-            title: '颜色 Style Color',
-            onPressed: () => Get.to(ExampleStyleColor())),
-        ASButton.info(
-            title: '按钮 Button', onPressed: () => Get.to(ExampleButton())),
-        ASButton.info(
+        _innerButton(
+          title: '颜色 Style Color',
+          onPressed: () => Get.to(ExampleStyleColor()),
+          icon: Icons.colorize,
+        ),
+        _innerButton(
+          title: '按钮 Button',
+          onPressed: () => Get.to(ExampleButton()),
+        ),
+        _innerButton(
             title: '框架 Scaffold', onPressed: () => Get.to(ExampleScaffold())),
-        ASButton.info(
+        _innerButton(
             title: '选项卡 Tabbar', onPressed: () => Get.to(ExampleTabBar())),
-        ASButton.info(
+        _innerButton(
             title: '数量选择器NumericButton',
             onPressed: () => Get.to(ExampleNumericButton())),
-        ASButton.info(
+        _innerButton(
             title: '选择器 Pickers', onPressed: () => Get.to(ExamplePicker())),
-        ASButton.info(
+        _innerButton(
           title: '底部按钮 BottomButton',
           onPressed: () => Get.to(ExampleBottomButton()),
         ),
-        ASButton.info(
+        _innerButton(
           title: '标签 TAG',
           onPressed: () => Get.to(ExampleTag()),
         ),
-        ASButton.info(
+        _innerButton(
           title: '抽屉 DRAWER',
           onPressed: () => Get.to(ExampleDrawer()),
         ),
-        ASButton.info(
+        _innerButton(
           title: '对话框 Dialog',
           onPressed: () => Get.to(ExampleDialog()),
         ),
-        ASButton.info(
+        _innerButton(
           title: '列表内容项 ListTile',
           onPressed: () => Get.to(ExampleListTile()),
         ),
-        ASButton.info(
+        _innerButton(
           title: '文本框 TextField',
           onPressed: () => Get.to(ExampleTextFiled()),
         ),
-        ASButton.info(
+        _innerButton(
           title: '刷新组件 Refresh',
           onPressed: () => Get.to(ExampleRefresh()),
         ),
-        ASButton.info(
+        _innerButton(
           title: '选框 Box',
           onPressed: () => Get.to(ExampleBox()),
         ),
