@@ -31,5 +31,5 @@ extension PhoneExt on String {
       return '${_parsePhone[0]}****${_parsePhone[2]}';
   }
 
-  Widget get text => Text(this);
+  Text get text => Text(this);
 }
