@@ -168,7 +168,7 @@ class _ASButtonState extends State<ASButton> {
               : BorderSide.none,
           borderRadius: BorderRadius.circular(widget.radius ?? 15.5.w)),
       color: widget.bgcolor ?? kForegroundColor,
-      splashColor: widget.splashColor,
+      splashColor: widget.splashColor??ColorTool.getSplashColor(kPrimaryColor),
       highlightColor: widget.splashColor?.withOpacity(0.3),
       elevation: 0,
       focusElevation: 0,

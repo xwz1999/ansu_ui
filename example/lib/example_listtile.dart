@@ -1,5 +1,4 @@
 import 'package:ansu_ui/ansu_ui.dart';
-import 'package:ansu_ui/divider/as_divider.dart';
 import 'package:flutter/material.dart';
 
 class ExampleListTile extends StatefulWidget {
