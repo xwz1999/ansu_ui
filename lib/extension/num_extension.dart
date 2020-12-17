@@ -13,8 +13,8 @@ extension NumExt on num {
   BorderRadius get radius => BorderRadius.circular(this.w);
 
   ///每三位数加逗号
-  String get comma {
-    String _num = this.toString();
+  String  comma ({int fixed}){
+    String _num = this.toStringAsFixed(fixed??2);
     String str = '';
     int count = 0;
     if (_num.indexOf('.') == -1) {
