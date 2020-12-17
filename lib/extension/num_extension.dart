@@ -9,6 +9,9 @@ extension NumExt on num {
   ///获取高 SizedBox
   Widget get hb => SizedBox(height: this.w);
 
+  ///获取 EdgeInsets.all
+  EdgeInsets get edge => EdgeInsets.all(this.w);
+
   ///圆角
   BorderRadius get radius => BorderRadius.circular(this.w);
 

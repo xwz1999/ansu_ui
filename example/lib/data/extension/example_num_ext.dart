@@ -82,6 +82,19 @@ class _ExampleNumExtState extends State<ExampleNumExt> {
               ),
             ),
           ),
+          ListTile(title: Text('EdgeInsets')),
+          ListTile(
+            leading: Chip(label: Text('.edge')),
+            title: Text('EdgeInsets Gen'),
+            subtitle: Text('10.edge'),
+            trailing: Container(
+              height: 30.w,
+              width: 30.w,
+              color: Colors.red,
+              padding: 10.edge,
+              child: Container(color: Colors.green),
+            ),
+          ),
         ],
       ),
     );
