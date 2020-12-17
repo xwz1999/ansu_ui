@@ -10,6 +10,7 @@ class ExampleButton extends StatefulWidget {
 }
 
 class _ExampleButtonState extends State<ExampleButton> {
+  int groupValue = 0;
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
@@ -124,6 +125,37 @@ class _ExampleButtonState extends State<ExampleButton> {
               title: '自动拆票',
               onPressed: () {},
             ),
+          ),
+          ListTile(
+            title: Text('Radio Button'),
+          ),
+          Wrap(
+            children: [
+              ASRadioButton(
+                groupValue: groupValue,
+                value: 0,
+                title: '候选0',
+                onTap: (_) => setState(() => groupValue = 0),
+              ),
+              ASRadioButton(
+                groupValue: groupValue,
+                value: 1,
+                title: '候选1',
+                onTap: (_) => setState(() => groupValue = 1),
+              ),
+              ASRadioButton(
+                groupValue: groupValue,
+                value: 2,
+                title: '候选2',
+                onTap: (_) => setState(() => groupValue = 2),
+              ),
+              ASRadioButton(
+                groupValue: groupValue,
+                value: 3,
+                title: '候选3',
+                onTap: (_) => setState(() => groupValue = 3),
+              ),
+            ],
           ),
         ],
       ),
