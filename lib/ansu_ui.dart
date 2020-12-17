@@ -48,6 +48,7 @@ export 'utils/screen_adapter.dart';
 export 'extension/num_extension.dart';
 export 'extension/widget_extension.dart';
 export 'extension/string_extension.dart';
+export 'extension/text_style_extension.dart';
 
 //`BOTTOM` is external lib
 export 'package:flutter_screenutil/flutter_screenutil.dart';

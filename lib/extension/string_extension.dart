@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 extension PhoneExt on String {
   List get _parsePhone {
     if (this.length < 11)
@@ -28,4 +30,6 @@ extension PhoneExt on String {
     else
       return '${_parsePhone[0]}****${_parsePhone[2]}';
   }
+
+  Widget get text => Text(this);
 }
