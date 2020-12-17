@@ -20,6 +20,11 @@ class _ExampleStringExtState extends State<ExampleStringExt> {
             title: Text('18888888888'),
             subtitle: Text('18888888888'.phone),
           ),
+          ListTile(
+            leading: Chip(label: Text('.securePhone')),
+            title: Text('18888888888'),
+            subtitle: Text('18888888888'.securePhone),
+          ),
         ],
       ),
     );
