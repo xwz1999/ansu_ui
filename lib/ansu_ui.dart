@@ -38,6 +38,8 @@ part 'pickers/as_date_picker.dart';
 part 'pickers/as_picker_box.dart';
 part 'pickers/as_city_picker.dart';
 part 'pickers/as_show_city_picker.dart';
+part 'pickers/as_two_date_picker.dart';
+part 'pickers/as_date_range_picker_part.dart';
 
 part 'dialog/as_dialog.dart';
 part 'dialog/as_dialog_button.dart';
