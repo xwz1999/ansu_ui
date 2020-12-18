@@ -29,14 +29,14 @@ extension TextExtension on Text {
   Text get black65 =>
       Text(this.data, style: this.style?.black65 ?? TextStyle().black65);
 
-  Text maxLines(int maxLines){
+  Text lines(int maxLines){
     return Text(
       this.data,
       maxLines: maxLines,
     );
   }
 
-  Text overflow(TextOverflow textOverflow){
+  Text over(TextOverflow textOverflow){
     return Text(
       this.data,
       overflow:textOverflow,
