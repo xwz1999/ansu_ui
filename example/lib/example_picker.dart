@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -56,7 +58,18 @@ class _ExamplePickerState extends State<ExamplePicker> {
             trailing: ASButton(
               title: '时间区间选择器',
               onPressed: () async {
-                show2DatePicker(context);
+                RangeDate dates = await show2DatePicker(context);
+                ASToast.show('${dates.start}-${dates.end}');
+              },
+            ),
+          ),
+          ListTile(
+            title: Text('图片选择器'),
+            subtitle: Text('ImagePicker'),
+            trailing: ASButton(
+              title: '图片选择器',
+              onPressed: () async {
+                File file = await camView(context);
               },
             ),
           ),

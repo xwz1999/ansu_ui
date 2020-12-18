@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       home: _ScreenAdapter(),
+      builder: BotToastInit(),
+      navigatorObservers: [BotToastNavigatorObserver()],
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

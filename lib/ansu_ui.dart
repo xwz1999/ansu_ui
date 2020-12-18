@@ -10,9 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:bot_toast/bot_toast.dart';
 
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:flutter_easyrefresh/easy_refresh.dart';
+export 'package:bot_toast/bot_toast.dart';
 
 //buttons
 part 'buttons/as_button.dart';
@@ -33,6 +35,8 @@ part 'bar/as_navigation_bar.dart';
 part 'bar/as_navigation_item.dart';
 
 part 'drawer/as_drawer.dart';
+
+part 'toast/as_toast.dart';
 
 part 'pickers/as_date_picker.dart';
 part 'pickers/as_picker_box.dart';
@@ -60,7 +64,7 @@ part 'divider/as_divider.dart';
 part 'text_field/as_search_text_field.dart';
 
 part 'utils/screen_adapter.dart';
-part 'utils/camera_util.dart';
+part 'utils/camera_util.dart';part 'utils/camera_view.dart';
 
 part 'extension/num_extension.dart';
 part 'extension/list_extension.dart';
