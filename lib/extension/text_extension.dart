@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'text_style_extension.dart';
+part of ansu_ui;
 
 extension TextExtension on Text {
   Text get bold => Text(

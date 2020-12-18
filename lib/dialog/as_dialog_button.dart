@@ -1,6 +1,4 @@
-import 'package:ansu_ui/buttons/as_longbutton.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+part of ansu_ui;
 
 class ASDialogButton extends StatelessWidget {
   final String title;

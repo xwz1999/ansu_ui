@@ -1,7 +1,4 @@
-import 'package:ansu_ui/buttons/as_back_button.dart';
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+part of ansu_ui;
 
 ///ASScaffold
 ///

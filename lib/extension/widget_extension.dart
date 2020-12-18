@@ -1,5 +1,4 @@
-import 'package:ansu_ui/ansu_ui.dart';
-import 'package:flutter/material.dart';
+part of ansu_ui;
 
 extension SeparateExt on List {
   List<Widget> sepWidget({Widget separate}) {

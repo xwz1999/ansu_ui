@@ -1,6 +1,4 @@
-import 'package:ansu_ui/ansu_ui.dart';
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:flutter/material.dart';
+part of ansu_ui;
 
 class ASVerticalTileItem extends StatelessWidget {
   ///标题

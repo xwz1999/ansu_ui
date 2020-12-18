@@ -1,5 +1,4 @@
-import 'package:ansu_ui/scaffold/as_scaffold.dart';
-import 'package:ansu_ui/tag/as_tag.dart';
+import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+part of ansu_ui;
 
 ///安速水平分割线
 class ASDivider extends StatelessWidget {

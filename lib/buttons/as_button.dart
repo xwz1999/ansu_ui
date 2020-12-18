@@ -1,7 +1,4 @@
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+part of ansu_ui;
 ///安速按钮
 class ASButton extends StatefulWidget {
   ///按钮颜色

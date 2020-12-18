@@ -1,7 +1,4 @@
-import 'package:ansu_ui/ansu_ui.dart';
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+part of ansu_ui;
 
 ///菜单按钮Tile
 class ASOptionTile extends StatelessWidget {

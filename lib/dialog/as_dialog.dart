@@ -1,8 +1,4 @@
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ansu_ui/extension/num_extension.dart';
+part of ansu_ui;
 
 class ASDialog extends StatefulWidget {
   final bool close;

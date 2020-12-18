@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+part of ansu_ui;
 
 BottomNavigationBarItem asNavigationItem(
     String path1, String path2, String title) {

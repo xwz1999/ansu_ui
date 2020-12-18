@@ -1,6 +1,4 @@
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
+part of ansu_ui;
 
 class ASRefresh extends StatefulWidget {
   final Widget child;

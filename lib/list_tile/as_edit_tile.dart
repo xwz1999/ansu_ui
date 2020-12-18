@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:ansu_ui/ansu_ui.dart';
+part of ansu_ui;
 
 class ASEditTile extends StatefulWidget {
   final Widget title;

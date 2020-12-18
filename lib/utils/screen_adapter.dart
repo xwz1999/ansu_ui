@@ -1,4 +1,4 @@
-import 'package:ansu_ui/ansu_ui.dart';
+part of ansu_ui;
 
 double statusBarHeight = ScreenUtil().statusBarHeight;
 double screenHeight = ScreenUtil().screenHeight;

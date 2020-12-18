@@ -1,5 +1,4 @@
 import 'package:ansu_ui/ansu_ui.dart';
-import 'package:ansu_ui/bar/as_navigation_bar.dart';
 import 'package:example/main_extention.dart';
 import 'package:example/main_home.dart';
 import 'package:flutter/material.dart';

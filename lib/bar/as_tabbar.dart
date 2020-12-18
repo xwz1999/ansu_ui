@@ -1,6 +1,4 @@
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:ansu_ui/bar/as_tab_indicator.dart';
-import 'package:flutter/material.dart';
+part of ansu_ui;
 
 /// ## 安速Tabbar
 ///
