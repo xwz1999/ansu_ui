@@ -50,6 +50,16 @@ class _ExamplePickerState extends State<ExamplePicker> {
               },
             ),
           ),
+          ListTile(
+            title: Text('时间区间选择器'),
+            subtitle: Text('DateRangePicker'),
+            trailing: ASButton(
+              title: '时间区间选择器',
+              onPressed: () async {
+                show2DatePicker(context);
+              },
+            ),
+          ),
         ],
       ),
     );
