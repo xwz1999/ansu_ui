@@ -29,6 +29,20 @@ extension TextExtension on Text {
   Text get black65 =>
       Text(this.data, style: this.style?.black65 ?? TextStyle().black65);
 
+  Text lines(int maxLines){
+    return Text(
+      this.data,
+      maxLines: maxLines,
+    );
+  }
+
+  Text over(TextOverflow textOverflow){
+    return Text(
+      this.data,
+      overflow:textOverflow,
+    );
+  }
+
   Text copyWith({
     FontWeight fontWeight,
     Color color,

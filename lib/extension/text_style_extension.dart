@@ -5,7 +5,7 @@ extension TextStyleExtension on TextStyle {
   TextStyle get bold => this.copyWith(fontWeight: FontWeight.bold);
 
   ///size
-  TextStyle size(double size) => this.copyWith(fontSize: size.w);
+  TextStyle size(double size) => this.copyWith(fontSize: size.sp);
 
   ///color
   TextStyle colorX(Color color) => this.copyWith(color: color);
