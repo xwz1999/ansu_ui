@@ -28,4 +28,17 @@ extension TextExtension on Text {
 
   Text get black65 =>
       Text(this.data, style: this.style?.black65 ?? TextStyle().black65);
+
+  Text copyWith({
+    FontWeight fontWeight,
+    Color color,
+    double fontSize,
+  }) {
+    return Text(this.data,
+        style: this.style.copyWith(
+              fontWeight: fontWeight,
+              color: color,
+              fontSize: fontSize,
+            ));
+  }
 }
