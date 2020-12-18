@@ -32,4 +32,8 @@ extension PhoneExt on String {
   }
 
   Text get text => Text(this);
+
+  get toast {
+    ASToast.show(this);
+  }
 }
