@@ -23,7 +23,24 @@ class _CameraViewState extends State<CameraView> {
   Widget build(BuildContext context) {
     return ASScaffold(
       title: widget.title,
-      body: Image.file(widget.file, fit: BoxFit.cover),
+      body: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        child: Container(
+          alignment: Alignment.center,
+          child: GestureDetector(
+            onTap: () {
+              toPhotoViewer(context, tag: widget.title, file: widget.file);
+            },
+            child: Hero(
+              child: Image.file(
+                widget.file,
+                fit: BoxFit.cover,
+              ),
+              tag: widget.title,
+            ),
+          ),
+        ),
+      ),
       bottomNavigationBar: Material(
         color: kForegroundColor,
         child: Column(
@@ -35,15 +52,17 @@ class _CameraViewState extends State<CameraView> {
               title: '重拍',
               onPressed: () async {
                 File file = await camFile();
-                if (file == null) Navigator.pop(context);
-                Navigator.pushReplacement(context, PageRouteBuilder(
-                  pageBuilder: (context, animation, secondAnimation) {
-                    return FadeTransition(
-                      opacity: animation,
-                      child: CameraView(file: file, title: widget.title),
-                    );
-                  },
-                ));
+                if (file == null)
+                  Navigator.pop(context);
+                else
+                  Navigator.pushReplacement(context, PageRouteBuilder(
+                    pageBuilder: (context, animation, secondAnimation) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: CameraView(file: file, title: widget.title),
+                      );
+                    },
+                  ));
               },
             ),
             _buildButton(

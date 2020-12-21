@@ -69,7 +69,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
             trailing: ASButton(
               title: '图片选择器',
               onPressed: () async {
-                File file = await camView(context);
+                File file = await camView(context, title: '图片选择器');
               },
             ),
           ),

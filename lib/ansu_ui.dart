@@ -1,6 +1,7 @@
 library ansu_ui;
 
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:ansu_ui/bar/as_tab_indicator.dart';
 import 'package:ansu_ui/painters/as_numeric_painter.dart';
@@ -11,7 +12,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:bot_toast/bot_toast.dart';
-
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:flutter_easyrefresh/easy_refresh.dart';
 export 'package:bot_toast/bot_toast.dart';
@@ -64,7 +64,9 @@ part 'divider/as_divider.dart';
 part 'text_field/as_search_text_field.dart';
 
 part 'utils/screen_adapter.dart';
-part 'utils/camera_util.dart';part 'utils/camera_view.dart';
+part 'utils/camera_util.dart';
+part 'utils/camera_view.dart';
+part 'utils/photo_viewer.dart';
 
 part 'extension/num_extension.dart';
 part 'extension/list_extension.dart';
