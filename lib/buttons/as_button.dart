@@ -158,7 +158,7 @@ class _ASButtonState extends State<ASButton> {
           ? Text(widget.title,
               style: widget.textStyle ?? TextStyle(fontSize: 13.sp))
           : widget.title,
-      padding: widget.padding ?? EdgeInsets.symmetric(vertical: 6.w),
+      padding: widget.padding ?? EdgeInsets.symmetric(vertical: 6.w,horizontal: 12.w),
       shape: RoundedRectangleBorder(
           side: widget.outline
               ? BorderSide(color: widget.outlineColor, width: 0.5.w)
