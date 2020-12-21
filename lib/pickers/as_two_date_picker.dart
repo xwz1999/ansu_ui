@@ -1,7 +1,9 @@
 part of ansu_ui;
 
 class AS2DatePicker extends StatefulWidget {
-  AS2DatePicker({Key key}) : super(key: key);
+  final bool isAnHour;
+  final RangeDate date;
+  AS2DatePicker({Key key, this.isAnHour, this.date}) : super(key: key);
 
   @override
   _AS2DatePickerState createState() => _AS2DatePickerState();
@@ -152,6 +154,8 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
     super.initState();
     _pageController = PageController();
     _selectedDate = now;
+    _inAnHour = widget.isAnHour ?? true;
+    _selectedDate = widget.date?.start ?? now;
   }
 
   @override

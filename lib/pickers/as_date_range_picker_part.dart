@@ -12,11 +12,12 @@ class RangeDate {
 ///返回值为`bool`且为`true`时,为一小时内
 ///
 ///否则返回`RangeDate`
-Future<dynamic> show2DatePicker(BuildContext context) async {
+Future<dynamic> show2DatePicker(BuildContext context,
+    {bool isAnHour, RangeDate date}) async {
   return await showModalBottomSheet(
     context: context,
     builder: (context) {
-      return AS2DatePicker();
+      return AS2DatePicker(isAnHour:isAnHour,date:date);
     },
   );
 }
