@@ -16,4 +16,7 @@ extension TextStyleExtension on TextStyle {
   TextStyle get black => this.copyWith(color: kTextColor);
 
   TextStyle get black65 => this.copyWith(color: kTextSubColor);
+
+  ///FontWeight:w300
+  TextStyle get light => this.copyWith(fontWeight: FontWeight.w300);
 }
