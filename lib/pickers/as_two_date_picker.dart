@@ -18,6 +18,8 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
         start: now,
         end: now.add(Duration(hours: 1)),
       );
+
+  bool _inAnHour = false;
   Widget _buildDayButton(int index, String title) {
     bool sameDay = _selectedDay == index;
     return MaterialButton(
@@ -92,20 +94,28 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
       itemBuilder: (context, index) {
         bool sameItem = now.day == _selectedDate.day &&
             _selectedDate.hour == startHour + index;
-        if (index == 0)
+        if (index == 0) {
           return _renderButton(
             '一小时内',
-            () => setState(() => _selectedDate = now),
+            () {
+              _inAnHour = true;
+              setState(() => {_selectedDate = now});
+            },
             sameItem,
           );
+        }
+        _inAnHour = false;
         return _renderButton(
           '${startHour + index}:00-${startHour + index + 1}:00',
-          () => setState(() => _selectedDate = DateTime(
-                now.year,
-                now.month,
-                now.day,
-                startHour + index,
-              )),
+          () {
+            _inAnHour = false;
+            setState(() => _selectedDate = DateTime(
+                  now.year,
+                  now.month,
+                  now.day,
+                  startHour + index,
+                ));
+          },
           sameItem,
         );
       },
@@ -121,12 +131,15 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
             _selectedDate.hour == index;
         return _renderButton(
           '$index\:00-${index + 1}:00',
-          () => setState(() => _selectedDate = DateTime(
-                now.year,
-                now.month,
-                now.day + offsetDay,
-                index,
-              )),
+          () {
+            _inAnHour = false;
+            setState(() => _selectedDate = DateTime(
+                  now.year,
+                  now.month,
+                  now.day + offsetDay,
+                  index,
+                ));
+          },
           sameItem,
         );
       },
@@ -191,12 +204,15 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
               child: ASLongButton.solid(
                 title: '确认',
                 onPressed: () {
-                  Navigator.pop(
-                      context,
-                      RangeDate(
-                        start: _selectedDate,
-                        end: _selectedDate.add(Duration(hours: 1)),
-                      ));
+                  if (_inAnHour)
+                    Navigator.pop(context, true);
+                  else
+                    Navigator.pop(
+                        context,
+                        RangeDate(
+                          start: _selectedDate,
+                          end: _selectedDate.add(Duration(hours: 1)),
+                        ));
                 },
               ),
             ),
