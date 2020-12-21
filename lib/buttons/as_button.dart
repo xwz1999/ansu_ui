@@ -151,7 +151,7 @@ class _ASButtonState extends State<ASButton> {
       disabledColor: widget.disableColor,
       disabledTextColor: widget.disableTextColor,
       textColor: widget.textColor ?? kLightPrimaryColor,
-      minWidth: widget.width ?? 75.w,
+      minWidth: widget.width,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: widget.onPressed,
       child: widget.title is String
