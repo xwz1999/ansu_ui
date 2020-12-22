@@ -15,6 +15,7 @@ class _ExamplePopUpMenuState extends State<ExamplePopUpMenu> {
       title: 'PopUpMenu',
       body: ListView(
         children: [
+          SizedBox(height: 500),
           ListTile(
             title: 'PopUpMenu'.text,
             trailing: Builder(
