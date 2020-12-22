@@ -21,6 +21,11 @@ extension TextExtension on Text {
     );
   }
 
+  Text height(double height) => Text(
+        this.data,
+        style: this.style?.heightX(height) ?? TextStyle().heightX(height),
+      );
+
   Text get white =>
       Text(this.data, style: this.style?.white ?? TextStyle().white);
 

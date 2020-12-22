@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 
-
 extension TextStyleExtension on TextStyle {
   ///Bold text
   TextStyle get bold => this.copyWith(fontWeight: FontWeight.bold);
@@ -22,4 +21,6 @@ extension TextStyleExtension on TextStyle {
 
   ///FontWeight:w300
   TextStyle get light => this.copyWith(fontWeight: FontWeight.w300);
+
+  TextStyle heightX(double height) => this.copyWith(height: height);
 }
