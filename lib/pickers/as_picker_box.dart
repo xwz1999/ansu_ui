@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/divider/as_divider.dart';
 
-
 class ASPickerBox extends StatelessWidget {
   final VoidCallback onPressed;
   final String confirmString;

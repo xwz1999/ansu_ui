@@ -12,7 +12,6 @@ import 'package:ansu_ui/utils/camera_util.dart';
 import 'package:ansu_ui/extension/list_extension.dart';
 import 'package:ansu_ui/divider/as_divider.dart';
 
-
 class CameraView extends StatefulWidget {
   final File file;
   final String title;

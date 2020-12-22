@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 
-
 class ASDialog extends StatefulWidget {
   final bool close;
 

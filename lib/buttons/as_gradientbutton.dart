@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 
-
 class ASGradientButton extends StatefulWidget {
   ///按钮文字
   ///动态类型，可以是string或者widget

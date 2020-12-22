@@ -38,9 +38,7 @@ class _ExampleDialogState extends State<ExampleDialog> {
                 Get.dialog(ASDeleteDialog(
                   title: '你确定删除xxx？',
                   boyd: '你确定删除xxxxxxxxxxxxxxxxxxxxx？',
-                  onpressed: () {
-                    
-                  },
+                  onpressed: () {},
                 ));
               }),
         ],

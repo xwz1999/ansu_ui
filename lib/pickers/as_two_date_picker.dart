@@ -9,7 +9,6 @@ import 'package:ansu_ui/extension/text_style_extension.dart';
 import 'package:ansu_ui/pickers/as_date_range_picker_part.dart';
 import 'package:ansu_ui/buttons/as_longbutton.dart';
 
-
 class AS2DatePicker extends StatefulWidget {
   final bool isAnHour;
   final RangeDate date;

@@ -44,7 +44,10 @@ class _ExampleListTileState extends State<ExampleListTile> {
                 text: '分类管理',
                 trail: InkWell(
                   onTap: () {},
-                  child: SizedBox(width: 20.w,height: 32.w,),
+                  child: SizedBox(
+                    width: 20.w,
+                    height: 32.w,
+                  ),
                 ),
               ),
             ],
