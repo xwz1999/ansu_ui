@@ -1,4 +1,5 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 extension NumExt on num {
   ///获取宽 SizedBox

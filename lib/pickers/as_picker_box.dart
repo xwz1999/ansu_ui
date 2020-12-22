@@ -1,4 +1,8 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
+import 'package:ansu_ui/divider/as_divider.dart';
+
 
 class ASPickerBox extends StatelessWidget {
   final VoidCallback onPressed;

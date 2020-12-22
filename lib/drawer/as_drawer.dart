@@ -1,4 +1,6 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ansu_ui/utils/screen_adapter.dart';
 
 ///安速抽屉
 class ASDrawer extends StatefulWidget {

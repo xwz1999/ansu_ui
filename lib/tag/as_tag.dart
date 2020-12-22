@@ -1,4 +1,7 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
+
 
 class ASTag extends StatefulWidget {
   ///宽度
@@ -113,7 +116,8 @@ class _ASTagState extends State<ASTag> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: widget.padding ?? EdgeInsets.symmetric(horizontal: 6.w,vertical: 2.w),
+      padding: widget.padding ??
+          EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.w),
       width: widget.width,
       height: widget.height,
       decoration: BoxDecoration(

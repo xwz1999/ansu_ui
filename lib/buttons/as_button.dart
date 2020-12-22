@@ -1,4 +1,7 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
+
 ///安速按钮
 class ASButton extends StatefulWidget {
   ///按钮颜色
@@ -158,7 +161,8 @@ class _ASButtonState extends State<ASButton> {
           ? Text(widget.title,
               style: widget.textStyle ?? TextStyle(fontSize: 13.sp))
           : widget.title,
-      padding: widget.padding ?? EdgeInsets.symmetric(vertical: 6.w,horizontal: 12.w),
+      padding: widget.padding ??
+          EdgeInsets.symmetric(vertical: 6.w, horizontal: 12.w),
       shape: RoundedRectangleBorder(
           side: widget.outline
               ? BorderSide(color: widget.outlineColor, width: 0.5.w)

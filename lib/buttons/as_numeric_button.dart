@@ -1,4 +1,8 @@
-part of ansu_ui;
+import 'package:ansu_ui/painters/as_numeric_painter.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
+
 
 ///## 数量选择组件
 class ASNumericButton extends StatefulWidget {

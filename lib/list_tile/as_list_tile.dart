@@ -1,4 +1,7 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
+
 
 class ASListTile extends StatefulWidget {
   ///主标题

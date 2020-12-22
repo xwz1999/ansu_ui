@@ -1,4 +1,5 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:ansu_ui/pickers/as_two_date_picker.dart';
 
 class RangeDate {
   DateTime start;
@@ -17,7 +18,7 @@ Future<dynamic> show2DatePicker(BuildContext context,
   return await showModalBottomSheet(
     context: context,
     builder: (context) {
-      return AS2DatePicker(isAnHour:isAnHour,date:date);
+      return AS2DatePicker(isAnHour: isAnHour, date: date);
     },
   );
 }

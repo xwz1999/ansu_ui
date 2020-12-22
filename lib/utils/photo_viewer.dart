@@ -1,4 +1,8 @@
-part of ansu_ui;
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:ansu_ui/extension/num_extension.dart';
+
 
 class PhotoViewer extends StatefulWidget {
   final File file;

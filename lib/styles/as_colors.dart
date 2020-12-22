@@ -1,4 +1,4 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
 
 ///主要暗色
 const Color kDarkColor = Color(0xFF333333);

@@ -1,4 +1,6 @@
-part of ansu_ui;
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
 
 ///安速返回按钮
 ///

@@ -1,76 +1,64 @@
 library ansu_ui;
 
-import 'dart:io';
-import 'dart:ui';
-
-import 'package:ansu_ui/bar/as_tab_indicator.dart';
-import 'package:ansu_ui/painters/as_numeric_painter.dart';
-import 'package:ansu_ui/utils/city_util.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:bot_toast/bot_toast.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:flutter_easyrefresh/easy_refresh.dart';
 export 'package:bot_toast/bot_toast.dart';
 
 //buttons
-part 'buttons/as_button.dart';
-part 'buttons/as_longbutton.dart';
-part 'buttons/as_back_button.dart';
-part 'buttons/as_numeric_button.dart';
-part 'buttons/as_bottom_button.dart';
-part 'buttons/as_gradientbutton.dart';
-part 'buttons/as_radio_button.dart';
+export 'buttons/as_button.dart';
+export 'buttons/as_longbutton.dart';
+export 'buttons/as_back_button.dart';
+export 'buttons/as_numeric_button.dart';
+export 'buttons/as_bottom_button.dart';
+export 'buttons/as_gradientbutton.dart';
+export 'buttons/as_radio_button.dart';
 
 //scaffold
-part 'scaffold/as_scaffold.dart';
+export 'scaffold/as_scaffold.dart';
 
-part 'styles/as_colors.dart';
+export 'styles/as_colors.dart';
 
-part 'bar/as_tabbar.dart';
-part 'bar/as_navigation_bar.dart';
-part 'bar/as_navigation_item.dart';
+export 'bar/as_tabbar.dart';
+export 'bar/as_navigation_bar.dart';
+export 'bar/as_navigation_item.dart';
 
-part 'drawer/as_drawer.dart';
+export 'drawer/as_drawer.dart';
 
-part 'toast/as_toast.dart';
+export 'toast/as_toast.dart';
 
-part 'pickers/as_date_picker.dart';
-part 'pickers/as_picker_box.dart';
-part 'pickers/as_city_picker.dart';
-part 'pickers/as_show_city_picker.dart';
-part 'pickers/as_two_date_picker.dart';
-part 'pickers/as_date_range_picker_part.dart';
+export 'pickers/as_date_picker.dart';
+export 'pickers/as_picker_box.dart';
+export 'pickers/as_city_picker.dart';
+export 'pickers/as_show_city_picker.dart';
+export 'pickers/as_two_date_picker.dart';
+export 'pickers/as_date_range_picker_part.dart';
 
-part 'dialog/as_dialog.dart';
-part 'dialog/as_dialog_button.dart';
-part 'dialog/as_delete_dialog.dart';
+export 'dialog/as_dialog.dart';
+export 'dialog/as_dialog_button.dart';
+export 'dialog/as_delete_dialog.dart';
 
-part 'list_tile/as_list_tile.dart';
-part 'list_tile/as_option_tile.dart';
-part 'list_tile/as_edit_tile.dart';
-part 'list_tile/as_option_tile_item.dart';
-part 'list_tile/as_vertical_tile_item.dart';
+export 'list_tile/as_list_tile.dart';
+export 'list_tile/as_option_tile.dart';
+export 'list_tile/as_edit_tile.dart';
+export 'list_tile/as_option_tile_item.dart';
+export 'list_tile/as_vertical_tile_item.dart';
 
-part 'refresh/as_refresh.dart';
+export 'refresh/as_refresh.dart';
 
-part 'box/as_check_box.dart';
+export 'box/as_check_box.dart';
 
-part 'tag/as_tag.dart';
-part 'divider/as_divider.dart';
-part 'text_field/as_search_text_field.dart';
+export 'tag/as_tag.dart';
+export 'divider/as_divider.dart';
+export 'text_field/as_search_text_field.dart';
 
-part 'utils/screen_adapter.dart';
-part 'utils/camera_util.dart';
-part 'utils/camera_view.dart';
-part 'utils/photo_viewer.dart';
+export 'utils/screen_adapter.dart';
+export 'utils/camera_util.dart';
+export 'utils/camera_view.dart';
+export 'utils/photo_viewer.dart';
 
-part 'extension/num_extension.dart';
-part 'extension/list_extension.dart';
-part 'extension/widget_extension.dart';
-part 'extension/string_extension.dart';
-part 'extension/text_style_extension.dart';
-part 'extension/text_extension.dart';
+export 'extension/num_extension.dart';
+export 'extension/list_extension.dart';
+export 'extension/widget_extension.dart';
+export 'extension/string_extension.dart';
+export 'extension/text_style_extension.dart';
+export 'extension/text_extension.dart';

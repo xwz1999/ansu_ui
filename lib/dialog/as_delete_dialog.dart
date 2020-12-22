@@ -1,4 +1,9 @@
-part of ansu_ui;
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
+import 'package:ansu_ui/extension/num_extension.dart';
+import 'package:ansu_ui/dialog/as_dialog_button.dart';
 
 class ASDeleteDialog extends StatelessWidget {
   ///标题
@@ -47,7 +52,7 @@ class ASDeleteDialog extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    margin:EdgeInsets.fromLTRB(24.w, 45.w, 24.w, 20.w) ,
+                    margin: EdgeInsets.fromLTRB(24.w, 45.w, 24.w, 20.w),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -73,15 +78,14 @@ class ASDeleteDialog extends StatelessWidget {
                                   )
                                 : this.boyd,
                       ],
-                      
                     ),
                   ),
                   this.button ??
-                          ASDialogButton.outline(
-                            title: '确认删除',
-                            onPressed: this.onpressed,
-                          ),
-                      20.hb
+                      ASDialogButton.outline(
+                        title: '确认删除',
+                        onPressed: this.onpressed,
+                      ),
+                  20.hb,
                 ],
               ),
             ],

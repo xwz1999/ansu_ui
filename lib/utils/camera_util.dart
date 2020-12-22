@@ -1,4 +1,8 @@
-part of ansu_ui;
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:ansu_ui/utils/camera_view.dart';
 
 ///获取相机文件
 Future<File> camFile({double maxHeight = 3000, double maxWidth = 3000}) async {

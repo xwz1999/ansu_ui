@@ -1,4 +1,4 @@
-part of ansu_ui;
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 double statusBarHeight = ScreenUtil().statusBarHeight;
 double screenHeight = ScreenUtil().screenHeight;

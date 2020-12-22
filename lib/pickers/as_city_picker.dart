@@ -1,4 +1,8 @@
-part of ansu_ui;
+import 'package:ansu_ui/utils/city_util.dart';
+import 'package:ansu_ui/pickers/as_picker_box.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ASCityPicker extends StatefulWidget {
   ASCityPicker({Key key}) : super(key: key);

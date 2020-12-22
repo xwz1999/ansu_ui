@@ -1,4 +1,5 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:ansu_ui/extension/num_extension.dart';
 
 extension SeparateExt on List<Widget> {
   List<Widget> sepWidget({Widget separate}) {
@@ -9,5 +10,4 @@ extension SeparateExt on List<Widget> {
         return separate ?? 10.wb;
     });
   }
-
 }

@@ -1,4 +1,17 @@
-part of ansu_ui;
+import 'dart:io';
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
+import 'package:ansu_ui/scaffold/as_scaffold.dart';
+import 'package:ansu_ui/extension/string_extension.dart';
+import 'package:ansu_ui/extension/text_extension.dart';
+import 'package:ansu_ui/utils/photo_viewer.dart';
+import 'package:ansu_ui/utils/camera_util.dart';
+import 'package:ansu_ui/extension/list_extension.dart';
+import 'package:ansu_ui/divider/as_divider.dart';
+
 
 class CameraView extends StatefulWidget {
   final File file;

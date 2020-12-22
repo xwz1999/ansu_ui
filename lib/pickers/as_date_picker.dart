@@ -1,4 +1,7 @@
-part of ansu_ui;
+import 'package:ansu_ui/pickers/as_picker_box.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 //时间选择器内部实现
 class _ASDatePickerWidget extends StatefulWidget {

@@ -1,4 +1,5 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:ansu_ui/toast/as_toast.dart';
 
 extension PhoneExt on String {
   List get _parsePhone {

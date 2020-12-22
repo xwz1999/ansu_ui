@@ -1,4 +1,7 @@
-part of ansu_ui;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
+import 'package:ansu_ui/divider/as_divider.dart';
 
 ///菜单按钮Tile
 class ASOptionTile extends StatelessWidget {
@@ -29,21 +32,21 @@ class ASOptionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     if (this.leading != null) {
       this.items.insert(
-        0,
-        Container(
-          padding: EdgeInsets.fromLTRB(10.w, 10.w, 10.w, 10.w),
-          alignment: Alignment.centerLeft,
-          child: this.leading is String
-              ? Text(
-                  this.leading,
-                  style: TextStyle(
-                      color: kTextColor,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.bold),
-                )
-              : this.leading,
-        ),
-      );
+            0,
+            Container(
+              padding: EdgeInsets.fromLTRB(10.w, 10.w, 10.w, 10.w),
+              alignment: Alignment.centerLeft,
+              child: this.leading is String
+                  ? Text(
+                      this.leading,
+                      style: TextStyle(
+                          color: kTextColor,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold),
+                    )
+                  : this.leading,
+            ),
+          );
     }
     return Material(
         color: kForegroundColor,
