@@ -11,7 +11,7 @@ extension NumExt on num {
   ///获取 EdgeInsets.all
   EdgeInsets get edge => EdgeInsets.all(this.w);
 
-  EdgeInsets pading(double horizontal, double vertical) => EdgeInsets.symmetric(
+  EdgeInsets pading(double horizontal, [double vertical]) => EdgeInsets.symmetric(
         horizontal: horizontal,
         vertical: vertical,
       );
