@@ -14,6 +14,19 @@ extension NumExt on num {
   ///圆角
   BorderRadius get radius => BorderRadius.circular(this.w);
 
+  BorderRadius get topRadius => BorderRadius.vertical(
+        top: Radius.circular(this.w),
+      );
+  BorderRadius get bottomRadius => BorderRadius.vertical(
+        bottom: Radius.circular(this.w),
+      );
+  BorderRadius get leftRadius => BorderRadius.horizontal(
+        left: Radius.circular(this.w),
+      );
+  BorderRadius get rightRadius => BorderRadius.horizontal(
+        right: Radius.circular(this.w),
+      );
+
   ///每三位数加逗号
   String comma({int fixed = 2}) {
     bool notUseFixedFlag = fixed == -1;

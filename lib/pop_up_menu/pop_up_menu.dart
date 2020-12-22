@@ -14,11 +14,13 @@ import 'package:flutter/material.dart';
 Future<T> showASPopUpMenu<T>({
   @required BuildContext context,
   @required List<PopupMenuEntry<T>> items,
+  T initValue,
 }) async {
   final RenderBox renderBox = context.findRenderObject();
   Offset offset = renderBox.localToGlobal(Offset.zero);
   return await showMenu(
     context: context,
+    initialValue: initValue,
     position: RelativeRect.fromLTRB(
       offset.dx,
       offset.dy,

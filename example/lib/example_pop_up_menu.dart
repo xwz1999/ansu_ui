@@ -24,8 +24,12 @@ class _ExamplePopUpMenuState extends State<ExamplePopUpMenu> {
                   onPressed: () {
                     showASPopUpMenu<int>(
                       context: context,
+                      initValue: 3,
                       items: [
                         PopupMenuItem(child: 'test'.text, value: 1),
+                        PopupMenuItem(child: 'test'.text, value: 2),
+                        PopupMenuItem(child: 'test'.text, value: 3),
+                        PopupMenuItem(child: 'test'.text, value: 4),
                       ],
                     ).then((value) {});
                   },
