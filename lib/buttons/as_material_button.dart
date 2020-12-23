@@ -1,29 +1,56 @@
+import 'package:ansu_ui/ansu_ui.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 
+///ASMaterialButton
+///
+///default value:
+///
+///height = 46.w
+///
+///radius = 5.radius
+///
+///padding = 0.edge
 class ASMaterialButton extends StatelessWidget {
   final VoidCallback onPressed;
   final double height;
   final Widget icon;
   final double radius;
   final Widget child;
+  final EdgeInsets padding;
 
-  const ASMaterialButton(
-      {Key key,
-      this.onPressed,
-      this.height,
-      this.icon,
-      this.child,
-      this.radius})
-      : super(key: key);
+  const ASMaterialButton({
+    Key key,
+    this.onPressed,
+    this.height,
+    this.icon,
+    @required this.child,
+    this.radius,
+    this.padding,
+  }) : super(key: key);
+
+  ASMaterialButton.dropdown({
+    Key key,
+    this.onPressed,
+    this.height,
+    @required this.child,
+    this.radius,
+    this.padding,
+  })  : icon = Icon(
+          CupertinoIcons.chevron_down,
+          size: 16.w,
+          color: kTextSubColor,
+        ),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      padding: 0.edge,
+      padding: padding ?? 0.edge,
       minWidth: 0,
       height: height ?? 46.w,
       child: icon == null
@@ -36,7 +63,7 @@ class ASMaterialButton extends StatelessWidget {
               ],
             ),
       shape: RoundedRectangleBorder(
-        borderRadius: radius.radius,
+        borderRadius: (radius ?? 5).radius,
       ),
     );
   }
