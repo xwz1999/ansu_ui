@@ -6,11 +6,17 @@ class ASListTileX extends StatelessWidget {
   final Widget title;
   final Widget suffix;
   final double height;
+  final List<Widget> prefixes;
+  final Widget child;
+  final List<Widget> suffixes;
   const ASListTileX({
     Key key,
     @required this.title,
     this.suffix,
     this.height,
+    this.prefixes,
+    this.child,
+    this.suffixes,
   }) : super(key: key);
 
   @override
@@ -18,12 +24,14 @@ class ASListTileX extends StatelessWidget {
     return Row(
       children: [
         10.wb,
+        (height ?? 46).hb,
         DefaultTextStyle(
           style: TextStyle().black65.size(14),
           child: title,
         ),
+        ...prefixes ?? [],
         Spacer(),
-        (height ?? 46).hb,
+        ...suffixes ?? [],
         suffix ?? SizedBox(),
       ],
     );
