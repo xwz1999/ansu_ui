@@ -17,6 +17,7 @@ class ASListTileX extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        10.wb,
         DefaultTextStyle(
           style: TextStyle().black65.size(14),
           child: title,
