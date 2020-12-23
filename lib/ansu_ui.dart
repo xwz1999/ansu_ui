@@ -12,6 +12,7 @@ export 'buttons/as_numeric_button.dart';
 export 'buttons/as_bottom_button.dart';
 export 'buttons/as_gradientbutton.dart';
 export 'buttons/as_radio_button.dart';
+export 'buttons/as_material_button.dart';
 
 //scaffold
 export 'scaffold/as_scaffold.dart';
@@ -42,6 +43,7 @@ export 'list_tile/as_option_tile.dart';
 export 'list_tile/as_edit_tile.dart';
 export 'list_tile/as_option_tile_item.dart';
 export 'list_tile/as_vertical_tile_item.dart';
+export 'list_tile/as_list_tile_x.dart';
 
 export 'refresh/as_refresh.dart';
 

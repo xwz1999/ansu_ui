@@ -163,11 +163,17 @@ class _ASButtonState extends State<ASButton> {
           : widget.title,
       padding: widget.padding ??
           EdgeInsets.symmetric(vertical: 6.w, horizontal: 12.w),
-      shape: RoundedRectangleBorder(
-          side: widget.outline
-              ? BorderSide(color: widget.outlineColor, width: 0.5.w)
-              : BorderSide.none,
-          borderRadius: BorderRadius.circular(widget.radius ?? 15.5.w)),
+      shape: widget.radius == null
+          ? StadiumBorder(
+              side: widget.outline
+                  ? BorderSide(color: widget.outlineColor, width: 0.5.w)
+                  : BorderSide.none,
+            )
+          : RoundedRectangleBorder(
+              side: widget.outline
+                  ? BorderSide(color: widget.outlineColor, width: 0.5.w)
+                  : BorderSide.none,
+              borderRadius: BorderRadius.circular(widget.radius ?? 15.5.w)),
       color: widget.bgcolor ?? kForegroundColor,
       splashColor: widget.splashColor,
       highlightColor: widget.splashColor?.withOpacity(0.3),
