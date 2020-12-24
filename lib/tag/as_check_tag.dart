@@ -1,5 +1,5 @@
-import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

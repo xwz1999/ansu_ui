@@ -1,4 +1,3 @@
-import 'package:ansu_ui/ansu_ui.dart';
 import 'package:example/example_bottom_button.dart';
 import 'package:example/example_box.dart';
 import 'package:example/example_dialog.dart';
@@ -17,6 +16,7 @@ import 'example_button.dart';
 import 'example_tab_bar.dart';
 import 'example_picker.dart';
 import 'example_style_color.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainHome extends StatefulWidget {
   MainHome({Key key}) : super(key: key);

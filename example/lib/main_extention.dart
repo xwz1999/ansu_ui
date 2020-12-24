@@ -1,8 +1,8 @@
 import 'package:example/data/extension/example_num_ext.dart';
 import 'package:example/data/extension/example_string_ext.dart';
 import 'package:flutter/material.dart';
-import 'package:ansu_ui/ansu_ui.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainExtention extends StatefulWidget {
   MainExtention({Key key}) : super(key: key);
