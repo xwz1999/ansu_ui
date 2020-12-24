@@ -69,6 +69,7 @@ class ASMaterialButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: (radius ?? 5).radius,
       ),
+      elevation: 0,
     );
   }
 }
