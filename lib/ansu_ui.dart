@@ -53,6 +53,8 @@ export 'box/as_check_box.dart';
 export 'pop_up_menu/pop_up_menu.dart';
 
 export 'tag/as_tag.dart';
+export 'tag/as_check_tag.dart';
+
 export 'divider/as_divider.dart';
 export 'text_field/as_search_text_field.dart';
 export 'badge/as_badge.dart';

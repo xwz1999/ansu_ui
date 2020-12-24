@@ -10,6 +10,7 @@ class ExampleTag extends StatefulWidget {
 }
 
 class _ExampaleTagState extends State<ExampleTag> {
+  bool _checked = false;
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
@@ -55,6 +56,14 @@ class _ExampaleTagState extends State<ExampleTag> {
             ListTile(
               title: Text('transport'),
               trailing: ASTag.transport('海运'),
+            ),
+            ListTile(
+              onTap: () => setState(() => _checked = !_checked),
+              title: Text('ASCheckedTag'),
+              trailing: ASCheckTag(
+                checked: _checked,
+                text: 'TAG'.text,
+              ),
             ),
           ],
         ));
