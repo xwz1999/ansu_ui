@@ -29,6 +29,18 @@ class ASTabBar extends StatefulWidget implements PreferredSizeWidget {
       : tabItems = null,
         super(key: key);
 
+  /// ## TabBar with tag
+  ///```dart
+  /// ASTabBar.tag(
+  ///   isScrollable: true,
+  ///   tabItems: [
+  ///     ASTabBarItem(title:'Tab1',tag:'12'),
+  ///     ASTabBarItem(title:'Tab2'),
+  ///   ],
+  ///   controller: _tabController4,
+  /// )
+  ///```
+  ///
   ASTabBar.tag(
       {Key key,
       @required this.tabItems,
