@@ -15,7 +15,7 @@ dependencies:
   lpinyin: ^1.1.0
   image_picker: ^0.6.7+15
   bot_toast: ^3.0.5
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

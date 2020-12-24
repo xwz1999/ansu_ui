@@ -1,6 +1,9 @@
+import 'package:ansu_ui/badge/as_badge.dart';
 import 'package:ansu_ui/bar/as_tab_indicator.dart';
+import 'package:ansu_ui/bar/as_tabbar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
+import 'package:ansu_ui/extension/string_extension.dart';
 
 /// ## 安速Tabbar
 ///
@@ -10,6 +13,8 @@ import 'package:ansu_ui/styles/as_colors.dart';
 class ASTabBar extends StatefulWidget implements PreferredSizeWidget {
   ///items
   final List<String> items;
+
+  final List<ASTabBarItem> tabItems;
 
   /// TabController
   final TabController controller;
@@ -21,7 +26,16 @@ class ASTabBar extends StatefulWidget implements PreferredSizeWidget {
       @required this.items,
       @required this.controller,
       this.isScrollable = false})
-      : super(key: key);
+      : tabItems = null,
+        super(key: key);
+
+  ASTabBar.tag(
+      {Key key,
+      @required this.tabItems,
+      @required this.controller,
+      this.isScrollable = false})
+      : items = null,
+        super(key: key);
 
   @override
   _ASTabBarState createState() => _ASTabBarState();
@@ -31,6 +45,7 @@ class ASTabBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _ASTabBarState extends State<ASTabBar> {
+  bool get isTag => widget.items?.isEmpty ?? true;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -38,7 +53,20 @@ class _ASTabBarState extends State<ASTabBar> {
       child: TabBar(
         isScrollable: widget.isScrollable,
         controller: widget.controller,
-        tabs: widget.items.map((e) => Tab(text: e)).toList(),
+        tabs: isTag
+            ? widget.tabItems.map((e) {
+                return Tab(
+                  child: ASBadge(
+                    child: e.title.text,
+                    tag: e.tag,
+                  ),
+                );
+              }).toList()
+            : widget.items
+                .map((e) => Tab(
+                      child: e.text,
+                    ))
+                .toList(),
         labelStyle: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.bold,

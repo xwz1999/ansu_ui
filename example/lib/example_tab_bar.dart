@@ -13,12 +13,14 @@ class _ExampleTabBarState extends State<ExampleTabBar>
   TabController _tabController1;
   TabController _tabController2;
   TabController _tabController3;
+  TabController _tabController4;
   @override
   void initState() {
     super.initState();
     _tabController1 = TabController(length: 3, vsync: this);
     _tabController2 = TabController(length: 5, vsync: this);
     _tabController3 = TabController(length: 10, vsync: this);
+    _tabController4 = TabController(length: 10, vsync: this);
   }
 
   @override
@@ -26,6 +28,7 @@ class _ExampleTabBarState extends State<ExampleTabBar>
     _tabController1?.dispose();
     _tabController2?.dispose();
     _tabController3?.dispose();
+    _tabController4?.dispose();
     super.dispose();
   }
 
@@ -33,8 +36,10 @@ class _ExampleTabBarState extends State<ExampleTabBar>
   Widget build(BuildContext context) {
     return ASScaffold(
       title: '选项卡 TabBar',
-      appBarBottom: PreferredSize(
+      body: Material(
+        color: kForegroundColor,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             ASTabBar(
               items: ['全部', 'Part1', 'Part2'],
@@ -49,9 +54,15 @@ class _ExampleTabBarState extends State<ExampleTabBar>
               items: List.generate(10, (index) => 'Tab $index'),
               controller: _tabController3,
             ),
+            ASTabBar.tag(
+              isScrollable: true,
+              tabItems: List.generate(10, (index) => 'Tab $index')
+                  .map((e) => ASTabBarItem(title: e, tag: e))
+                  .toList(),
+              controller: _tabController4,
+            ),
           ],
         ),
-        preferredSize: Size.fromHeight(46 * 3.0),
       ),
     );
   }

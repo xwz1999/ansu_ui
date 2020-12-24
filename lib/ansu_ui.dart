@@ -20,6 +20,7 @@ export 'scaffold/as_scaffold.dart';
 export 'styles/as_colors.dart';
 
 export 'bar/as_tabbar.dart';
+export 'bar/as_tabbar_item.dart';
 export 'bar/as_navigation_bar.dart';
 export 'bar/as_navigation_item.dart';
 
@@ -54,6 +55,7 @@ export 'pop_up_menu/pop_up_menu.dart';
 export 'tag/as_tag.dart';
 export 'divider/as_divider.dart';
 export 'text_field/as_search_text_field.dart';
+export 'badge/as_badge.dart';
 
 export 'utils/screen_adapter.dart';
 export 'utils/camera_util.dart';
