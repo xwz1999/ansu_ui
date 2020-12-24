@@ -20,6 +20,7 @@ class ASMaterialButton extends StatelessWidget {
   final double radius;
   final Widget child;
   final EdgeInsets padding;
+  final Color color;
 
   const ASMaterialButton({
     Key key,
@@ -29,6 +30,7 @@ class ASMaterialButton extends StatelessWidget {
     @required this.child,
     this.radius,
     this.padding,
+    this.color,
   }) : super(key: key);
 
   ASMaterialButton.dropdown({
@@ -38,6 +40,7 @@ class ASMaterialButton extends StatelessWidget {
     @required this.child,
     this.radius,
     this.padding,
+    this.color,
   })  : icon = Icon(
           CupertinoIcons.chevron_down,
           size: 16.w,
@@ -48,6 +51,7 @@ class ASMaterialButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      color: color,
       onPressed: onPressed,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       padding: padding ?? 0.edge,
