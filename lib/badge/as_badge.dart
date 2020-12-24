@@ -37,7 +37,7 @@ class ASBadge extends StatelessWidget {
                     borderRadius: 8.radius,
                   ),
                   height: 16.w,
-                  child: '12'.text.white.size(10),
+                  child: tag.text.white.size(10),
                 ),
               ),
             ],
