@@ -41,6 +41,17 @@ class _ExampleDialogState extends State<ExampleDialog> {
                   onpressed: () {},
                 ));
               }),
+          ListTile(
+            title: 'BOTTOM DIALOG'.text,
+            onTap: () {
+              showASBottomDialog(
+                context,
+                items: [
+                  ASBottomDialogItem(title: 'TEST'.text, onPressed: () {}),
+                ],
+              );
+            },
+          ),
         ],
       ),
     );

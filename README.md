@@ -27,8 +27,3 @@ minSdkVersion 21
 
 * 文件命名规则 `as_***`,例如 `as_button`
 * 类名命名规则 `AS***`,例如`ASButton`
-
-## ROADMAP
-
-- [ ] Dialog
-- [ ] ListTile
