@@ -3,12 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ASCheckBox extends StatefulWidget {
   final bool value;
+  ///控制选中时的样式
   final bool checkStyle;
-  ASCheckBox({Key key, this.value = false})
+  ///选中时颜色
+final Color color;
+  ASCheckBox({Key key, this.value = false, this.color})
       : checkStyle = false,
         super(key: key);
 
-  ASCheckBox.checkStyle({Key key, this.value = false})
+  ASCheckBox.checkStyle({Key key, this.value = false, this.color})
       : checkStyle = true,
         super(key: key);
 
@@ -35,7 +38,7 @@ class _ASCheckBoxState extends State<ASCheckBox> {
         height: widget.value ? 13.w : 5.w,
         width: widget.value ? 13.w : 5.w,
         decoration: BoxDecoration(
-          color: Color(0xFFF69A2D).withOpacity(widget.value ? 1 : 0),
+          color:widget.color?? Color(0xFFF69A2D).withOpacity(widget.value ? 1 : 0),
           borderRadius: BorderRadius.circular(13.w),
         ),
       ),
@@ -55,15 +58,17 @@ class _ASCheckBoxState extends State<ASCheckBox> {
           width: widget.value ? 0 : 1.w,
         ),
         borderRadius: BorderRadius.circular(27.w),
-        color: Color(0xFFFFBD32).withOpacity(widget.value ? 1 : 0),
+        color:widget.color?? Color(0xFFFFBD32).withOpacity(widget.value ? 1 : 0),
       ),
       child: AnimatedOpacity(
         duration: Duration(milliseconds: 300),
         curve: Curves.fastOutSlowIn,
         opacity: widget.value ? 1 : 0,
-        child: Icon(
-          Icons.check,
-          size: 18.w,
+        child: FittedBox(
+                  child: Icon(
+            Icons.check,
+            size: 18.w,
+          ),
         ),
       ),
     );
