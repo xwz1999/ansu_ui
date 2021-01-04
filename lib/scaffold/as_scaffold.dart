@@ -60,6 +60,7 @@ class _ASScaffoldState extends State<ASScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       endDrawer: widget.endDrawer,
       backgroundColor: widget.backgroundColor,
       bottomNavigationBar: widget.bottomNavigationBar,
