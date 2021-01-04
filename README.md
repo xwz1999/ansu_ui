@@ -6,6 +6,12 @@
 
 ## Getting Started
 
+### 生成关键代码
+
+```bash
+flutter pub run grinder update-code-segments
+```
+
 ### 安装ansu_ui
 
 #### Android
@@ -15,6 +21,27 @@ Change the minimum Android sdk version to 21 (or higher) in your `android/app/bu
 ```gradle
 minSdkVersion 21
 ```
+
+## ROAD MAP
+
+* [ ] Auto Code generate
+  * [x] Scaffold
+  * [x] Button
+  * [ ] Extension
+  * [ ] Badge
+  * [ ] Bars
+  * [ ] Box
+  * [ ] Dialog
+  * [ ] Divider
+  * [ ] Drawer
+  * [ ] ListTile
+  * [ ] Pickers
+  * [ ] PopUpMenu
+  * [ ] Refresh
+  * [ ] Tag
+  * [ ] TextField
+  * [ ] Toast
+  * [ ] Utils
 
 ## 贡献
 
