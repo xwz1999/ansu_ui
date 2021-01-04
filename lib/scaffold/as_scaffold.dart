@@ -24,6 +24,9 @@ class ASScaffold extends StatefulWidget {
   /// `Scaffold` leading
   final Widget leading;
 
+  /// `Scaffold` actions
+  final List<Widget> actions;
+
   /// `Scaffold` bottomNavigationBar
   final Widget bottomNavigationBar;
 
@@ -50,6 +53,7 @@ class ASScaffold extends StatefulWidget {
     this.endDrawer,
     this.appBar,
     this.backgroundColor = kBackgroundColor,
+    this.actions,
   }) : super(key: key);
 
   @override
@@ -73,6 +77,7 @@ class _ASScaffoldState extends State<ASScaffold> {
                 backgroundColor: kForegroundColor,
                 elevation: 0,
                 leading: widget.leading ?? ASBackButton(),
+                actions: widget.actions ?? [],
                 centerTitle: true,
                 title: DefaultTextStyle(
                   style: TextStyle(
