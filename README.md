@@ -9,6 +9,7 @@
 ### 生成关键代码
 
 ```bash
+cd example
 flutter pub run grinder update-code-segments
 ```
 
@@ -28,17 +29,27 @@ minSdkVersion 21
   * [x] Scaffold
   * [x] Button
   * [ ] Extension
+    * [ ] num ext
+    * [ ] string ext
+    * [ ] widget ext
+    * [ ] image ext
+    * [ ] list ext
+    * [ ] text ext
+    * [ ] text style ext
   * [ ] Badge
   * [ ] Bars
-  * [ ] Box
+    * [x] TabBar
+    * [ ] NavigationBar
+  * [ ] CheckBox
   * [ ] Dialog
   * [ ] Divider
   * [ ] Drawer
   * [ ] ListTile
   * [ ] Pickers
+    * [x] numeric Picker
   * [ ] PopUpMenu
   * [ ] Refresh
-  * [ ] Tag
+  * [x] Tag
   * [ ] TextField
   * [ ] Toast
   * [ ] Utils

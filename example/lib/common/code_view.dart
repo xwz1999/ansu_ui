@@ -27,12 +27,11 @@ class _CodeViewState extends State<CodeView> {
             baseStyle: codeTheme.copyWith(color: Colors.white70),
             numberStyle: codeTheme.copyWith(color: const Color(0xFFBD93F9)),
             commentStyle: codeTheme.copyWith(color: const Color(0xFF808080)),
-            keywordStyle: codeTheme.copyWith(color: const Color(0xFF1CDEC9)),
-            stringStyle: codeTheme.copyWith(color: const Color(0xFFFFA65C)),
-            punctuationStyle:
-                codeTheme.copyWith(color: const Color(0xFF8BE9FD)),
-            classStyle: codeTheme.copyWith(color: const Color(0xFFD65BAD)),
-            constantStyle: codeTheme.copyWith(color: const Color(0xFFFF8383)),
+            keywordStyle: codeTheme.copyWith(color: Colors.blue),
+            stringStyle: codeTheme.copyWith(color: Colors.green),
+            punctuationStyle: codeTheme.copyWith(color: Colors.teal),
+            classStyle: codeTheme.copyWith(color: Colors.yellow),
+            constantStyle: codeTheme.copyWith(color: Colors.pink),
             child:
                 Builder(builder: (context) => Text.rich(widget.text(context))),
           )),

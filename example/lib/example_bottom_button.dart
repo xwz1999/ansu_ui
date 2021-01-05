@@ -1,6 +1,10 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+import 'codeviewer/code_segments.dart';
+import 'common/code_view.dart';
 
 class ExampleBottomButton extends StatefulWidget {
   ExampleBottomButton({Key key}) : super(key: key);
@@ -14,10 +18,24 @@ class _ExampleBottomButtonState extends State<ExampleBottomButton> {
   Widget build(BuildContext context) {
     return ASScaffold(
       title: 'ASBottomButton',
+      actions: [
+        IconButton(
+          icon: Icon(
+            Icons.code,
+            color: Colors.black54,
+          ),
+          onPressed: () => Get.to(
+            CodeView(
+              text: (context) => CodeSegments.bottomButton(context),
+            ),
+          ),
+        )
+      ],
       body: Center(),
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          // BEGIN bottomButton
           ASBottomButton.infinity(
             title: '无渐变infinity',
             onPressed: () {},
@@ -42,6 +60,7 @@ class _ExampleBottomButtonState extends State<ExampleBottomButton> {
               ))
             ],
           )
+          // END
         ],
       ),
     );

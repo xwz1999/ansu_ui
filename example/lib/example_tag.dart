@@ -1,6 +1,10 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+import 'codeviewer/code_segments.dart';
+import 'common/code_view.dart';
 
 class ExampleTag extends StatefulWidget {
   ExampleTag({Key key}) : super(key: key);
@@ -15,8 +19,22 @@ class _ExampaleTagState extends State<ExampleTag> {
   Widget build(BuildContext context) {
     return ASScaffold(
         title: 'ASTag',
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.code,
+              color: Colors.black54,
+            ),
+            onPressed: () => Get.to(
+              CodeView(
+                text: (context) => CodeSegments.tag(context),
+              ),
+            ),
+          )
+        ],
         body: Column(
           children: [
+            // BEGIN tag
             ListTile(
               title: Text('yellowSolid'),
               trailing: ASTag.yellowSolid(
@@ -65,6 +83,7 @@ class _ExampaleTagState extends State<ExampleTag> {
                 text: 'TAG'.text,
               ),
             ),
+            // END
           ],
         ));
   }

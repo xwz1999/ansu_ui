@@ -4,6 +4,9 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'codeviewer/code_segments.dart';
+import 'common/code_view.dart';
+
 class ExamplePicker extends StatefulWidget {
   ExamplePicker({Key key}) : super(key: key);
 
@@ -16,8 +19,22 @@ class _ExamplePickerState extends State<ExamplePicker> {
   Widget build(BuildContext context) {
     return ASScaffold(
       title: '选择器',
+      actions: [
+        IconButton(
+          icon: Icon(
+            Icons.code,
+            color: Colors.black54,
+          ),
+          onPressed: () => Get.to(
+            CodeView(
+              text: (context) => CodeSegments.picker(context),
+            ),
+          ),
+        )
+      ],
       body: ListView(
         children: [
+          // BEGIN picker
           ListTile(
             title: Text('日期选择器'),
             subtitle: Text('DatePicker'),
@@ -74,6 +91,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
               },
             ),
           ),
+          // END
         ],
       ),
     );

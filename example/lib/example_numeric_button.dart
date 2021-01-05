@@ -1,5 +1,8 @@
 import 'package:ansu_ui/ansu_ui.dart';
+import 'package:example/codeviewer/code_segments.dart';
+import 'package:example/common/code_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ExampleNumericButton extends StatefulWidget {
   ExampleNumericButton({Key key}) : super(key: key);
@@ -16,15 +19,28 @@ class _ExampleNumericButtonState extends State<ExampleNumericButton> {
   }
 
   int _pickedValue = 0;
-
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
       title: '数量选择器',
+      actions: [
+        IconButton(
+          icon: Icon(
+            Icons.code,
+            color: Colors.black54,
+          ),
+          onPressed: () => Get.to(
+            CodeView(
+              text: (context) => CodeSegments.numericButton(context),
+            ),
+          ),
+        )
+      ],
       body: Builder(
         builder: (context) {
           return ListView(
             children: [
+              // BEGIN numericButton
               ListTile(
                 title: Text(_pickedValue.toString()),
                 subtitle: Text('一般用法'),
@@ -44,6 +60,8 @@ class _ExampleNumericButtonState extends State<ExampleNumericButton> {
                   },
                 ),
               ),
+
+              // END
             ],
           );
         },
