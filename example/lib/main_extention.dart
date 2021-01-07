@@ -1,5 +1,5 @@
-import 'package:example/data/extension/example_num_ext.dart';
-import 'package:example/data/extension/example_string_ext.dart';
+import 'package:example/extension/example_num_ext.dart';
+import 'package:example/extension/example_string_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

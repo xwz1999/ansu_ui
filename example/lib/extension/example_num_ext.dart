@@ -1,6 +1,9 @@
 import 'package:ansu_ui/ansu_ui.dart';
+import 'package:example/codeviewer/code_segments.dart';
+import 'package:example/common/code_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ExampleNumExt extends StatefulWidget {
   ExampleNumExt({Key key}) : super(key: key);
@@ -14,8 +17,23 @@ class _ExampleNumExtState extends State<ExampleNumExt> {
   Widget build(BuildContext context) {
     return ASScaffold(
       title: 'Num Ext',
+      actions: [
+        IconButton(
+          icon: Icon(
+            Icons.code,
+            color: Colors.black54,
+          ),
+          onPressed: () => Get.to(
+            CodeView(
+              text: (context) => CodeSegments.numExt(context),
+            ),
+          ),
+        ),
+      ],
       body: ListView(
         children: [
+          // BEGIN numExt
+          //Comma
           ListTile(title: Text('Comma')),
           ListTile(
             leading: Chip(label: Text('.comma')),
@@ -48,6 +66,7 @@ class _ExampleNumExtState extends State<ExampleNumExt> {
             subtitle: Text(123456.7899999.comma(fixed: -1)),
             trailing: Chip(label: Text('without Fixed')),
           ),
+          //SizedBox
           ListTile(title: Text('SizedBox')),
           ListTile(
             leading: Chip(label: Text('.wb')),
@@ -69,6 +88,7 @@ class _ExampleNumExtState extends State<ExampleNumExt> {
               color: Colors.red,
             ),
           ),
+          //Radius
           ListTile(title: Text('Radius')),
           ListTile(
             leading: Chip(label: Text('.radius')),
@@ -83,6 +103,7 @@ class _ExampleNumExtState extends State<ExampleNumExt> {
               ),
             ),
           ),
+          //EdgeInsets
           ListTile(title: Text('EdgeInsets')),
           ListTile(
             leading: Chip(label: Text('.edge')),
@@ -96,6 +117,7 @@ class _ExampleNumExtState extends State<ExampleNumExt> {
               child: Container(color: Colors.green),
             ),
           ),
+          // END
         ],
       ),
     );

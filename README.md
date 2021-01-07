@@ -29,8 +29,8 @@ minSdkVersion 21
   * [x] Scaffold
   * [x] Button
   * [ ] Extension
-    * [ ] num ext
-    * [ ] string ext
+    * [x] num ext
+    * [x] string ext
     * [ ] widget ext
     * [ ] image ext
     * [ ] list ext
