@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ansu_ui/extension/string_extension.dart';
-import 'package:ansu_ui/extension/text_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class ASBadge extends StatelessWidget {
   final Widget child;
@@ -37,7 +36,7 @@ class ASBadge extends StatelessWidget {
                     borderRadius: 8.radius,
                   ),
                   height: 16.w,
-                  child: tag.text.white.size(10),
+                  child: tag.text.white.size(10).make(),
                 ),
               ),
             ],

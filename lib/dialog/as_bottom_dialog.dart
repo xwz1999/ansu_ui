@@ -2,9 +2,8 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:ansu_ui/buttons/as_material_button.dart';
 import 'package:flutter/material.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:ansu_ui/extension/string_extension.dart';
-import 'package:ansu_ui/extension/text_extension.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 ///ASDialog
 ///
@@ -26,7 +25,7 @@ class _ASBottomDialogState extends State<ASBottomDialog> {
       onPressed: () {
         Navigator.pop(context);
       },
-      child: '取消'.text.bold.black.size(18),
+      child: '取消'.text.black.size(18).make(),
     );
   }
 

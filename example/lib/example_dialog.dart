@@ -1,6 +1,7 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class ExampleDialog extends StatefulWidget {
   @override
@@ -42,12 +43,13 @@ class _ExampleDialogState extends State<ExampleDialog> {
                 ));
               }),
           ListTile(
-            title: 'BOTTOM DIALOG'.text,
+            title: 'BOTTOM DIALOG'.text.make(),
             onTap: () {
               showASBottomDialog(
                 context,
                 items: [
-                  ASBottomDialogItem(title: 'TEST'.text, onPressed: () {}),
+                  ASBottomDialogItem(
+                      title: 'TEST'.text.make(), onPressed: () {}),
                 ],
               );
             },

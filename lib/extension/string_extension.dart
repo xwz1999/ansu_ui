@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:ansu_ui/toast/as_toast.dart';
 
 extension PhoneExt on String {
@@ -31,8 +30,6 @@ extension PhoneExt on String {
     else
       return '${_parsePhone[0]}****${_parsePhone[2]}';
   }
-
-  Text get text => Text(this);
 
   get toast {
     ASToast.show(this);

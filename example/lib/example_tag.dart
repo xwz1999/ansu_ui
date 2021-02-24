@@ -2,6 +2,7 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import 'codeviewer/code_segments.dart';
 import 'common/code_view.dart';
@@ -80,7 +81,7 @@ class _ExampaleTagState extends State<ExampleTag> {
               title: Text('ASCheckedTag'),
               trailing: ASCheckTag(
                 checked: _checked,
-                text: 'TAG'.text,
+                text: 'TAG'.text.make(),
               ),
             ),
             // END

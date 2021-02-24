@@ -3,7 +3,7 @@ import 'package:ansu_ui/bar/as_tab_indicator.dart';
 import 'package:ansu_ui/bar/as_tabbar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:ansu_ui/extension/string_extension.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 /// ## 安速Tabbar
 ///
@@ -69,14 +69,14 @@ class _ASTabBarState extends State<ASTabBar> {
             ? widget.tabItems.map((e) {
                 return Tab(
                   child: ASBadge(
-                    child: e.title.text,
+                    child: e.title.text.make(),
                     tag: e.tag,
                   ),
                 );
               }).toList()
             : widget.items
                 .map((e) => Tab(
-                      child: e.text,
+                      child: e.text.make(),
                     ))
                 .toList(),
         labelStyle: TextStyle(

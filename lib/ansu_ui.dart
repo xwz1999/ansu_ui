@@ -68,5 +68,5 @@ export 'extension/list_extension.dart';
 export 'extension/widget_extension.dart';
 export 'extension/string_extension.dart';
 export 'extension/text_style_extension.dart';
-export 'extension/text_extension.dart';
 export 'extension/image_extension.dart';
+export 'package:velocity_x/velocity_x.dart';

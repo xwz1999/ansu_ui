@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:ansu_ui/extension/string_extension.dart';
 import 'package:ansu_ui/extension/widget_extension.dart';
-import 'package:ansu_ui/extension/text_extension.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 import 'package:ansu_ui/extension/text_style_extension.dart';
 import 'package:ansu_ui/pickers/as_date_range_picker_part.dart';
 import 'package:ansu_ui/buttons/as_longbutton.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class AS2DatePicker extends StatefulWidget {
   final bool isAnHour;
@@ -50,9 +49,7 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
       },
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       height: 70.w,
-      child: title.text.black
-          .size(16)
-          .copyWith(fontWeight: sameDay ? FontWeight.bold : FontWeight.normal),
+      child: title.text.black.size(16.sp).bold.make(),
     );
   }
 
@@ -79,7 +76,7 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
         children: [
           30.wb,
           AnimatedDefaultTextStyle(
-            child: title.text,
+            child: title.text.make(),
             style: TextStyle().size(16).copyWith(
                   color: selected ? kSecondaryColor : kTextColor,
                 ),
