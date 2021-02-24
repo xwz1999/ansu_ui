@@ -10,6 +10,7 @@ class ASRefresh extends StatefulWidget {
   final bool firstRefresh;
   final Widget emptyWidget;
   final Widget firstRefreshWidget;
+  final ScrollController scrollController;
   ASRefresh({
     Key key,
     @required this.child,
@@ -19,6 +20,7 @@ class ASRefresh extends StatefulWidget {
     this.firstRefresh = true,
     this.emptyWidget,
     this.firstRefreshWidget,
+    this.scrollController,
   }) : super(key: key);
 
   @override
@@ -29,6 +31,7 @@ class _ASRefreshState extends State<ASRefresh> {
   @override
   Widget build(BuildContext context) {
     return EasyRefresh(
+      scrollController: widget.scrollController,
       child: widget.child,
       onRefresh: widget.onRefresh,
       onLoad: widget.onLoad,
