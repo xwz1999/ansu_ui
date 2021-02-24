@@ -48,27 +48,22 @@ class ASPickerBox extends StatelessWidget {
           children: [
             SizedBox(
               height: 48.w,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  _buildButton(
-                      title: '取消',
-                      onPressed: () {
-                        Navigator.pop(context);
-                      }),
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        title ?? '',
-                        style: TextStyle(
-                          color: kTextColor,
-                          fontSize: 16.sp,
-                        ),
-                      ),
-                    ),
+              child: NavigationToolbar(
+                leading: _buildButton(
+                  title: '取消',
+                  onPressed: () => Navigator.pop(context),
+                ),
+                middle: Text(
+                  title ?? '',
+                  style: TextStyle(
+                    color: kTextColor,
+                    fontSize: 16.sp,
                   ),
-                  _buildButton(title: confirmString, onPressed: onPressed),
-                ],
+                ),
+                trailing: _buildButton(
+                  title: confirmString,
+                  onPressed: onPressed,
+                ),
               ),
             ),
             ASDivider(),

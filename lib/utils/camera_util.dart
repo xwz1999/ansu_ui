@@ -15,10 +15,12 @@ Future<File> camFile({double maxHeight = 3000, double maxWidth = 3000}) async {
   return File(pickedFile.path);
 }
 
-Future<File> camView(BuildContext context,
-    {double maxHeight = 3000,
-    double maxWidth = 3000,
-    @required String title}) async {
+Future<File> camView(
+  BuildContext context, {
+  double maxHeight = 3000,
+  double maxWidth = 3000,
+  @required String title,
+}) async {
   File file = await camFile(maxHeight: maxHeight, maxWidth: maxWidth);
   if (file == null) return null;
   return await Navigator.push(context, PageRouteBuilder(
