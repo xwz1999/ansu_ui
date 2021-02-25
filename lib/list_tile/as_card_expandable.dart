@@ -10,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///ASCardExpandable.custom 自定义显示列表，
 ///默认自动将extra连接在children后面
 class ASCardExpandable extends StatefulWidget {
-  final String title;
+  final dynamic title;
   final List<Widget> mid;
   final List<Widget> children;
   final List<Widget> extra;
@@ -61,6 +61,22 @@ class ASCardExpandable extends StatefulWidget {
 
 class _ASCardExpandableState extends State<ASCardExpandable> {
   ExpandableController _expandableController = ExpandableController();
+  Widget get _title {
+    if (widget.title is String)
+      return widget.title.text.black.bold.size(16.sp).make();
+    if (widget.title is Widget)
+      return DefaultTextStyle(
+        child: widget.title,
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontSize: 16.sp,
+        ),
+      );
+    else
+      return SizedBox();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ASOptionTile(
@@ -71,7 +87,7 @@ class _ASCardExpandableState extends State<ASCardExpandable> {
         ),
         controller: _expandableController,
         header: ASListTileX(
-          title: widget.title.text.black.bold.size(16.sp).make(),
+          title: _title,
           prefixes: widget.mid,
           suffix: ASMaterialButton(
             child: AnimatedSwitcher(
