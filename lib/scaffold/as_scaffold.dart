@@ -43,6 +43,7 @@ class ASScaffold extends StatefulWidget {
 
   ///背景色
   final Color backgroundColor;
+  final Widget floatingActionButton;
   ASScaffold({
     Key key,
     this.title,
@@ -54,6 +55,7 @@ class ASScaffold extends StatefulWidget {
     this.appBar,
     this.backgroundColor = kBackgroundColor,
     this.actions,
+    this.floatingActionButton,
   }) : super(key: key);
 
   @override
@@ -67,6 +69,7 @@ class _ASScaffoldState extends State<ASScaffold> {
       endDrawer: widget.endDrawer,
       backgroundColor: widget.backgroundColor,
       bottomNavigationBar: widget.bottomNavigationBar,
+      floatingActionButton: widget.floatingActionButton,
       appBar: widget.title == null &&
               widget.appBar == null &&
               widget.appBarBottom == null
