@@ -44,6 +44,7 @@ export 'list_tile/as_edit_tile.dart';
 export 'list_tile/as_option_tile_item.dart';
 export 'list_tile/as_vertical_tile_item.dart';
 export 'list_tile/as_list_tile_x.dart';
+export 'list_tile/as_card_expandable.dart';
 
 export 'refresh/as_refresh.dart';
 
