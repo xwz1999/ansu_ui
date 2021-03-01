@@ -20,6 +20,7 @@ dependencies:
   aku_ui:
     git:
       url: http://test.akuhotel.com:8099/aku_fe/aku_ui.git
+  get:
 
 dev_dependencies:
   flutter_test:

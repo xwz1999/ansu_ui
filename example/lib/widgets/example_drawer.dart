@@ -28,7 +28,15 @@ class _ExampleDrawerState extends State<ExampleDrawer> {
             return ASLongButton.solid(
               title: 'DRAWER',
               onPressed: () {
-                Scaffold.of(context).openEndDrawer();
+                showASDrawer(ASDrawer(
+                  children: [
+                    Text('title'),
+                  ],
+                  bottom: ASLongButton.solid(
+                    title: '确定',
+                    onPressed: () {},
+                  ),
+                ));
               },
             );
           },

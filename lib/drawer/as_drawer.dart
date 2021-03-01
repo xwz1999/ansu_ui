@@ -1,8 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/utils/screen_adapter.dart';
+import 'package:get/get.dart';
+
+///打开抽屉
+Future showASDrawer(Widget drawer) async {
+  return await Get.generalDialog(
+    pageBuilder: (context, animation, secondAnimation) {
+      return drawer;
+    },
+    transitionBuilder: (context, animation, secondaryAnimation, child) {
+      return SlideTransition(
+        position: Tween(
+          end: Offset(0, 0),
+          begin: Offset(1, 0),
+        ).animate(
+          CurvedAnimation(
+            parent: animation,
+            curve: Curves.easeInOutCubic,
+          ),
+        ),
+        child: child,
+      );
+    },
+    barrierDismissible: true,
+    barrierLabel: 'filter',
+  );
+}
 
 ///安速抽屉
+///
+///使用`showASDrawer`打开抽屉，不推荐使用`Scaffold`的`drawer`和`endDrawer`打开抽屉。
 class ASDrawer extends StatefulWidget {
   ///子组件List Children
   ///
