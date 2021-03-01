@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:ansu_ui/extension/widget_extension.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 import 'package:ansu_ui/extension/text_style_extension.dart';
 import 'package:ansu_ui/pickers/as_date_range_picker_part.dart';
@@ -205,7 +204,7 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
                   ),
                 ),
               ],
-            ).expanded,
+            ).expand(),
             Container(
               margin: EdgeInsets.symmetric(
                 horizontal: 24.w,

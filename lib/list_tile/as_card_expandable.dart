@@ -51,7 +51,7 @@ class ASCardExpandable extends StatefulWidget {
           child: title.text.black.size(14.sp).make(),
         ),
         DefaultTextStyle(style: TextStyle().black65.size(14), child: child)
-            .expanded,
+            .expand(),
         suffix ?? SizedBox(),
         10.wb,
       ],

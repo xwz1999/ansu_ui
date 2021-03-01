@@ -11,8 +11,8 @@ extension TextStyleExtension on TextStyle {
 
   ///color
   TextStyle colorX(Color color) => this.copyWith(color: color);
-  //specific values
 
+  //specific values
   TextStyle get white => this.copyWith(color: kLightTextColor);
 
   TextStyle get black => this.copyWith(color: kTextColor);
