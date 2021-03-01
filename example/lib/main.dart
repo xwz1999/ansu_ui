@@ -81,9 +81,18 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       bottomNavigationBar: ASNavigationBar(
         controller: _tabController,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'HOME'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.extension), label: 'EXTENSION'),
+            icon: Icon(Icons.home),
+            label: 'HOME',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.extension),
+            label: 'EXTENSION',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.apps),
+            label: 'UTILS',
+          ),
         ],
       ),
     );

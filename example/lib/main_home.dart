@@ -1,21 +1,21 @@
-import 'package:example/example_bottom_button.dart';
-import 'package:example/example_box.dart';
-import 'package:example/example_dialog.dart';
-import 'package:example/example_drawer.dart';
-import 'package:example/example_listtile.dart';
-import 'package:example/example_pop_up_menu.dart';
-import 'package:example/example_refresh.dart';
-import 'package:example/example_tag.dart';
-import 'package:example/example_text_field.dart';
+import 'package:example/widgets/example_bottom_button.dart';
+import 'package:example/widgets/example_box.dart';
+import 'package:example/widgets/example_button.dart';
+import 'package:example/widgets/example_dialog.dart';
+import 'package:example/widgets/example_drawer.dart';
+import 'package:example/widgets/example_listtile.dart';
+import 'package:example/widgets/example_numeric_button.dart';
+import 'package:example/widgets/example_picker.dart';
+import 'package:example/widgets/example_pop_up_menu.dart';
+import 'package:example/widgets/example_refresh.dart';
+import 'package:example/widgets/example_scaffold.dart';
+import 'package:example/widgets/example_style_color.dart';
+import 'package:example/widgets/example_tab_bar.dart';
+import 'package:example/widgets/example_tag.dart';
+import 'package:example/widgets/example_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'example_numeric_button.dart';
-import 'example_scaffold.dart';
-import 'example_button.dart';
-import 'example_tab_bar.dart';
-import 'example_picker.dart';
-import 'example_style_color.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainHome extends StatefulWidget {

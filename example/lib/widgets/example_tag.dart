@@ -1,11 +1,11 @@
 import 'package:ansu_ui/ansu_ui.dart';
+import 'package:example/codeviewer/code_segments.dart';
+import 'package:example/common/code_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import 'codeviewer/code_segments.dart';
-import 'common/code_view.dart';
 
 class ExampleTag extends StatefulWidget {
   ExampleTag({Key key}) : super(key: key);
