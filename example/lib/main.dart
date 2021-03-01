@@ -1,6 +1,7 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:example/main_extention.dart';
 import 'package:example/main_home.dart';
+import 'package:example/main_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       statusBarColor: Colors.transparent,
     ));
 
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -76,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         children: [
           MainHome(),
           MainExtention(),
+          MainUtils(),
         ],
       ),
       bottomNavigationBar: ASNavigationBar(
