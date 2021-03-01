@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
+import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASTag extends StatefulWidget {
   ///宽度
@@ -116,18 +117,23 @@ class _ASTagState extends State<ASTag> {
   Widget build(BuildContext context) {
     return Container(
       padding: widget.padding ??
-          EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.w),
+          EdgeInsets.symmetric(
+            horizontal: 6.w,
+            vertical: 2.w,
+          ),
       width: widget.width,
-      height: widget.height,
+      height: widget.height ?? 19.w,
       decoration: BoxDecoration(
-          color: widget.bgColor ?? kDarkPrimaryColor,
-          border: widget.outline
-              ? Border.all(
-                  width: 1.w,
-                  color: widget.outlineColor ?? kSecondaryColor,
-                )
-              : Border.fromBorderSide(BorderSide.none),
-          borderRadius: BorderRadius.circular(widget.radius ?? 9.w)),
+        color: widget.bgColor ?? kDarkPrimaryColor,
+        border: widget.outline
+            ? Border.all(
+                width: 1.w,
+                color: widget.outlineColor ?? kSecondaryColor,
+              )
+            : Border.fromBorderSide(BorderSide.none),
+        borderRadius: (widget.radius ?? 9.w).radius,
+      ),
+      alignment: Alignment.center,
       child: Text(
         widget.text,
         style: widget.textStyle ??

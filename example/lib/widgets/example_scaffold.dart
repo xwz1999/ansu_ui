@@ -49,11 +49,6 @@ class _ExampleScaffoldState extends State<ExampleScaffold>
         isScrollable: true,
         controller: _tabController,
       ),
-      endDrawer: ASDrawer(
-        children: [
-          Text('DRAWER'),
-        ],
-      ),
       body: ListView(
         children: [
           Builder(
