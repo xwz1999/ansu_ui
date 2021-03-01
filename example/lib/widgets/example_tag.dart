@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-
 class ExampleTag extends StatefulWidget {
   ExampleTag({Key key}) : super(key: key);
 
@@ -40,6 +39,7 @@ class _ExampaleTagState extends State<ExampleTag> {
               title: Text('yellowSolid'),
               trailing: ASTag.yellowSolid(
                 '带电',
+                width: 36.w,
               ),
             ),
             ListTile(
