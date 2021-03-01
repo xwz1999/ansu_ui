@@ -34,7 +34,6 @@ class ASOptionTile extends StatelessWidget {
       this.items.insert(
             0,
             Container(
-              padding: EdgeInsets.fromLTRB(10.w, 10.w, 10.w, 10.w),
               alignment: Alignment.centerLeft,
               child: this.leading is String
                   ? Text(
@@ -49,6 +48,7 @@ class ASOptionTile extends StatelessWidget {
           );
     }
     return Material(
+        clipBehavior: Clip.antiAlias,
         color: kForegroundColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.w),
