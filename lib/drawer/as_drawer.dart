@@ -4,7 +4,11 @@ import 'package:ansu_ui/utils/screen_adapter.dart';
 import 'package:get/get.dart';
 
 ///打开抽屉
-Future showASDrawer(Widget drawer) async {
+///
+///pass a value through navigator. 
+///
+///example `Navigator.pop(context,true)` or `Get.back(result:true)`
+Future<T> showASDrawer<T>(Widget drawer) async {
   return await Get.generalDialog(
     pageBuilder: (context, animation, secondAnimation) {
       return drawer;
