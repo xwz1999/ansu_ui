@@ -10,7 +10,7 @@ import 'package:velocity_x/velocity_x.dart';
 /// [items]
 ///
 /// [controller] see more TabController
-class ASTabBar extends StatefulWidget implements PreferredSizeWidget {
+class ASTabBar extends StatelessWidget implements PreferredSizeWidget {
   ///items
   final List<String> items;
 
@@ -49,24 +49,16 @@ class ASTabBar extends StatefulWidget implements PreferredSizeWidget {
       : items = null,
         super(key: key);
 
-  @override
-  _ASTabBarState createState() => _ASTabBarState();
-
-  @override
-  Size get preferredSize => Size.fromHeight(46);
-}
-
-class _ASTabBarState extends State<ASTabBar> {
-  bool get isTag => widget.items?.isEmpty ?? true;
+  bool get isTag => items?.isEmpty ?? true;
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.center,
       child: TabBar(
-        isScrollable: widget.isScrollable,
-        controller: widget.controller,
+        isScrollable: isScrollable,
+        controller: controller,
         tabs: isTag
-            ? widget.tabItems.map((e) {
+            ? tabItems.map((e) {
                 return Tab(
                   child: ASBadge(
                     child: e.title.text.make(),
@@ -74,7 +66,7 @@ class _ASTabBarState extends State<ASTabBar> {
                   ),
                 );
               }).toList()
-            : widget.items
+            : items
                 .map((e) => Tab(
                       child: e.text.make(),
                     ))
@@ -94,4 +86,7 @@ class _ASTabBarState extends State<ASTabBar> {
       ),
     );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(46);
 }

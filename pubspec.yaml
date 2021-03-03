@@ -11,9 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^3.2.0
-  flutter_easyrefresh: ^2.1.6
-  lpinyin: ^1.1.0
-  image_picker: ^0.6.7+15
+  flutter_easyrefresh: ^2.1.8
+  lpinyin: ^1.1.1
+  image_picker: ^0.6.7+22
   bot_toast: ^3.0.5
   velocity_x:
   expandable: ^4.1.4
