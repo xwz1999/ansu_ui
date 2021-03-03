@@ -101,6 +101,18 @@ class ASBottomButton extends StatelessWidget {
         textColor = kPrimaryColor,
         width = double.infinity,
         super(key: key);
+  Widget get _title {
+    if (title is String)
+      return Text(
+        title,
+        style: textStyle ??
+            TextStyle(
+              fontSize: 20.sp,
+              fontWeight: FontWeight.bold,
+            ),
+      );
+    return title;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -109,29 +121,23 @@ class ASBottomButton extends StatelessWidget {
       width: width ?? double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-            begin: begin ?? Alignment.bottomRight,
-            end: end ?? Alignment.topLeft,
-            colors: colors ?? [bgcolor, bgcolor]),
+          begin: begin ?? Alignment.bottomRight,
+          end: end ?? Alignment.topLeft,
+          colors: colors ?? [bgcolor, bgcolor],
+        ),
       ),
       child: MaterialButton(
         onPressed: onPressed,
         textColor: textColor ?? kLightTextColor,
         disabledColor: disableColor,
         disabledTextColor: disableTextColor,
-        padding: padding ??
-            EdgeInsets.symmetric(
-              vertical: 13.w,
-            ),
+        padding: padding ?? EdgeInsets.symmetric(vertical: 13.w),
         elevation: 0,
         hoverElevation: 0,
         highlightElevation: 0,
         focusElevation: 0,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        child: title is String
-            ? Text(title,
-                style: textStyle ??
-                    TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold))
-            : title,
+        child: _title,
       ),
     );
   }
