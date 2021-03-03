@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ASCheckBox extends StatefulWidget {
+class ASCheckBox extends StatelessWidget {
   final bool value;
 
   ///控制选中时的样式
@@ -17,11 +17,6 @@ class ASCheckBox extends StatefulWidget {
       : checkStyle = true,
         super(key: key);
 
-  @override
-  _ASCheckBoxState createState() => _ASCheckBoxState();
-}
-
-class _ASCheckBoxState extends State<ASCheckBox> {
   _renderDefault() {
     return Container(
       height: 17.w,
@@ -37,11 +32,10 @@ class _ASCheckBoxState extends State<ASCheckBox> {
       child: AnimatedContainer(
         duration: Duration(milliseconds: 300),
         curve: Curves.fastOutSlowIn,
-        height: widget.value ? 13.w : 5.w,
-        width: widget.value ? 13.w : 5.w,
+        height: value ? 13.w : 5.w,
+        width: value ? 13.w : 5.w,
         decoration: BoxDecoration(
-          color: (widget.color ?? Color(0xFFF69A2D))
-              .withOpacity(widget.value ? 1 : 0),
+          color: (color ?? Color(0xFFF69A2D)).withOpacity(value ? 1 : 0),
           borderRadius: BorderRadius.circular(13.w),
         ),
       ),
@@ -58,22 +52,21 @@ class _ASCheckBoxState extends State<ASCheckBox> {
       decoration: BoxDecoration(
         border: Border.all(
           color: Color(0xFFD5D5D5),
-          width: widget.value ? 0 : 1.w,
+          width: value ? 0 : 1.w,
         ),
         borderRadius: BorderRadius.circular(27.w),
-        color: (widget.color ?? Color(0xFFFFBD32))
-            .withOpacity(widget.value ? 1 : 0),
+        color: (color ?? Color(0xFFFFBD32)).withOpacity(value ? 1 : 0),
       ),
       child: AnimatedOpacity(
         duration: Duration(milliseconds: 300),
         curve: Curves.fastOutSlowIn,
-        opacity: widget.value ? 1 : 0,
+        opacity: value ? 1 : 0,
         child: FittedBox(
           child: Padding(
             padding: EdgeInsets.all(5.w),
             child: Icon(
               Icons.check,
-              color: widget.color != null ? Colors.white : Colors.black,
+              color: color != null ? Colors.white : Colors.black,
             ),
           ),
         ),
@@ -83,6 +76,6 @@ class _ASCheckBoxState extends State<ASCheckBox> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.checkStyle ? _renderCheck() : _renderDefault();
+    return checkStyle ? _renderCheck() : _renderDefault();
   }
 }

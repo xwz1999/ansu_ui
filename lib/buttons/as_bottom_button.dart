@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 
-class ASBottomButton extends StatefulWidget {
+class ASBottomButton extends StatelessWidget {
   ///动态组件，可以是字符或组件
   final dynamic title;
 
@@ -103,27 +103,22 @@ class ASBottomButton extends StatefulWidget {
         super(key: key);
 
   @override
-  _ASBottomButtonState createState() => _ASBottomButtonState();
-}
-
-class _ASBottomButtonState extends State<ASBottomButton> {
-  @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
-      width: widget.width ?? double.infinity,
+      width: width ?? double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-            begin: widget.begin ?? Alignment.bottomRight,
-            end: widget.end ?? Alignment.topLeft,
-            colors: widget.colors ?? [widget.bgcolor, widget.bgcolor]),
+            begin: begin ?? Alignment.bottomRight,
+            end: end ?? Alignment.topLeft,
+            colors: colors ?? [bgcolor, bgcolor]),
       ),
       child: MaterialButton(
-        onPressed: widget.onPressed,
-        textColor: widget.textColor ?? kLightTextColor,
-        disabledColor: widget.disableColor,
-        disabledTextColor: widget.disableTextColor,
-        padding: widget.padding ??
+        onPressed: onPressed,
+        textColor: textColor ?? kLightTextColor,
+        disabledColor: disableColor,
+        disabledTextColor: disableTextColor,
+        padding: padding ??
             EdgeInsets.symmetric(
               vertical: 13.w,
             ),
@@ -132,11 +127,11 @@ class _ASBottomButtonState extends State<ASBottomButton> {
         highlightElevation: 0,
         focusElevation: 0,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        child: widget.title is String
-            ? Text(widget.title,
-                style: widget.textStyle ??
+        child: title is String
+            ? Text(title,
+                style: textStyle ??
                     TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold))
-            : widget.title,
+            : title,
       ),
     );
   }
