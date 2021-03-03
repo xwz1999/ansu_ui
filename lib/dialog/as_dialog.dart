@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
+import 'package:ansu_ui/extension/list_extension.dart';
 
 class ASDialog extends StatefulWidget {
   final bool close;
@@ -78,12 +79,8 @@ class _ASDialogState extends State<ASDialog> {
                         ),
                       ),
                     ),
-                    ...List.generate(widget.items.length * 2 - 1, (index) {
-                      if (index.isEven)
-                        return widget.items[index ~/ 2];
-                      else
-                        return _widgetSpacer.hb;
-                    }),
+                    ...widget.items
+                        .sepWidget(separate: SizedBox(height: _widgetSpacer)),
                   ],
                 ),
               ),
