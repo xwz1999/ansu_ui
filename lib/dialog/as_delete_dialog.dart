@@ -10,7 +10,7 @@ class ASDeleteDialog extends StatelessWidget {
   final String title;
 
   /// 内容,字符串或widget
-  final dynamic boyd;
+  final dynamic body;
 
   ///删除按钮
   final Widget button;
@@ -19,7 +19,7 @@ class ASDeleteDialog extends StatelessWidget {
   final VoidCallback onpressed;
 
   const ASDeleteDialog(
-      {Key key, this.title, this.boyd, this.button, this.onpressed})
+      {Key key, this.title, this.body, this.button, this.onpressed})
       : super(key: key);
 
   @override
@@ -68,15 +68,15 @@ class ASDeleteDialog extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
-                        this.boyd == null
+                        this.body == null
                             ? SizedBox()
-                            : this.boyd is String
+                            : this.body is String
                                 ? Text(
-                                    this.boyd,
+                                    this.body,
                                     style: TextStyle(
                                         color: kTextSubColor, fontSize: 16.sp),
                                   )
-                                : this.boyd,
+                                : this.body,
                       ],
                     ),
                   ),
