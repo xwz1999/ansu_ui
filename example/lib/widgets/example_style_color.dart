@@ -13,7 +13,19 @@ class ExampleStyleColor extends StatefulWidget {
 class _ExampleStyleColorState extends State<ExampleStyleColor> {
   _buildCard(ColorObject object) {
     return ListTile(
-      title: Text('${object.name} ${object.color.toString().substring(6, 16)}'),
+      title: Text(
+        '${object.name} ${object.color.toString().substring(6, 16)}',
+        style: TextStyle(
+          color: object.color,
+          shadows: [
+            Shadow(
+              color: Colors.black54,
+              offset: Offset.zero,
+              blurRadius: 2,
+            ),
+          ],
+        ),
+      ),
       subtitle: Text(object.codeName),
       trailing: Card(
         color: object.color,

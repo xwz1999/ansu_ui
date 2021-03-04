@@ -10,6 +10,7 @@ class ExamplePopUpMenu extends StatefulWidget {
 }
 
 class _ExamplePopUpMenuState extends State<ExamplePopUpMenu> {
+  int _value;
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
@@ -22,18 +23,23 @@ class _ExamplePopUpMenuState extends State<ExamplePopUpMenu> {
             trailing: Builder(
               builder: (context) {
                 return TextButton(
-                  child: 'test'.text.make(),
-                  onPressed: () {
-                    showASPopUpMenu<int>(
+                  child: '$_value'.text.make(),
+                  onPressed: () async {
+                    int result = await showASPopUpMenu<int>(
                       context: context,
-                      initValue: 3,
-                      items: [
-                        PopupMenuItem(child: 'test'.text.make(), value: 1),
-                        PopupMenuItem(child: 'test'.text.make(), value: 2),
-                        PopupMenuItem(child: 'test'.text.make(), value: 3),
-                        PopupMenuItem(child: 'test'.text.make(), value: 4),
-                      ],
-                    ).then((value) {});
+                      initValue: _value,
+                      items: List.generate(
+                        20,
+                        (index) => PopupMenuItem(
+                          child: '$index'.text.isIntrinsic.make(),
+                          value: index,
+                        ),
+                      ),
+                    );
+                    if (result != null)
+                      setState(() {
+                        _value = result;
+                      });
                   },
                 );
               },
