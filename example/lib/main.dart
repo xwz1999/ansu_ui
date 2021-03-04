@@ -16,29 +16,24 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      home: _ScreenAdapter(),
-      builder: BotToastInit(),
-      navigatorObservers: [BotToastNavigatorObserver()],
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('zh'),
-      ],
+    return ScreenUtilInit(
+      designSize: Size(375, 812),
+      allowFontScaling: false,
+      builder: () => GetMaterialApp(
+        title: 'Flutter Demo',
+        home: MyHomePage(),
+        builder: BotToastInit(),
+        navigatorObservers: [BotToastNavigatorObserver()],
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('zh'),
+        ],
+      ),
     );
-  }
-}
-
-class _ScreenAdapter extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    ScreenUtil.init(context,
-        designSize: Size(375, 812), allowFontScaling: false);
-    return MyHomePage();
   }
 }
 

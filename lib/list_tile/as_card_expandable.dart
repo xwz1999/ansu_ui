@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:aku_ui/aku_ui.dart';
+import 'package:animated_collection/animated_collection.dart';
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
