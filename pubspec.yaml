@@ -12,18 +12,16 @@ dependencies:
     sdk: flutter
   flutter_screenutil: ^5.0.0-nullsafety.7
   flutter_easyrefresh: ^2.1.8
-  lpinyin: ^1.1.1
+  lpinyin: 
+    git: https://github.com/flutterchina/lpinyin
   image_picker: ^0.7.2
   bot_toast: ^4.0.0+1
-  velocity_x:
-    git:
-      url: http://test.akuhotel.com:8099/aku_fe/velocityX.git
-      branch: stable
+  velocity_x: ^2.3.1-nullsafety.0
   expandable: ^4.1.4
   animated_collection:
     git:
       url: http://test.akuhotel.com:8099/aku_fe/animated_collection.git
-  get:
+  get: ^4.0.0-nullsafety.2
 
 dev_dependencies:
   flutter_test:
