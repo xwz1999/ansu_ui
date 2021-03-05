@@ -16,7 +16,10 @@ dependencies:
     git: https://github.com/flutterchina/lpinyin
   image_picker: ^0.7.2
   bot_toast: ^4.0.0+1
-  velocity_x: ^2.3.1-nullsafety.0
+  velocity_x:
+    git:
+      url: http://159.75.73.143:8080/akufe/velocityX
+      ref: dev#null-safety
   expandable: ^4.1.4
   animated_collection:
     git:
