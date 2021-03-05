@@ -23,7 +23,7 @@ dependencies:
   expandable: ^4.1.4
   animated_collection:
     git:
-      url: http://test.akuhotel.com:8099/aku_fe/animated_collection.git
+      url: http://159.75.73.143:8080/laiiihz/animated_collection.git
   get: ^4.0.0-nullsafety.2
 
 dev_dependencies:
