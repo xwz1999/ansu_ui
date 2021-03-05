@@ -2,11 +2,11 @@ library ansu_ui;
 
 //buttons
 export 'buttons/as_button.dart';
-export 'buttons/as_longbutton.dart';
+export 'buttons/as_long_button.dart';
 export 'buttons/as_back_button.dart';
 export 'buttons/as_numeric_button.dart';
 export 'buttons/as_bottom_button.dart';
-export 'buttons/as_gradientbutton.dart';
+export 'buttons/as_gradient_button.dart';
 export 'buttons/as_radio_button.dart';
 export 'buttons/as_material_button.dart';
 

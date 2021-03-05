@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 
 ///安速按钮
-class ASButton extends StatefulWidget {
+class ASButton extends StatelessWidget {
   ///按钮颜色
   final Color bgcolor;
 
@@ -144,39 +144,32 @@ class ASButton extends StatefulWidget {
         super(key: key);
 
   @override
-  _ASButtonState createState() => _ASButtonState();
-}
-
-class _ASButtonState extends State<ASButton> {
-  @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      disabledColor: widget.disableColor,
-      disabledTextColor: widget.disableTextColor,
-      textColor: widget.textColor ?? kLightPrimaryColor,
-      minWidth: widget.width,
+      disabledColor: disableColor,
+      disabledTextColor: disableTextColor,
+      textColor: textColor ?? kLightPrimaryColor,
+      minWidth: width,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      onPressed: widget.onPressed,
-      child: widget.title is String
-          ? Text(widget.title,
-              style: widget.textStyle ?? TextStyle(fontSize: 13.sp))
-          : widget.title,
-      padding: widget.padding ??
-          EdgeInsets.symmetric(vertical: 6.w, horizontal: 12.w),
-      shape: widget.radius == null
+      onPressed: onPressed,
+      child: title is String
+          ? Text(title, style: textStyle ?? TextStyle(fontSize: 13.sp))
+          : title,
+      padding: padding ?? EdgeInsets.symmetric(vertical: 6.w, horizontal: 12.w),
+      shape: radius == null
           ? StadiumBorder(
-              side: widget.outline
-                  ? BorderSide(color: widget.outlineColor, width: 0.5.w)
+              side: outline
+                  ? BorderSide(color: outlineColor, width: 0.5.w)
                   : BorderSide.none,
             )
           : RoundedRectangleBorder(
-              side: widget.outline
-                  ? BorderSide(color: widget.outlineColor, width: 0.5.w)
+              side: outline
+                  ? BorderSide(color: outlineColor, width: 0.5.w)
                   : BorderSide.none,
-              borderRadius: BorderRadius.circular(widget.radius ?? 15.5.w)),
-      color: widget.bgcolor ?? kForegroundColor,
-      splashColor: widget.splashColor,
-      highlightColor: widget.splashColor?.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(radius ?? 15.5.w)),
+      color: bgcolor ?? kForegroundColor,
+      splashColor: splashColor,
+      highlightColor: splashColor?.withOpacity(0.3),
       elevation: 0,
       focusElevation: 0,
       highlightElevation: 0,

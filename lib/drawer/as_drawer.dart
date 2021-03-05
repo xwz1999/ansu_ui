@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 ///打开抽屉
 ///
-///pass a value through navigator. 
+///pass a value through navigator.
 ///
 ///example `Navigator.pop(context,true)` or `Get.back(result:true)`
 Future<T> showASDrawer<T>(Widget drawer) async {
@@ -35,7 +35,7 @@ Future<T> showASDrawer<T>(Widget drawer) async {
 ///安速抽屉
 ///
 ///使用`showASDrawer`打开抽屉，不推荐使用`Scaffold`的`drawer`和`endDrawer`打开抽屉。
-class ASDrawer extends StatefulWidget {
+class ASDrawer extends StatelessWidget {
   ///子组件List Children
   ///
   ///内部为ListView实现
@@ -86,11 +86,6 @@ class ASDrawer extends StatefulWidget {
         super(key: key);
 
   @override
-  _ASDrawerState createState() => _ASDrawerState();
-}
-
-class _ASDrawerState extends State<ASDrawer> {
-  @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.bottomRight,
@@ -100,15 +95,15 @@ class _ASDrawerState extends State<ASDrawer> {
           height: screenHeight - statusBarHeight,
           width: screenWidth - 44.w,
           child: Material(
-            child: widget.child ??
+            child: child ??
                 Stack(
                   children: [
                     ListView(
-                      padding: widget.padding,
-                      children: widget.children,
+                      padding: padding,
+                      children: children,
                     ),
                     Positioned(
-                      child: widget.bottom ?? SizedBox(),
+                      child: bottom ?? SizedBox(),
                       bottom: 45.w,
                       left: 26.w,
                       right: 26.w,

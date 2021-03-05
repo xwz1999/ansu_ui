@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 
-class ASGradientButton extends StatefulWidget {
+class ASGradientButton extends StatelessWidget {
   ///按钮文字
   ///动态类型，可以是string或者widget
   final dynamic title;
@@ -90,19 +90,14 @@ class ASGradientButton extends StatefulWidget {
         colors = [Color(0xFFFFA700), Color(0xFFFFBD00)],
         super(key: key);
 
-  @override
-  _ASGradientButtonState createState() => _ASGradientButtonState();
-}
-
-class _ASGradientButtonState extends State<ASGradientButton> {
-  bool get isNullFunc => widget.onPressed == null;
-  List<Color> get colors {
-    if (widget.colors == null)
+  bool get isNullFunc => onPressed == null;
+  List<Color> get _colors {
+    if (colors == null)
       return null;
     else {
       return List.generate(
-        widget.colors.length,
-        (index) => widget.colors[index].withOpacity(isNullFunc ? 0.5 : 1),
+        colors.length,
+        (index) => colors[index].withOpacity(isNullFunc ? 0.5 : 1),
       );
     }
   }
@@ -112,32 +107,32 @@ class _ASGradientButtonState extends State<ASGradientButton> {
     return AnimatedContainer(
       curve: Curves.easeInOutCirc,
       duration: Duration(milliseconds: 300),
-      width: widget.width ?? 110.w,
+      width: width ?? 110.w,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: widget.begin ?? Alignment.topCenter,
-          end: widget.end ?? Alignment.bottomCenter,
-          colors: colors ??
+          begin: begin ?? Alignment.topCenter,
+          end: end ?? Alignment.bottomCenter,
+          colors: _colors ??
               [
                 kDarkPrimaryColor.withOpacity(isNullFunc ? 0.5 : 1),
                 kLightPrimaryColor.withOpacity(isNullFunc ? 0.5 : 1),
               ],
         ),
-        borderRadius: BorderRadius.circular(widget.radius ?? 20.w),
+        borderRadius: BorderRadius.circular(radius ?? 20.w),
       ),
       child: MaterialButton(
-        disabledColor: widget.disableColor,
-        textColor: widget.textColor ?? Color(0xD9FFFFFF),
-        disabledTextColor: widget.disableTextColor,
+        disabledColor: disableColor,
+        textColor: textColor ?? Color(0xD9FFFFFF),
+        disabledTextColor: disableTextColor,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        onPressed: widget.onPressed,
-        child: widget.title is String
-            ? Text(widget.title,
-                style: widget.textStyle ?? TextStyle(fontSize: 18.sp))
-            : widget.title,
-        padding: widget.padding ?? EdgeInsets.symmetric(vertical: 10.w),
+        onPressed: onPressed,
+        child: title is String
+            ? Text(title,
+                style: textStyle ?? TextStyle(fontSize: 18.sp))
+            : title,
+        padding: padding ?? EdgeInsets.symmetric(vertical: 10.w),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(widget.radius ?? 20.w)),
+            borderRadius: BorderRadius.circular(radius ?? 20.w)),
         elevation: 0,
       ),
     );
