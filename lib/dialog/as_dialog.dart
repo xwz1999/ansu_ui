@@ -5,7 +5,7 @@ import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 import 'package:ansu_ui/extension/list_extension.dart';
 
-class ASDialog extends StatefulWidget {
+class ASDialog extends StatelessWidget {
   final bool close;
 
   ///按钮组
@@ -30,21 +30,16 @@ class ASDialog extends StatefulWidget {
     this.childPadding,
   }) : super(key: key);
 
-  @override
-  _ASDialogState createState() => _ASDialogState();
-}
-
-class _ASDialogState extends State<ASDialog> {
-  double get _widgetSpacer => widget.spacer ?? 20.w;
+  double get _widgetSpacer => spacer ?? 20.w;
   EdgeInsets get _widgetPadding =>
-      widget.padding ??
+      padding ??
       EdgeInsets.only(
         top: 13.w,
         bottom: 20.w,
       );
 
   EdgeInsets get _childPadding =>
-      widget.childPadding ??
+      childPadding ??
       EdgeInsets.only(
         top: 40.w,
         bottom: 50.w,
@@ -75,16 +70,16 @@ class _ASDialogState extends State<ASDialog> {
                         ),
                         child: Padding(
                           padding: _childPadding,
-                          child: widget.child,
+                          child: child,
                         ),
                       ),
                     ),
-                    ...widget.items
+                    ...items
                         .sepWidget(separate: SizedBox(height: _widgetSpacer)),
                   ],
                 ),
               ),
-              widget.close
+              close
                   ? Positioned(
                       right: 0,
                       top: 0,

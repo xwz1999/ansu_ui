@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 
-class ASListTile extends StatefulWidget {
+class ASListTile extends StatelessWidget {
   ///主标题
   final String title;
 
@@ -33,27 +33,23 @@ class ASListTile extends StatefulWidget {
   })  : height = 32.w,
         crossAxisAlignment = CrossAxisAlignment.center,
         super(key: key);
-  @override
-  _ASListTileState createState() => _ASListTileState();
-}
 
-class _ASListTileState extends State<ASListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: widget.height == null
+      margin: height == null
           ? EdgeInsets.symmetric(vertical: 8.w, horizontal: 10.w)
           : EdgeInsets.symmetric(horizontal: 10.w),
-      height: widget.height,
+      height: height,
       alignment: Alignment.centerLeft,
       child: Row(
         crossAxisAlignment:
-            widget.crossAxisAlignment ?? CrossAxisAlignment.start,
+            crossAxisAlignment ?? CrossAxisAlignment.start,
         children: [
           Container(
             width: 85.w,
             child: Text(
-              widget.title,
+              title,
               maxLines: 1,
               overflow: TextOverflow.visible,
               softWrap: false,
@@ -61,17 +57,17 @@ class _ASListTileState extends State<ASListTile> {
             ),
           ),
           Expanded(
-            child: widget.text == null
+            child: text == null
                 ? Text('')
-                : widget.text is String
+                : text is String
                     ? Text(
-                        widget.text,
+                        text,
                         maxLines: 2,
                         style: TextStyle(color: kTextSubColor, fontSize: 14.sp),
                       )
-                    : widget.text,
+                    : text,
           ),
-          widget.trail ?? SizedBox()
+          trail ?? SizedBox()
         ],
       ),
     );

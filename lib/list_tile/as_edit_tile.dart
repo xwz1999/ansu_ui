@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 
-class ASEditTile extends StatefulWidget {
+class ASEditTile extends StatelessWidget {
   final Widget title;
   final FocusNode node;
   final String hintText;
@@ -16,18 +16,13 @@ class ASEditTile extends StatefulWidget {
     this.controller,
   }) : super(key: key);
 
-  @override
-  _ASEditTileState createState() => _ASEditTileState();
-}
-
-class _ASEditTileState extends State<ASEditTile> {
   FocusNode _node;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (widget.node != null) {
-          widget.node?.requestFocus();
+        if (node != null) {
+          node?.requestFocus();
         } else {
           _node?.requestFocus();
         }
@@ -43,13 +38,13 @@ class _ASEditTileState extends State<ASEditTile> {
                   color: Colors.black.withOpacity(0.65),
                   fontSize: 14.sp,
                 ),
-                child: widget.title ?? Text(''),
+                child: title ?? Text(''),
               ),
             ),
             Expanded(
               child: TextField(
-                focusNode: widget.node ?? _node,
-                controller: widget.controller,
+                focusNode: node ?? _node,
+                controller: controller,
                 textAlign: TextAlign.end,
                 style: TextStyle(
                   fontSize: 14.sp,
@@ -60,7 +55,7 @@ class _ASEditTileState extends State<ASEditTile> {
                   border: InputBorder.none,
                   isDense: true,
                   contentPadding: EdgeInsets.zero,
-                  hintText: widget.hintText,
+                  hintText: hintText,
                   hintStyle: TextStyle(
                     color: kTextSubColor,
                     fontSize: 14.sp,

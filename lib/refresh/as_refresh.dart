@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 
-class ASRefresh extends StatefulWidget {
+class ASRefresh extends StatelessWidget {
   final Widget child;
   final Future Function() onLoad;
   final Future Function() onRefresh;
@@ -24,21 +24,16 @@ class ASRefresh extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ASRefreshState createState() => _ASRefreshState();
-}
-
-class _ASRefreshState extends State<ASRefresh> {
-  @override
   Widget build(BuildContext context) {
     return EasyRefresh(
-      scrollController: widget.scrollController,
-      child: widget.child,
-      onRefresh: widget.onRefresh,
-      onLoad: widget.onLoad,
-      controller: widget.controller,
-      firstRefresh: widget.firstRefresh,
-      emptyWidget: widget.emptyWidget,
-      firstRefreshWidget: widget.firstRefreshWidget,
+      scrollController: scrollController,
+      child: child,
+      onRefresh: onRefresh,
+      onLoad: onLoad,
+      controller: controller,
+      firstRefresh: firstRefresh,
+      emptyWidget: emptyWidget,
+      firstRefreshWidget: firstRefreshWidget,
       header: MaterialHeader(
         valueColor: AlwaysStoppedAnimation(kPrimaryColor),
       ),

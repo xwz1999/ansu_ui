@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 
-class ASLongButton extends StatefulWidget {
+class ASLongButton extends StatelessWidget {
   ///按钮文字
   ///动态类型，可以是string或者widget
   final dynamic title;
@@ -87,35 +87,30 @@ class ASLongButton extends StatefulWidget {
         outline = true,
         outlineColor = kDarkPrimaryColor,
         super(key: key);
-  @override
-  _ASLongButtonState createState() => _ASLongButtonState();
-}
 
-
-class _ASLongButtonState extends State<ASLongButton> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: widget.width ?? 280.w,
-      disabledColor: widget.disableColor,
-      textColor: widget.textColor ?? kLightTextColor,
-      disabledTextColor: widget.disableTextColor,
+      minWidth: width ?? 280.w,
+      disabledColor: disableColor,
+      textColor: textColor ?? kLightTextColor,
+      disabledTextColor: disableTextColor,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      onPressed: widget.onPressed,
-      child: widget.title is String
-          ? Text(widget.title,
-              style: widget.textStyle ?? TextStyle(fontSize: 20.sp))
-          : widget.title,
-      padding: widget.padding ?? EdgeInsets.symmetric(vertical: 8.w),
+      onPressed: onPressed,
+      child: title is String
+          ? Text(title,
+              style: textStyle ?? TextStyle(fontSize: 20.sp))
+          : title,
+      padding: padding ?? EdgeInsets.symmetric(vertical: 8.w),
       shape: RoundedRectangleBorder(
-          side: widget.outline
-              ? BorderSide(color: widget.outlineColor, width: 1.w)
+          side: outline
+              ? BorderSide(color: outlineColor, width: 1.w)
               : BorderSide.none,
-          borderRadius: BorderRadius.circular(widget.radius ?? 22.5.w)),
-      color: widget.bgColor ?? kForegroundColor,
+          borderRadius: BorderRadius.circular(radius ?? 22.5.w)),
+      color: bgColor ?? kForegroundColor,
       elevation: 0,
       highlightElevation: 0,
-      splashColor: ColorTool.getSplashColor(widget.bgColor),
+      splashColor: ColorTool.getSplashColor(bgColor),
     );
   }
 }

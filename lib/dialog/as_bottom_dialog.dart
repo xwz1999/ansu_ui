@@ -10,16 +10,11 @@ import 'package:velocity_x/velocity_x.dart';
 ///`items`
 ///
 ///with auto cancel
-class ASBottomDialog extends StatefulWidget {
+class ASBottomDialog extends StatelessWidget {
   final List<Widget> items;
   ASBottomDialog({Key key, @required this.items}) : super(key: key);
 
-  @override
-  _ASBottomDialogState createState() => _ASBottomDialogState();
-}
-
-class _ASBottomDialogState extends State<ASBottomDialog> {
-  _buildCancel() {
+  _buildCancel(BuildContext context) {
     return ASMaterialButton(
       color: kForegroundColor,
       onPressed: () {
@@ -37,9 +32,9 @@ class _ASBottomDialogState extends State<ASBottomDialog> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          ...widget.items.sepWidget(separate: ASDivider()),
+          ...items.sepWidget(separate: ASDivider()),
           10.hb,
-          _buildCancel(),
+          _buildCancel(context),
         ],
       ),
     );
