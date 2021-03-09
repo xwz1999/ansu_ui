@@ -12,8 +12,7 @@ dependencies:
     sdk: flutter
   flutter_screenutil: ^5.0.0-nullsafety.7
   flutter_easyrefresh: ^2.1.8
-  lpinyin: 
-    git: https://github.com/flutterchina/lpinyin
+  lpinyin: ^2.0.1
   image_picker: ^0.7.2
   bot_toast: ^4.0.0+1
   velocity_x:

@@ -156,12 +156,10 @@ packages:
   lpinyin:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: d39049042658dffcf9f6bd936cd52c1919a90b1a
-      url: "https://github.com/flutterchina/lpinyin"
-    source: git
-    version: "2.0.0"
+      name: lpinyin
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.1"
   matcher:
     dependency: transitive
     description:
