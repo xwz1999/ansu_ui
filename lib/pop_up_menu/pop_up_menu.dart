@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 /// ## 弹框菜单
 ///```dart
-/// showASPopUpMenu<int>(
+/// int result = await showASPopUpMenu<int>(
 ///   context: context,
 ///   items: [
-///     PopupMenuItem(child: 'test'.text, value: 1),
+///     PopupMenuItem(child: Text('test'), value: 1),
 ///   ],
-/// ).then((value) {});
+/// );
 /// ```
 Future<T> showASPopUpMenu<T>({
   @required BuildContext context,
