@@ -13,6 +13,7 @@ import 'package:example/widgets/example_style_color.dart';
 import 'package:example/widgets/example_tab_bar.dart';
 import 'package:example/widgets/example_tag.dart';
 import 'package:example/widgets/example_text_field.dart';
+import 'package:example/widgets/example_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -103,6 +104,10 @@ class _MainHomeState extends State<MainHome> {
         _innerButton(
           title: 'Pop Up Menu',
           onPressed: () => Get.to(ExamplePopUpMenu()),
+        ),
+        _innerButton(
+          title: 'Toast',
+          onPressed: () => Get.to(ExampleToast()),
         ),
       ],
     );
