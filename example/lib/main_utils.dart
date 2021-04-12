@@ -1,4 +1,3 @@
-import 'package:example/extension/example_num_ext.dart';
 import 'package:example/util_view/example_camera_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

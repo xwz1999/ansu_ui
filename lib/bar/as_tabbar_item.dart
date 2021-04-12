@@ -1,6 +1,6 @@
 class ASTabBarItem {
-  String title;
-  String tag;
+  String? title;
+  String? tag;
   ASTabBarItem({
     this.title,
     this.tag,

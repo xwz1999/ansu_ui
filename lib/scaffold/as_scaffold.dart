@@ -19,33 +19,33 @@ class ASScaffold extends StatelessWidget {
   final dynamic title;
 
   /// `Scaffold` body
-  final Widget body;
+  final Widget? body;
 
   /// `Scaffold` leading
-  final Widget leading;
+  final Widget? leading;
 
   /// `Scaffold` actions
-  final List<Widget> actions;
+  final List<Widget>? actions;
 
   /// `Scaffold` bottomNavigationBar
-  final Widget bottomNavigationBar;
+  final Widget? bottomNavigationBar;
 
   /// `AppBar` appBarBottom
-  final PreferredSizeWidget appBarBottom;
+  final PreferredSizeWidget? appBarBottom;
 
   /// `EndDrawer` endDrawer
   ///
   /// 右方向的抽屉
-  final Widget endDrawer;
+  final Widget? endDrawer;
 
   /// `AppBar` appBar
-  final Widget appBar;
+  final Widget? appBar;
 
   ///背景色
   final Color backgroundColor;
-  final Widget floatingActionButton;
+  final Widget? floatingActionButton;
   ASScaffold({
-    Key key,
+    Key? key,
     this.title,
     this.leading,
     this.body,
@@ -63,7 +63,7 @@ class ASScaffold extends StatelessWidget {
     return title ?? SizedBox();
   }
 
-  Widget get _appBar {
+  Widget? get _appBar {
     if (title == null && appBar == null && appBarBottom == null) return null;
     return appBar ??
         AppBar(
@@ -97,7 +97,7 @@ class ASScaffold extends StatelessWidget {
       backgroundColor: backgroundColor,
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton: floatingActionButton,
-      appBar: _appBar,
+      appBar: _appBar as PreferredSizeWidget?,
       body: body,
     );
   }

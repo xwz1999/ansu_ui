@@ -12,9 +12,9 @@ import 'package:velocity_x/velocity_x.dart';
 /// [controller] see more TabController
 class ASTabBar extends StatelessWidget implements PreferredSizeWidget {
   ///items
-  final List<String> items;
+  final List<String>? items;
 
-  final List<ASTabBarItem> tabItems;
+  final List<ASTabBarItem>? tabItems;
 
   /// TabController
   final TabController controller;
@@ -22,9 +22,9 @@ class ASTabBar extends StatelessWidget implements PreferredSizeWidget {
   ///可滚动
   final bool isScrollable;
   ASTabBar(
-      {Key key,
-      @required this.items,
-      @required this.controller,
+      {Key? key,
+      required this.items,
+      required this.controller,
       this.isScrollable = false})
       : tabItems = null,
         super(key: key);
@@ -42,9 +42,9 @@ class ASTabBar extends StatelessWidget implements PreferredSizeWidget {
   ///```
   ///
   ASTabBar.tag(
-      {Key key,
-      @required this.tabItems,
-      @required this.controller,
+      {Key? key,
+      required this.tabItems,
+      required this.controller,
       this.isScrollable = false})
       : items = null,
         super(key: key);
@@ -58,15 +58,15 @@ class ASTabBar extends StatelessWidget implements PreferredSizeWidget {
         isScrollable: isScrollable,
         controller: controller,
         tabs: isTag
-            ? tabItems.map((e) {
+            ? tabItems!.map((e) {
                 return Tab(
                   child: ASBadge(
-                    child: e.title.text.make(),
+                    child: e.title!.text.make(),
                     tag: e.tag,
                   ),
                 );
               }).toList()
-            : items
+            : items!
                 .map((e) => Tab(
                       child: e.text.make(),
                     ))

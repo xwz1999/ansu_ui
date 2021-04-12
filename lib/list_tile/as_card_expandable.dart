@@ -18,8 +18,8 @@ class ASCardExpandable extends StatefulWidget {
   ///自定义children和extra的排序，extra不自动排列在children后面。
   final bool custom;
   ASCardExpandable({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.children = const [],
     this.extra = const [],
     this.mid = const [],
@@ -28,8 +28,8 @@ class ASCardExpandable extends StatefulWidget {
 
   ///自定义children和extra的排序，extra不自动排列在children后面。
   ASCardExpandable.custom({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.children = const [],
     this.extra = const [],
     this.mid = const [],
@@ -40,7 +40,7 @@ class ASCardExpandable extends StatefulWidget {
   _ASCardExpandableState createState() => _ASCardExpandableState();
 
   static Widget tile(
-      {@required String title, @required Widget child, Widget suffix}) {
+      {required String title, required Widget child, Widget? suffix}) {
     return Row(
       textBaseline: TextBaseline.alphabetic,
       children: [
@@ -109,14 +109,14 @@ class _ASCardExpandableState extends State<ASCardExpandable> {
           children: [
             SizedBox(),
             ...widget.children,
-          ].sepWidget(separate: ASDivider(indent: 10.w, endIndent: 10.w)),
+          ].sepWidget(separate: ASDivider(indent: 10.w, endIndent: 10.w))!,
         ),
         expanded: Column(
           children: [
             SizedBox(),
             ...(widget.custom ? <Widget>[] : widget.children),
             ...widget.extra,
-          ].sepWidget(separate: ASDivider(indent: 10.w, endIndent: 10.w)),
+          ].sepWidget(separate: ASDivider(indent: 10.w, endIndent: 10.w))!,
         ),
       ),
     );

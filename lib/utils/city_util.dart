@@ -10,16 +10,16 @@ class CityUtil {
         .toList();
   }
 
-  static List<CityModel> getCityModelByCode(String code) {
-    Map<String, dynamic> temp = citiesData[code];
-    if (temp?.entries?.isEmpty ?? true)
+  static List<CityModel> getCityModelByCode(String? code) {
+    Map<String, dynamic>? temp = citiesData[code!];
+    if (temp?.entries.isEmpty ?? true)
       return [
         CityModel(
           code: code,
           name: provincesData[code] ?? citiesData[code] ?? '',
         )
       ];
-    return temp.entries
+    return temp!.entries
         .map((e) => CityModel(
               code: e.key,
               name: e.value['name'],
@@ -29,8 +29,8 @@ class CityUtil {
 }
 
 class ProvinceModel {
-  String code;
-  String name;
+  String? code;
+  String? name;
   ProvinceModel({
     this.code,
     this.name,
@@ -38,8 +38,8 @@ class ProvinceModel {
 }
 
 class CityModel {
-  String code;
-  String name;
+  String? code;
+  String? name;
   CityModel({
     this.code,
     this.name,

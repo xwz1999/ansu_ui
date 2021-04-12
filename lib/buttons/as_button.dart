@@ -5,46 +5,46 @@ import 'package:ansu_ui/styles/as_colors.dart';
 ///安速按钮
 class ASButton extends StatelessWidget {
   ///按钮颜色
-  final Color bgcolor;
+  final Color? bgcolor;
 
   ///按钮文字
   ///动态类型，可以是string或者widget
   final dynamic title;
 
   ///按钮圆角
-  final double radius;
+  final double? radius;
 
   ///按钮边框
   final bool outline;
 
   ///按钮边框颜色
-  final Color outlineColor;
+  final Color? outlineColor;
 
   ///按钮文字颜色
   ///若已定义文字风格则此属性不生效
-  final Color textColor;
+  final Color? textColor;
 
   ///按钮文字格式
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   ///内边距
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
 
   ///点击事件
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   ///宽度
-  final double width;
+  final double? width;
 
   ///不可点击颜色
-  final Color disableColor;
+  final Color? disableColor;
 
   ///不可点击时文字颜色
-  final Color disableTextColor;
+  final Color? disableTextColor;
 
-  final Color splashColor;
+  final Color? splashColor;
   ASButton({
-    Key key,
+    Key? key,
     this.bgcolor,
     this.radius,
     this.outline = false,
@@ -52,7 +52,7 @@ class ASButton extends StatelessWidget {
     this.textColor,
     this.textStyle,
     this.padding,
-    @required this.title,
+    required this.title,
     this.onPressed,
     this.width,
     this.disableColor,
@@ -61,13 +61,13 @@ class ASButton extends StatelessWidget {
   }) : super(key: key);
 
   ASButton.danger({
-    Key key,
+    Key? key,
     this.textStyle,
     this.padding,
     this.radius,
     this.bgcolor,
     this.onPressed,
-    @required this.title,
+    required this.title,
     this.width,
     this.disableColor,
     this.disableTextColor,
@@ -78,12 +78,12 @@ class ASButton extends StatelessWidget {
         super(key: key);
 
   ASButton.info(
-      {Key key,
+      {Key? key,
       this.bgcolor,
       this.radius,
       this.textStyle,
       this.padding,
-      @required this.title,
+      required this.title,
       this.onPressed,
       this.width,
       this.disableColor,
@@ -95,12 +95,12 @@ class ASButton extends StatelessWidget {
         super(key: key);
 
   ASButton.warn({
-    Key key,
+    Key? key,
     this.radius,
     this.outlineColor,
     this.textStyle,
     this.padding,
-    @required this.title,
+    required this.title,
     this.onPressed,
     this.width,
     this.disableColor,
@@ -111,12 +111,12 @@ class ASButton extends StatelessWidget {
         this.splashColor = ColorTool.getSplashColor(kPrimaryColor),
         super(key: key);
   ASButton.operation(
-      {Key key,
+      {Key? key,
       this.radius,
       this.outlineColor,
       this.textStyle,
       this.padding,
-      @required this.title,
+      required this.title,
       this.onPressed,
       this.width,
       this.disableColor,
@@ -127,8 +127,8 @@ class ASButton extends StatelessWidget {
         outline = false,
         super(key: key);
   ASButton.order({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.onPressed,
     this.outlineColor,
     this.width,
@@ -159,12 +159,12 @@ class ASButton extends StatelessWidget {
       shape: radius == null
           ? StadiumBorder(
               side: outline
-                  ? BorderSide(color: outlineColor, width: 0.5.w)
+                  ? BorderSide(color: outlineColor!, width: 0.5.w)
                   : BorderSide.none,
             )
           : RoundedRectangleBorder(
               side: outline
-                  ? BorderSide(color: outlineColor, width: 0.5.w)
+                  ? BorderSide(color: outlineColor!, width: 0.5.w)
                   : BorderSide.none,
               borderRadius: BorderRadius.circular(radius ?? 15.5.w)),
       color: bgcolor ?? kForegroundColor,

@@ -7,8 +7,8 @@ import 'package:ansu_ui/extension/text_style_extension.dart';
 ///ASBottomDialog item
 class ASBottomDialogItem extends StatelessWidget {
   final Widget title;
-  final VoidCallback onPressed;
-  const ASBottomDialogItem({Key key, @required this.title, this.onPressed})
+  final VoidCallback? onPressed;
+  const ASBottomDialogItem({Key? key, required this.title, this.onPressed})
       : super(key: key);
 
   @override
@@ -18,7 +18,7 @@ class ASBottomDialogItem extends StatelessWidget {
       color: kForegroundColor,
       onPressed: () {
         Navigator.pop(context);
-        onPressed();
+        onPressed!();
       },
       child: DefaultTextStyle(
         style: TextStyle().black.bold.size(18),

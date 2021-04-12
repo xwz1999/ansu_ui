@@ -5,36 +5,36 @@ import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASTag extends StatelessWidget {
   ///宽度
-  final double width;
+  final double? width;
 
   ///高度
-  final double height;
+  final double? height;
 
   ///背景色
-  final Color bgColor;
+  final Color? bgColor;
 
   ///标签内容
-  final String text;
+  final String? text;
 
   ///标签文字颜色
-  final Color textColor;
+  final Color? textColor;
 
   ///标签文字风格
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   ///是否有边框
   final bool outline;
 
   ///边框颜色
-  final Color outlineColor;
+  final Color? outlineColor;
 
   ///圆角
-  final double radius;
+  final double? radius;
 
   ///内边距
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry? padding;
   ASTag(
-      {Key key,
+      {Key? key,
       this.width,
       this.height,
       this.bgColor,
@@ -48,7 +48,7 @@ class ASTag extends StatelessWidget {
       : super(key: key);
 
   ASTag.yellowSolid(this.text,
-      {Key key,
+      {Key? key,
       this.width,
       this.height,
       this.textStyle,
@@ -62,7 +62,7 @@ class ASTag extends StatelessWidget {
 
   ASTag.redHollow(
     this.text, {
-    Key key,
+    Key? key,
     this.width,
     this.height,
     this.textStyle,
@@ -75,7 +75,7 @@ class ASTag extends StatelessWidget {
         super(key: key);
 
   ASTag.yellowHollow(this.text,
-      {Key key,
+      {Key? key,
       this.width,
       this.height,
       this.textStyle,
@@ -88,7 +88,7 @@ class ASTag extends StatelessWidget {
         super(key: key);
 
   ASTag.yellowHollowS(this.text,
-      {Key key,
+      {Key? key,
       this.width,
       this.height,
       this.textStyle,
@@ -99,7 +99,7 @@ class ASTag extends StatelessWidget {
         outline = true,
         outlineColor = kDarkPrimaryColor,
         super(key: key);
-  ASTag.transport(this.text, {Key key, this.textStyle, this.padding})
+  ASTag.transport(this.text, {Key? key, this.textStyle, this.padding})
       : bgColor = kForegroundColor,
         textColor = Color(0xFF00B0FF),
         outline = true,
@@ -131,7 +131,7 @@ class ASTag extends StatelessWidget {
       ),
       alignment: Alignment.center,
       child: Text(
-        text,
+        text!,
         style: textStyle ??
             TextStyle(
               color: textColor,

@@ -4,14 +4,14 @@ import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASListTileX extends StatelessWidget {
   final Widget title;
-  final Widget suffix;
-  final double height;
-  final List<Widget> prefixes;
-  final Widget child;
-  final List<Widget> suffixes;
+  final Widget? suffix;
+  final double? height;
+  final List<Widget>? prefixes;
+  final Widget? child;
+  final List<Widget>? suffixes;
   const ASListTileX({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.suffix,
     this.height,
     this.prefixes,

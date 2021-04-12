@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 
 class PhotoViewer extends StatefulWidget {
-  final File file;
-  final String tag;
-  PhotoViewer({Key key, this.file, this.tag}) : super(key: key);
+  final File? file;
+  final String? tag;
+  PhotoViewer({Key? key, this.file, this.tag}) : super(key: key);
 
   @override
   _PhotoViewerState createState() => _PhotoViewerState();
@@ -23,8 +23,8 @@ class _PhotoViewerState extends State<PhotoViewer> {
           child: InteractiveViewer(
             boundaryMargin: 100.edge,
             child: Hero(
-              tag: widget.tag,
-              child: Image.file(widget.file),
+              tag: widget.tag!,
+              child: Image.file(widget.file!),
             ),
           ),
         ),
@@ -33,7 +33,7 @@ class _PhotoViewerState extends State<PhotoViewer> {
   }
 }
 
-toPhotoViewer(BuildContext context, {String tag, File file}) {
+toPhotoViewer(BuildContext context, {String? tag, File? file}) {
   Navigator.push(
     context,
     PageRouteBuilder(

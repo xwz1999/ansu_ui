@@ -4,16 +4,16 @@ import 'package:ansu_ui/styles/as_colors.dart';
 
 class ASRefresh extends StatelessWidget {
   final Widget child;
-  final Future Function() onLoad;
-  final Future Function() onRefresh;
-  final EasyRefreshController controller;
+  final Future Function()? onLoad;
+  final Future Function()? onRefresh;
+  final EasyRefreshController? controller;
   final bool firstRefresh;
-  final Widget emptyWidget;
-  final Widget firstRefreshWidget;
-  final ScrollController scrollController;
+  final Widget? emptyWidget;
+  final Widget? firstRefreshWidget;
+  final ScrollController? scrollController;
   ASRefresh({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.onLoad,
     this.onRefresh,
     this.controller,

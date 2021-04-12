@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASOptionTileItem extends StatelessWidget {
-  final Widget leading;
-  final Widget title;
+  final Widget? leading;
+  final Widget? title;
   final onPressed;
   const ASOptionTileItem({
-    Key key,
+    Key? key,
     this.leading,
     this.title,
     this.onPressed,
@@ -32,7 +32,7 @@ class ASOptionTileItem extends StatelessWidget {
                   color: Colors.black.withOpacity(0.65),
                   fontSize: 14.sp,
                 ),
-                child: title,
+                child: title!,
               ),
             ),
             14.wb,

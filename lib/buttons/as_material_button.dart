@@ -14,30 +14,30 @@ import 'package:ansu_ui/extension/num_extension.dart';
 ///
 ///padding = 0.edge
 class ASMaterialButton extends StatelessWidget {
-  final VoidCallback onPressed;
-  final double height;
-  final Widget icon;
-  final double radius;
+  final VoidCallback? onPressed;
+  final double? height;
+  final Widget? icon;
+  final double? radius;
   final Widget child;
-  final EdgeInsets padding;
-  final Color color;
+  final EdgeInsets? padding;
+  final Color? color;
 
   const ASMaterialButton({
-    Key key,
+    Key? key,
     this.onPressed,
     this.height,
     this.icon,
-    @required this.child,
+    required this.child,
     this.radius,
     this.padding,
     this.color,
   }) : super(key: key);
 
   ASMaterialButton.dropdown({
-    Key key,
+    Key? key,
     this.onPressed,
     this.height,
-    @required this.child,
+    required this.child,
     this.radius,
     this.padding,
     this.color,
@@ -63,7 +63,7 @@ class ASMaterialButton extends StatelessWidget {
               children: [
                 child,
                 4.wb,
-                icon,
+                icon!,
               ],
             ),
       shape: RoundedRectangleBorder(

@@ -9,9 +9,9 @@ import 'package:ansu_ui/styles/as_colors.dart';
 ///ASBackButton.white 白色返回按钮
 class ASBackButton extends StatelessWidget {
   final Color color;
-  const ASBackButton({Key key, this.color = kDarkColor}) : super(key: key);
+  const ASBackButton({Key? key, this.color = kDarkColor}) : super(key: key);
 
-  const ASBackButton.white({Key key})
+  const ASBackButton.white({Key? key})
       : color = kForegroundColor,
         super(key: key);
 

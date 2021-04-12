@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 ///pass a value through navigator.
 ///
 ///example `Navigator.pop(context,true)` or `Get.back(result:true)`
-Future<T> showASDrawer<T>(Widget drawer) async {
+Future<T?> showASDrawer<T>(Widget drawer) async {
   return await Get.generalDialog(
     pageBuilder: (context, animation, secondAnimation) {
       return drawer;
@@ -39,7 +39,7 @@ class ASDrawer extends StatelessWidget {
   ///子组件List Children
   ///
   ///内部为ListView实现
-  final List<Widget> children;
+  final List<Widget>? children;
 
   ///Padding
   ///
@@ -54,18 +54,18 @@ class ASDrawer extends StatelessWidget {
   ///left: 26.w,
   ///right: 26.w,
   ///```
-  final Widget bottom;
+  final Widget? bottom;
 
   ///子组件
   ///
   ///使用该选项，`bottom`、`padding`、`children`将失效
-  final Widget child;
+  final Widget? child;
 
   ///默认抽屉
   ///
   ///默认Padding `EdgeInsets.fromLTRB(26.w, 24.w, 26.w, 90.w)`
   ASDrawer({
-    Key key,
+    Key? key,
     this.children,
     this.bottom,
     this.child,
@@ -76,7 +76,7 @@ class ASDrawer extends StatelessWidget {
 
   ///自定义Padding
   ASDrawer.padding({
-    Key key,
+    Key? key,
     this.padding = EdgeInsets.zero,
     this.children,
     this.child,
@@ -100,7 +100,7 @@ class ASDrawer extends StatelessWidget {
                   children: [
                     ListView(
                       padding: padding,
-                      children: children,
+                      children: children!,
                     ),
                     Positioned(
                       child: bottom ?? SizedBox(),

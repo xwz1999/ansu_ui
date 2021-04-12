@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ///`items` better with ASBottomDialogItem
 showASBottomDialog(
   BuildContext context, {
-  List<Widget> items,
+  List<Widget>? items,
 }) async {
   return await showModalBottomSheet(
     context: context,

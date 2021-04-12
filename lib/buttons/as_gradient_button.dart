@@ -9,40 +9,40 @@ class ASGradientButton extends StatelessWidget {
 
   ///按钮文字颜色
   ///若已定义文字风格则此属性不生效
-  final Color textColor;
+  final Color? textColor;
 
   ///圆角
-  final double radius;
+  final double? radius;
 
   ///按钮文字风格
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   ///内边距
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry? padding;
 
   ///点击事件
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   ///渐变颜色
-  final List<Color> colors;
+  final List<Color>? colors;
 
   ///开始位置
-  final AlignmentGeometry begin;
+  final AlignmentGeometry? begin;
 
   ///结束位置
-  final AlignmentGeometry end;
+  final AlignmentGeometry? end;
 
   ///宽度
-  final double width;
+  final double? width;
 
   ///不可点击颜色
-  final Color disableColor;
+  final Color? disableColor;
 
   ///不可点击文字颜色
-  final Color disableTextColor;
+  final Color? disableTextColor;
   ASGradientButton(
-      {Key key,
-      @required this.title,
+      {Key? key,
+      required this.title,
       this.textColor,
       this.radius,
       this.textStyle,
@@ -56,8 +56,8 @@ class ASGradientButton extends StatelessWidget {
       this.disableTextColor})
       : super(key: key);
   ASGradientButton.pay({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.textStyle,
     this.onPressed,
     this.disableColor,
@@ -72,8 +72,8 @@ class ASGradientButton extends StatelessWidget {
         super(key: key);
 
   ASGradientButton.operation(
-      {Key key,
-      @required this.title,
+      {Key? key,
+      required this.title,
       this.textColor,
       this.onPressed,
       this.disableColor,
@@ -91,13 +91,13 @@ class ASGradientButton extends StatelessWidget {
         super(key: key);
 
   bool get isNullFunc => onPressed == null;
-  List<Color> get _colors {
+  List<Color>? get _colors {
     if (colors == null)
       return null;
     else {
       return List.generate(
-        colors.length,
-        (index) => colors[index].withOpacity(isNullFunc ? 0.5 : 1),
+        colors!.length,
+        (index) => colors![index].withOpacity(isNullFunc ? 0.5 : 1),
       );
     }
   }

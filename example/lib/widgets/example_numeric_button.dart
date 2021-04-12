@@ -13,7 +13,7 @@ class ExampleNumericButton extends StatefulWidget {
 
 class _ExampleNumericButtonState extends State<ExampleNumericButton> {
   _showSnack(BuildContext context, String title) {
-    Scaffold.of(context).showSnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(title)),
     );
   }

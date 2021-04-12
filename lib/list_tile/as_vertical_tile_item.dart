@@ -9,12 +9,12 @@ class ASVerticalTileItem extends StatelessWidget {
   final Widget title;
 
   ///child
-  final Widget child;
+  final Widget? child;
 
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
   ASVerticalTileItem({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.child,
     this.padding,
   }) : super(key: key);
@@ -43,7 +43,7 @@ class ASVerticalTileItem extends StatelessWidget {
           ),
           13.hb,
           ASDivider(),
-          child,
+          child!,
         ],
       ),
     );

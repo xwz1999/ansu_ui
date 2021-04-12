@@ -7,19 +7,19 @@ import 'package:ansu_ui/dialog/as_dialog_button.dart';
 
 class ASDeleteDialog extends StatelessWidget {
   ///标题
-  final String title;
+  final String? title;
 
   /// 内容,字符串或widget
   final dynamic body;
 
   ///删除按钮
-  final Widget button;
+  final Widget? button;
 
   ///点击回调
-  final VoidCallback onpressed;
+  final VoidCallback? onpressed;
 
   const ASDeleteDialog(
-      {Key key, this.title, this.body, this.button, this.onpressed})
+      {Key? key, this.title, this.body, this.button, this.onpressed})
       : super(key: key);
 
   @override
@@ -61,7 +61,7 @@ class ASDeleteDialog extends StatelessWidget {
                             : Container(
                                 margin: EdgeInsets.only(bottom: 15.w),
                                 child: Text(
-                                  this.title,
+                                  this.title!,
                                   style: TextStyle(
                                       color: kTextColor,
                                       fontSize: 18.sp,

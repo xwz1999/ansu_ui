@@ -4,22 +4,22 @@ import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/divider/as_divider.dart';
 
 class ASPickerBox extends StatelessWidget {
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final String confirmString;
-  final String title;
+  final String? title;
   final Widget child;
 
   const ASPickerBox(
-      {Key key,
+      {Key? key,
       this.onPressed,
       this.confirmString = '完成',
       this.title,
-      @required this.child})
+      required this.child})
       : super(key: key);
 
   _buildButton({
-    @required String title,
-    @required VoidCallback onPressed,
+    required String title,
+    required VoidCallback? onPressed,
   }) {
     return TextButton(
       style: ButtonStyle(

@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:ansu_ui/utils/camera_view.dart';
 
 ///获取相机文件
-Future<File> camFile({double maxHeight = 3000, double maxWidth = 3000}) async {
+Future<File?> camFile({double maxHeight = 3000, double maxWidth = 3000}) async {
   var pickedFile = await ImagePicker().getImage(
     source: ImageSource.camera,
     maxHeight: maxHeight,
@@ -15,13 +15,13 @@ Future<File> camFile({double maxHeight = 3000, double maxWidth = 3000}) async {
   return File(pickedFile.path);
 }
 
-Future<File> camView(
+Future<File?> camView(
   BuildContext context, {
   double maxHeight = 3000,
   double maxWidth = 3000,
-  @required String title,
+  required String title,
 }) async {
-  File file = await camFile(maxHeight: maxHeight, maxWidth: maxWidth);
+  File? file = await camFile(maxHeight: maxHeight, maxWidth: maxWidth);
   if (file == null) return null;
   return await Navigator.push(context, PageRouteBuilder(
     pageBuilder: (context, animation, secondAnimation) {

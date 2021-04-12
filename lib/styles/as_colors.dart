@@ -37,7 +37,7 @@ const Color kLightTextColor = Color(0xD9FFFFFF);
 const Color kSecondaryColor = Color(0xFFE50112);
 
 class ColorTool {
-  static Color getSplashColor(Color color) {
+  static Color getSplashColor(Color? color) {
     if (color == null) return Colors.transparent;
     int r = color.red;
     int g = color.green;

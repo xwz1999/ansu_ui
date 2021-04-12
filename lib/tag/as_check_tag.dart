@@ -7,9 +7,9 @@ class ASCheckTag extends StatelessWidget {
   final bool checked;
   final Widget text;
   const ASCheckTag({
-    Key key,
+    Key? key,
     this.checked = false,
-    @required this.text,
+    required this.text,
   }) : super(key: key);
 
   @override

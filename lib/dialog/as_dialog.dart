@@ -2,31 +2,30 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:ansu_ui/extension/num_extension.dart';
 import 'package:ansu_ui/extension/list_extension.dart';
 
 class ASDialog extends StatelessWidget {
   final bool close;
 
   ///按钮组
-  final List<Widget> items;
+  final List<Widget>? items;
 
   ///按钮与按钮之间的间距
-  final double spacer;
+  final double? spacer;
 
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
 
   final Widget child;
 
-  final EdgeInsets childPadding;
+  final EdgeInsets? childPadding;
 
   ASDialog({
-    Key key,
+    Key? key,
     this.close = false,
     this.items,
     this.spacer,
     this.padding,
-    @required this.child,
+    required this.child,
     this.childPadding,
   }) : super(key: key);
 
@@ -75,7 +74,7 @@ class ASDialog extends StatelessWidget {
                       ),
                     ),
                     ...items
-                        .sepWidget(separate: SizedBox(height: _widgetSpacer)),
+                        .sepWidget(separate: SizedBox(height: _widgetSpacer))!,
                   ],
                 ),
               ),

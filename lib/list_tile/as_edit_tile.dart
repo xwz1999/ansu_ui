@@ -4,19 +4,19 @@ import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASEditTile extends StatelessWidget {
-  final Widget title;
-  final FocusNode node;
-  final String hintText;
-  final TextEditingController controller;
+  final Widget? title;
+  final FocusNode? node;
+  final String? hintText;
+  final TextEditingController? controller;
   ASEditTile({
-    Key key,
+    Key? key,
     this.title,
     this.node,
     this.hintText,
     this.controller,
   }) : super(key: key);
 
-  FocusNode _node;
+  final FocusNode? _node = FocusNode();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

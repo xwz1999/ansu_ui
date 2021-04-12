@@ -10,12 +10,12 @@ import 'package:flutter/material.dart';
 ///   ],
 /// );
 /// ```
-Future<T> showASPopUpMenu<T>({
-  @required BuildContext context,
-  @required List<PopupMenuEntry<T>> items,
-  T initValue,
+Future<T?> showASPopUpMenu<T>({
+  required BuildContext context,
+  required List<PopupMenuEntry<T>> items,
+  T? initValue,
 }) async {
-  final RenderBox renderBox = context.findRenderObject();
+  final RenderBox renderBox = context.findRenderObject() as RenderBox;
   Size size = renderBox.size;
   return await showMenu(
     context: context,
@@ -23,10 +23,10 @@ Future<T> showASPopUpMenu<T>({
     position: RelativeRect.fromRect(
       Rect.fromPoints(
         renderBox.localToGlobal(Offset.zero,
-            ancestor: Overlay.of(context).context.findRenderObject()),
+            ancestor: Overlay.of(context)!.context.findRenderObject()),
         renderBox.localToGlobal(size.bottomRight(Offset.zero)),
       ),
-      Offset.zero & Overlay.of(context).context.size,
+      Offset.zero & Overlay.of(context)!.context.size!,
     ),
     items: items,
     shape: RoundedRectangleBorder(borderRadius: 10.radius),

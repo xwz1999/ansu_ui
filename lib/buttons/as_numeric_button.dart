@@ -23,25 +23,25 @@ class ASNumericButton extends StatefulWidget {
   final int maxValue;
 
   ///后缀
-  final String suffix;
+  final String? suffix;
 
   ///达到最大值
-  final Function(int value) reachMax;
+  final Function(int value)? reachMax;
 
   ///达到最小值
-  final Function(int value) reachMin;
+  final Function(int value)? reachMin;
 
   ///
   final Function(int value) onChange;
   ASNumericButton({
-    Key key,
-    @required this.initValue,
+    Key? key,
+    required this.initValue,
     this.suffix,
     this.minValue = 0,
     this.maxValue = 9999,
     this.reachMax,
     this.reachMin,
-    @required this.onChange,
+    required this.onChange,
   }) : super(key: key);
 
   @override
@@ -50,18 +50,18 @@ class ASNumericButton extends StatefulWidget {
 
 class _ASNumericButtonState extends State<ASNumericButton> {
   FocusNode _focusNode = FocusNode();
-  TextEditingController _controller;
+  TextEditingController? _controller;
   BorderSide _outline = BorderSide(
     color: Color(0xFFD8D4D4),
     width: 1.w,
   );
 
-  int _displayValue;
+  late int _displayValue;
 
   Widget _buildButton({
-    @required CustomPainter painter,
-    @required VoidCallback onPressed,
-    @required BorderRadius borderRadius,
+    required CustomPainter painter,
+    required VoidCallback onPressed,
+    required BorderRadius borderRadius,
   }) {
     return Container(
       height: 32.w,
@@ -113,10 +113,10 @@ class _ASNumericButtonState extends State<ASNumericButton> {
             if (_displayValue > widget.minValue) {
               _displayValue--;
               widget.onChange(_displayValue);
-              _controller.text = _displayValue.toString();
+              _controller!.text = _displayValue.toString();
               setState(() {});
             } else {
-              if (widget.reachMin != null) widget.reachMin(_displayValue);
+              if (widget.reachMin != null) widget.reachMin!(_displayValue);
             }
           },
           borderRadius: BorderRadius.horizontal(left: Radius.circular(16.w)),
@@ -134,7 +134,7 @@ class _ASNumericButtonState extends State<ASNumericButton> {
                 keyboardType: TextInputType.number,
                 controller: _controller,
                 onChanged: (text) {
-                  int value = int.tryParse(text);
+                  int? value = int.tryParse(text);
                   _displayValue = value ?? widget.initValue;
                   setState(() {});
                   widget.onChange(_displayValue);
@@ -173,10 +173,10 @@ class _ASNumericButtonState extends State<ASNumericButton> {
             if (_displayValue < widget.maxValue) {
               _displayValue++;
               widget.onChange(_displayValue);
-              _controller.text = _displayValue.toString();
+              _controller!.text = _displayValue.toString();
               setState(() {});
             } else {
-              if (widget.reachMax != null) widget.reachMax(_displayValue);
+              if (widget.reachMax != null) widget.reachMax!(_displayValue);
             }
           },
           borderRadius: BorderRadius.horizontal(right: Radius.circular(16.w)),

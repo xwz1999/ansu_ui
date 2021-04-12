@@ -6,7 +6,7 @@ BottomNavigationBarItem asNavigationItem(
   String path1,
   String path2,
   String title, {
-  String tag,
+  String? tag,
 }) {
   Widget icon = Image.asset(
     path1,

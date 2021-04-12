@@ -5,7 +5,7 @@ import 'package:ansu_ui/styles/as_colors.dart';
 ///TextFiled
 class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
   ASSearchTextField({
-    Key key,
+    Key? key,
     this.controller,
     this.hintText,
     this.onChanged,
@@ -19,7 +19,7 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
 
   ///
   ASSearchTextField.button({
-    Key key,
+    Key? key,
     this.controller,
     this.hintText,
     this.onChanged,
@@ -35,27 +35,27 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
   final bool button;
 
   ///控制器
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   ///hint Text
-  final String hintText;
+  final String? hintText;
 
   ///文字变化回调
-  final ValueChanged<String> onChanged;
+  final ValueChanged<String>? onChanged;
 
   ///完成输入回调
-  final ValueChanged<String> onSubmitted;
+  final ValueChanged<String>? onSubmitted;
 
   ///焦点
-  final FocusNode focusNode;
+  final FocusNode? focusNode;
 
   ///margin
-  final EdgeInsets margin;
+  final EdgeInsets? margin;
 
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   ///高度
-  final double height;
+  final double? height;
 
   @override
   _ASSearchTextFieldState createState() => _ASSearchTextFieldState();

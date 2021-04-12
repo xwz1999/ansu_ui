@@ -7,40 +7,40 @@ class ASBottomButton extends StatelessWidget {
   final dynamic title;
 
   ///颜色
-  final Color bgcolor;
+  final Color? bgcolor;
 
   ///文字颜色
-  final Color textColor;
+  final Color? textColor;
 
   ///文字风格
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   ///内边距
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry? padding;
 
   ///不可点击时颜色
-  final Color disableColor;
+  final Color? disableColor;
 
   ///不可点击时文字颜色
-  final Color disableTextColor;
+  final Color? disableTextColor;
 
   ///宽度
-  final double width;
+  final double? width;
 
   ///渐变起始位置
-  final AlignmentGeometry begin;
+  final AlignmentGeometry? begin;
 
   ///渐变结束位置
-  final AlignmentGeometry end;
+  final AlignmentGeometry? end;
 
   ///渐变颜色
-  final List<Color> colors;
+  final List<Color>? colors;
 
   ///点击事件
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   ASBottomButton(
-      {Key key,
+      {Key? key,
       this.title,
       this.bgcolor,
       this.textColor,
@@ -56,8 +56,8 @@ class ASBottomButton extends StatelessWidget {
       : super(key: key);
 
   ASBottomButton.infinity({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.onPressed,
     this.textStyle,
     this.padding,
@@ -72,8 +72,8 @@ class ASBottomButton extends StatelessWidget {
         super(key: key);
 
   ASBottomButton.gradient(
-      {Key key,
-      @required this.title,
+      {Key? key,
+      required this.title,
       this.onPressed,
       this.bgcolor,
       this.textStyle,
@@ -87,8 +87,8 @@ class ASBottomButton extends StatelessWidget {
         width = double.infinity,
         super(key: key);
   ASBottomButton.shortWhite({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.onPressed,
     this.bgcolor,
     this.textStyle,
@@ -101,7 +101,7 @@ class ASBottomButton extends StatelessWidget {
         textColor = kPrimaryColor,
         width = double.infinity,
         super(key: key);
-  Widget get _title {
+  Widget? get _title {
     if (title is String)
       return Text(
         title,
@@ -123,7 +123,7 @@ class ASBottomButton extends StatelessWidget {
         gradient: LinearGradient(
           begin: begin ?? Alignment.bottomRight,
           end: end ?? Alignment.topLeft,
-          colors: colors ?? [bgcolor, bgcolor],
+          colors: colors ?? [bgcolor!, bgcolor!],
         ),
       ),
       child: MaterialButton(

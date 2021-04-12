@@ -8,9 +8,9 @@ import 'package:ansu_ui/buttons/as_long_button.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class AS2DatePicker extends StatefulWidget {
-  final bool isAnHour;
-  final RangeDate date;
-  AS2DatePicker({Key key, this.isAnHour, this.date}) : super(key: key);
+  final bool? isAnHour;
+  final RangeDate? date;
+  AS2DatePicker({Key? key, this.isAnHour, this.date}) : super(key: key);
 
   @override
   _AS2DatePickerState createState() => _AS2DatePickerState();
@@ -20,8 +20,8 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
   int _selectedDay = 0;
 
   DateTime get now => DateTime.now();
-  DateTime _selectedDate;
-  PageController _pageController;
+  DateTime? _selectedDate;
+  PageController? _pageController;
 
   DateTimeRange get singleHour => DateTimeRange(
         start: now,
@@ -99,8 +99,8 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
     return ListView.builder(
       padding: 8.edge,
       itemBuilder: (context, index) {
-        bool sameItem = now.day == _selectedDate.day &&
-            _selectedDate.hour == startHour + index;
+        bool sameItem = now.day == _selectedDate!.day &&
+            _selectedDate!.hour == startHour + index;
         if (index == 0) {
           return _renderButton(
             '一小时内',
@@ -134,8 +134,8 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
     return ListView.builder(
       padding: 8.edge,
       itemBuilder: (context, index) {
-        bool sameItem = (now.day + offsetDay) == _selectedDate.day &&
-            _selectedDate.hour == index;
+        bool sameItem = (now.day + offsetDay) == _selectedDate!.day &&
+            _selectedDate!.hour == index;
         return _renderButton(
           '$index\:00-${index + 1}:00',
           () {
@@ -220,7 +220,7 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
                         context,
                         RangeDate(
                           start: _selectedDate,
-                          end: _selectedDate.add(Duration(hours: 1)),
+                          end: _selectedDate!.add(Duration(hours: 1)),
                         ));
                 },
               ),

@@ -5,7 +5,7 @@ import 'package:ansu_ui/styles/as_colors.dart';
 class ASNavigationBar extends StatefulWidget {
   final List<BottomNavigationBarItem> items;
   final TabController controller;
-  ASNavigationBar({Key key, @required this.items, this.controller})
+  ASNavigationBar({Key? key, required this.items,required this.controller})
       : super(key: key);
 
   @override

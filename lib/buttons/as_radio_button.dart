@@ -5,18 +5,18 @@ import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASRadioButton<T> extends StatefulWidget {
   /// 选中的值
-  final T groupValue;
+  final T? groupValue;
 
   ///按钮标题
-  final String title;
+  final String? title;
 
   /// 该按钮的值
-  final T value;
+  final T? value;
 
   ///按钮回调
-  final Function(T value) onTap;
+  final Function(T value)? onTap;
   ASRadioButton({
-    Key key,
+    Key? key,
     this.groupValue,
     this.title,
     this.value,
@@ -32,7 +32,7 @@ class _ASRadioButtonState extends State<ASRadioButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => widget.onTap(widget.value),
+      onTap: () => widget.onTap!(widget.value),
       borderRadius: 13.radius,
       child: AnimatedContainer(
         padding: EdgeInsets.symmetric(
@@ -40,7 +40,7 @@ class _ASRadioButtonState extends State<ASRadioButton> {
           vertical: _selected ? 5.w : 4.w,
         ),
         child: AnimatedDefaultTextStyle(
-          child: Text(widget.title),
+          child: Text(widget.title!),
           style: TextStyle(
             color: _selected ? kLightTextColor : kTextSubColor,
           ),

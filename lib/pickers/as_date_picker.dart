@@ -5,14 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 //时间选择器内部实现
 class _ASDatePickerWidget extends StatefulWidget {
-  _ASDatePickerWidget({Key key}) : super(key: key);
+  _ASDatePickerWidget({Key? key}) : super(key: key);
 
   @override
   _ASDatePickerWidgetState createState() => _ASDatePickerWidgetState();
 }
 
 class _ASDatePickerWidgetState extends State<_ASDatePickerWidget> {
-  DateTime _dateTime;
+  DateTime? _dateTime;
   @override
   void initState() {
     super.initState();
@@ -57,7 +57,7 @@ class _ASDatePickerWidgetState extends State<_ASDatePickerWidget> {
 ///```dart
 ///Navigator.pop(context,dateTime)
 ///```
-Future<DateTime> asDatePicker(BuildContext context) async {
+Future<DateTime?> asDatePicker(BuildContext context) async {
   return await showModalBottomSheet(
     context: context,
     builder: (context) {

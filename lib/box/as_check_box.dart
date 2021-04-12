@@ -8,12 +8,12 @@ class ASCheckBox extends StatelessWidget {
   final bool checkStyle;
 
   ///选中时颜色
-  final Color color;
-  ASCheckBox({Key key, this.value = false, this.color})
+  final Color? color;
+  ASCheckBox({Key? key, this.value = false, this.color})
       : checkStyle = false,
         super(key: key);
 
-  ASCheckBox.checkStyle({Key key, this.value = false, this.color})
+  ASCheckBox.checkStyle({Key? key, this.value = false, this.color})
       : checkStyle = true,
         super(key: key);
 

@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///安速水平分割线
 class ASDivider extends StatelessWidget {
   final Color color;
-  final double height;
-  final double thickness;
-  final double indent;
-  final double endIndent;
+  final double? height;
+  final double? thickness;
+  final double? indent;
+  final double? endIndent;
   ASDivider({
-    Key key,
+    Key? key,
     this.indent,
     this.endIndent,
     this.color = const Color(0xFFE9E9E9),
@@ -34,12 +34,12 @@ class ASDivider extends StatelessWidget {
 ///安速 垂直分割线
 class ASVDivider extends StatelessWidget {
   final Color color;
-  final double width;
-  final double thickness;
-  final double indent;
-  final double endIndent;
+  final double? width;
+  final double? thickness;
+  final double? indent;
+  final double? endIndent;
   ASVDivider({
-    Key key,
+    Key? key,
     this.indent,
     this.endIndent,
     this.color = const Color(0xFFE9E9E9),

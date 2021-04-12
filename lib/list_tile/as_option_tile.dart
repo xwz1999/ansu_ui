@@ -6,32 +6,32 @@ import 'package:ansu_ui/divider/as_divider.dart';
 ///菜单按钮Tile
 class ASOptionTile extends StatelessWidget {
   ///应使用 ASOptionTileItem
-  final List<Widget> items;
+  final List<Widget>? items;
 
   ///单个Widget
-  final Widget item;
+  final Widget? item;
 
   ///内边距
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry? padding;
 
   ///标题
   final dynamic leading;
 
   ///item 推荐使用`ASOptionTileItem`,`ASVerticalTileItem`,`ASListTile`
-  ASOptionTile({Key key, this.items, this.item, this.padding, this.leading})
+  ASOptionTile({Key? key, this.items, this.item, this.padding, this.leading})
       : super(key: key);
 
   ///单个子组件的Tile
   ASOptionTile.single(
-      {Key key, @required this.item, this.padding, this.leading})
+      {Key? key, required this.item, this.padding, this.leading})
       : items = [],
         super(key: key);
-  int get length => items.length;
+  int get length => items!.length;
 
   @override
   Widget build(BuildContext context) {
     if (this.leading != null) {
-      this.items.insert(
+      this.items!.insert(
             0,
             Container(
               alignment: Alignment.centerLeft,
@@ -61,7 +61,7 @@ class ASOptionTile extends StatelessWidget {
                 children: List.generate(length * 2 - 1, (index) {
                   final displayIndex = index ~/ 2;
                   if (index.isEven)
-                    return items[displayIndex];
+                    return items![displayIndex];
                   else
                     return this.padding == null
                         ? ASDivider(indent: 10.w, endIndent: 10.w)

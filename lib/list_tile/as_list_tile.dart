@@ -4,21 +4,21 @@ import 'package:ansu_ui/styles/as_colors.dart';
 
 class ASListTile extends StatelessWidget {
   ///主标题
-  final String title;
+  final String? title;
 
   ///动态类型，可传入widget
   final dynamic text;
 
   ///内容
-  final Widget trail;
+  final Widget? trail;
 
   ///高度，默认32px
-  final double height;
+  final double? height;
 
   ///对齐方式
-  final CrossAxisAlignment crossAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
   ASListTile({
-    Key key,
+    Key? key,
     this.title,
     this.text,
     this.trail,
@@ -26,7 +26,7 @@ class ASListTile extends StatelessWidget {
     this.crossAxisAlignment,
   }) : super(key: key);
   ASListTile.option({
-    Key key,
+    Key? key,
     this.title,
     this.text,
     this.trail,
@@ -49,7 +49,7 @@ class ASListTile extends StatelessWidget {
           Container(
             width: 85.w,
             child: Text(
-              title,
+              title!,
               maxLines: 1,
               overflow: TextOverflow.visible,
               softWrap: false,

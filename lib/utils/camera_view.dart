@@ -13,16 +13,16 @@ import 'package:ansu_ui/divider/as_divider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CameraView extends StatefulWidget {
-  final File file;
-  final String title;
-  CameraView({Key key, this.file, this.title}) : super(key: key);
+  final File? file;
+  final String? title;
+  CameraView({Key? key, this.file, this.title}) : super(key: key);
 
   @override
   _CameraViewState createState() => _CameraViewState();
 }
 
 class _CameraViewState extends State<CameraView> {
-  _buildButton({String title, Color color = kTextColor, onPressed}) {
+  _buildButton({required String title, Color color = kTextColor, onPressed}) {
     return MaterialButton(
       child: title.text.bold.size(18).color(color).make(),
       onPressed: onPressed,
@@ -45,10 +45,10 @@ class _CameraViewState extends State<CameraView> {
             },
             child: Hero(
               child: Image.file(
-                widget.file,
+                widget.file!,
                 fit: BoxFit.cover,
               ),
-              tag: widget.title,
+              tag: widget.title!,
             ),
           ),
         ),
@@ -63,7 +63,7 @@ class _CameraViewState extends State<CameraView> {
             _buildButton(
               title: '重拍',
               onPressed: () async {
-                File file = await camFile();
+                File? file = await camFile();
                 if (file == null)
                   Navigator.pop(context);
                 else
@@ -86,7 +86,7 @@ class _CameraViewState extends State<CameraView> {
               title: '确认',
               onPressed: () => Navigator.pop(context, widget.file),
             ),
-          ].sepWidget(separate: ASDivider()),
+          ].sepWidget(separate: ASDivider())!,
         ),
       ),
     );

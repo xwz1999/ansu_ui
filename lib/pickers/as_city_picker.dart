@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ASCityPicker extends StatefulWidget {
-  ASCityPicker({Key key}) : super(key: key);
+  ASCityPicker({Key? key}) : super(key: key);
 
   @override
   _ASCityPickerState createState() => _ASCityPickerState();
 }
 
 class _ASCityPickerState extends State<ASCityPicker> {
-  double getFontSize(String text) {
+  double getFontSize(String? text) {
     double fontSize = 13.sp;
     int len = text?.length ?? 0;
     if (len >= 1 && len <= 3) {
@@ -31,9 +31,9 @@ class _ASCityPickerState extends State<ASCityPicker> {
     return fontSize;
   }
 
-  ProvinceModel _selectedProvince;
-  CityModel _selectedCity;
-  CityModel _selectedDistrict;
+  late ProvinceModel _selectedProvince;
+  late CityModel _selectedCity;
+  CityModel? _selectedDistrict;
 
   FixedExtentScrollController _cityController = FixedExtentScrollController();
   FixedExtentScrollController _districtController =
@@ -48,7 +48,7 @@ class _ASCityPickerState extends State<ASCityPicker> {
 
   @override
   void dispose() {
-    _cityController?.dispose();
+    _cityController.dispose();
     super.dispose();
   }
 
@@ -88,7 +88,7 @@ class _ASCityPickerState extends State<ASCityPicker> {
               children: CityUtil.provinceModel
                   .map((e) => Center(
                           child: Text(
-                        e.name,
+                        e.name!,
                         style: TextStyle(
                           fontSize: getFontSize(e.name),
                         ),
@@ -122,7 +122,7 @@ class _ASCityPickerState extends State<ASCityPicker> {
               children: CityUtil.getCityModelByCode(_selectedProvince.code)
                   .map((e) => Center(
                           child: Text(
-                        e.name,
+                        e.name!,
                         style: TextStyle(
                           fontSize: getFontSize(e.name),
                         ),
@@ -146,7 +146,7 @@ class _ASCityPickerState extends State<ASCityPicker> {
               children: CityUtil.getCityModelByCode(_selectedCity.code)
                   .map((e) => Center(
                           child: Text(
-                        e.name,
+                        e.name!,
                         style: TextStyle(
                           fontSize: getFontSize(e.name),
                         ),
