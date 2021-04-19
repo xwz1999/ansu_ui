@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         home: MyHomePage(),
         builder: BotToastInit(),
+        theme: ASTheme.lightTheme,
         navigatorObservers: [BotToastNavigatorObserver()],
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
@@ -49,9 +50,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
-      statusBarColor: Colors.transparent,
-    ));
+    ASTheme.init();
 
     _tabController = TabController(length: 3, vsync: this);
   }

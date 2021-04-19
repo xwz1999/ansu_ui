@@ -95,12 +95,10 @@ packages:
   flutter_easyrefresh:
     dependency: "direct main"
     description:
-      path: "."
-      ref: v2
-      resolved-ref: "73f03412c46b4662db6fb92fa18902d82c52e6b6"
-      url: "https://github.com/xuelongqy/flutter_easyrefresh"
-    source: git
-    version: "2.2.0"
+      name: flutter_easyrefresh
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.2.1"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:

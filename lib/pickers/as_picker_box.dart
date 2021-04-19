@@ -21,19 +21,12 @@ class ASPickerBox extends StatelessWidget {
     required String title,
     required VoidCallback? onPressed,
   }) {
-    return TextButton(
-      style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(kPrimaryColor),
-        overlayColor: MaterialStateProperty.all(kPrimaryColor.withOpacity(0.2)),
-        padding:
-            MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 20.w)),
-        textStyle: MaterialStateProperty.all(TextStyle(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w500,
-        )),
+    return SizedBox(
+      height: 48.w,
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text(title),
       ),
-      onPressed: onPressed,
-      child: Text(title),
     );
   }
 

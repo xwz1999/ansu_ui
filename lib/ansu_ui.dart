@@ -71,3 +71,5 @@ export 'extension/string_extension.dart';
 export 'extension/text_style_extension.dart';
 export 'extension/image_extension.dart';
 export 'package:velocity_x/velocity_x.dart';
+
+export 'theme/as_theme.dart';

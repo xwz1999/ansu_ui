@@ -1,7 +1,8 @@
+import 'package:ansu_ui/theme/as_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/buttons/as_back_button.dart';
+import 'package:flutter/services.dart';
 
 ///ASScaffold
 ///
@@ -41,6 +42,8 @@ class ASScaffold extends StatelessWidget {
   /// `AppBar` appBar
   final Widget? appBar;
 
+  final SystemUiOverlayStyle? systemStyle;
+
   ///背景色
   final Color backgroundColor;
   final Widget? floatingActionButton;
@@ -56,31 +59,21 @@ class ASScaffold extends StatelessWidget {
     this.backgroundColor = kBackgroundColor,
     this.actions,
     this.floatingActionButton,
+    this.systemStyle,
   }) : super(key: key);
 
   Widget get _title {
     if (title is String) return Text(title);
-    return title ?? SizedBox();
+    return title;
   }
 
   Widget? get _appBar {
     if (title == null && appBar == null && appBarBottom == null) return null;
     return appBar ??
         AppBar(
-          brightness: Brightness.light,
-          backgroundColor: kForegroundColor,
-          elevation: 0,
           leading: leading ?? ASBackButton(),
           actions: actions ?? [],
-          centerTitle: true,
-          title: DefaultTextStyle(
-            style: TextStyle(
-              color: kTextColor,
-              fontSize: 18.sp,
-              fontWeight: FontWeight.bold,
-            ),
-            child: _title,
-          ),
+          title: _title,
           bottom: appBarBottom ??
               PreferredSize(
                 child: SizedBox(),
@@ -91,14 +84,17 @@ class ASScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: key,
-      endDrawer: endDrawer,
-      backgroundColor: backgroundColor,
-      bottomNavigationBar: bottomNavigationBar,
-      floatingActionButton: floatingActionButton,
-      appBar: _appBar as PreferredSizeWidget?,
-      body: body,
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: systemStyle ?? ASTheme.defaultSystemStyle,
+      child: Scaffold(
+        key: key,
+        endDrawer: endDrawer,
+        backgroundColor: backgroundColor,
+        bottomNavigationBar: bottomNavigationBar,
+        floatingActionButton: floatingActionButton,
+        appBar: _appBar as PreferredSizeWidget?,
+        body: body,
+      ),
     );
   }
 }
