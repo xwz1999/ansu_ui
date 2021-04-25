@@ -86,7 +86,7 @@ class _CameraViewState extends State<CameraView> {
               title: '确认',
               onPressed: () => Navigator.pop(context, widget.file),
             ),
-          ].sepWidget(separate: ASDivider())!,
+          ].sepWidget(separate: ASDivider()),
         ),
       ),
     );

@@ -76,3 +76,4 @@ export 'theme/as_theme.dart';
 
 //third party
 export 'package:velocity_x/velocity_x.dart';
+export 'package:flutter_screenutil/flutter_screenutil.dart';

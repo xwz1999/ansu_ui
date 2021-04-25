@@ -23,6 +23,7 @@ class ASTheme {
         textTheme: ThemeData.light().textTheme.apply(
               displayColor: Color(0xFF333333),
               bodyColor: Color(0xFF333333),
+              fontFamily: 'NotoSansSC',
             ),
         inputDecorationTheme: InputDecorationTheme(),
         primaryColor: kPrimaryColor,

@@ -3,7 +3,6 @@ import 'package:example/main_extention.dart';
 import 'package:example/main_home.dart';
 import 'package:example/main_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

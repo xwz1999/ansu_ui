@@ -32,7 +32,7 @@ class ASBottomDialog extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          ...items.sepWidget(separate: ASDivider())!,
+          ...(items??[]).sepWidget(separate: ASDivider()),
           10.hb,
           _buildCancel(context),
         ],

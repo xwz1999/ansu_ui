@@ -73,8 +73,8 @@ class ASDialog extends StatelessWidget {
                         ),
                       ),
                     ),
-                    ...items
-                        .sepWidget(separate: SizedBox(height: _widgetSpacer))!,
+                    ...(items ?? [])
+                        .sepWidget(separate: SizedBox(height: _widgetSpacer)),
                   ],
                 ),
               ),

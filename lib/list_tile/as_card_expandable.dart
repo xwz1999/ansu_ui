@@ -109,14 +109,14 @@ class _ASCardExpandableState extends State<ASCardExpandable> {
           children: [
             SizedBox(),
             ...widget.children,
-          ].sepWidget(separate: ASDivider(indent: 10.w, endIndent: 10.w))!,
+          ].sepWidget(separate: ASDivider(indent: 10.w, endIndent: 10.w)),
         ),
         expanded: Column(
           children: [
             SizedBox(),
             ...(widget.custom ? <Widget>[] : widget.children),
             ...widget.extra,
-          ].sepWidget(separate: ASDivider(indent: 10.w, endIndent: 10.w))!,
+          ].sepWidget(separate: ASDivider(indent: 10.w, endIndent: 10.w)),
         ),
       ),
     );
