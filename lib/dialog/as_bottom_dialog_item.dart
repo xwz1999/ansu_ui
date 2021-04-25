@@ -17,7 +17,6 @@ class ASBottomDialogItem extends StatelessWidget {
       height: 48.w,
       color: kForegroundColor,
       onPressed: () {
-        Navigator.pop(context);
         onPressed!();
       },
       child: DefaultTextStyle(

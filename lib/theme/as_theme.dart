@@ -9,15 +9,22 @@ class ASTheme {
   }
 
   static SystemUiOverlayStyle get defaultSystemStyle => SystemUiOverlayStyle(
-        systemNavigationBarColor: Colors.white,
+        systemNavigationBarColor: kBackgroundColor,
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.light,
       );
 
+  static SystemUiOverlayStyle get yellow =>
+      defaultSystemStyle.copyWith(systemNavigationBarColor: kPrimaryColor);
+
   static ThemeData get lightTheme =>
       ThemeData(primarySwatch: Colors.yellow).copyWith(
-        textTheme: TextTheme().apply(displayColor: Color(0xFF333333)),
+        textTheme: ThemeData.light().textTheme.apply(
+              displayColor: Color(0xFF333333),
+              bodyColor: Color(0xFF333333),
+            ),
+        inputDecorationTheme: InputDecorationTheme(),
         primaryColor: kPrimaryColor,
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(

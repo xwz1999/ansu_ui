@@ -24,7 +24,11 @@ class ASBackButton extends StatelessWidget {
               size: 24,
               color: color,
             ),
-            onPressed: () => Navigator.pop(context),
+            onPressed: () {
+              if (Navigator.canPop(context)) {
+                Navigator.pop(context);
+              }
+            },
           )
         : SizedBox();
   }

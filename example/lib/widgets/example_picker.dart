@@ -90,6 +90,16 @@ class _ExamplePickerState extends State<ExamplePicker> {
               },
             ),
           ),
+          ListTile(
+            title: Text('图片选择器'),
+            subtitle: Text('ImagePicker'),
+            trailing: ASButton(
+              title: '图片选择器',
+              onPressed: () async {
+                File file = await pickImageFile();
+              },
+            ),
+          ),
           // END
         ],
       ),

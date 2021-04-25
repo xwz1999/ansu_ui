@@ -57,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    print(Theme.of(context).textTheme.headline1.fontFamily);
     return ASScaffold(
       leading: navigator.canPop()
           ? IconButton(

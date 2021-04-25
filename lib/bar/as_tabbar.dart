@@ -21,12 +21,15 @@ class ASTabBar extends StatelessWidget implements PreferredSizeWidget {
 
   ///可滚动
   final bool isScrollable;
-  ASTabBar(
-      {Key? key,
-      required this.items,
-      required this.controller,
-      this.isScrollable = false})
-      : tabItems = null,
+
+  final ValueChanged<int>? onTap;
+  ASTabBar({
+    Key? key,
+    required this.items,
+    required this.controller,
+    this.isScrollable = false,
+    this.onTap,
+  })  : tabItems = null,
         super(key: key);
 
   /// ## TabBar with tag
@@ -41,12 +44,13 @@ class ASTabBar extends StatelessWidget implements PreferredSizeWidget {
   /// )
   ///```
   ///
-  ASTabBar.tag(
-      {Key? key,
-      required this.tabItems,
-      required this.controller,
-      this.isScrollable = false})
-      : items = null,
+  ASTabBar.tag({
+    Key? key,
+    required this.tabItems,
+    required this.controller,
+    this.isScrollable = false,
+    this.onTap,
+  })  : items = null,
         super(key: key);
 
   bool get isTag => items?.isEmpty ?? true;
@@ -57,6 +61,7 @@ class ASTabBar extends StatelessWidget implements PreferredSizeWidget {
       child: TabBar(
         isScrollable: isScrollable,
         controller: controller,
+        onTap: onTap,
         tabs: isTag
             ? tabItems!.map((e) {
                 return Tab(

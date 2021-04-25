@@ -9,6 +9,7 @@ export 'buttons/as_bottom_button.dart';
 export 'buttons/as_gradient_button.dart';
 export 'buttons/as_radio_button.dart';
 export 'buttons/as_material_button.dart';
+export 'buttons/as_check_button.dart';
 
 //scaffold
 export 'scaffold/as_scaffold.dart';
@@ -70,6 +71,8 @@ export 'extension/widget_extension.dart';
 export 'extension/string_extension.dart';
 export 'extension/text_style_extension.dart';
 export 'extension/image_extension.dart';
-export 'package:velocity_x/velocity_x.dart';
 
 export 'theme/as_theme.dart';
+
+//third party
+export 'package:velocity_x/velocity_x.dart';
