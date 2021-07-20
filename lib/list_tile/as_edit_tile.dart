@@ -11,7 +11,7 @@ class ASEditTile extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String text)? onChange;
   final Function(String text)? onSubmitted;
-  final List<FilteringTextInputFormatter>? inputFormatters;
+  final List<TextInputFormatter>? inputFormatters;
   final TextInputType? keyBoardType;
   final TextStyle? hintTextStyle;
   ASEditTile({
