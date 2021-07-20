@@ -15,6 +15,7 @@ class ASOptionTile extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
 
   ///标题
+  ///leading!=null 时 items!=null 是必要的
   final dynamic leading;
 
   ///item 推荐使用`ASOptionTileItem`,`ASVerticalTileItem`,`ASListTile`
@@ -36,13 +37,16 @@ class ASOptionTile extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               child: this.leading is String
-                  ? Text(
-                      this.leading,
-                      style: TextStyle(
-                          color: kTextColor,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold),
-                    )
+                  ? Padding(
+                    padding:EdgeInsets.symmetric(vertical: 14.w,horizontal: 10.w),
+                    child: Text(
+                        this.leading,
+                        style: TextStyle(
+                            color: kTextColor,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.bold),
+                      ),
+                  )
                   : this.leading,
             ),
           );

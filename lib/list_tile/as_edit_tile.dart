@@ -14,6 +14,7 @@ class ASEditTile extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final TextInputType? keyBoardType;
   final TextStyle? hintTextStyle;
+  final Widget? suffix;
   ASEditTile({
     Key? key,
     this.title,
@@ -23,13 +24,16 @@ class ASEditTile extends StatelessWidget {
     this.onChange,
     this.onSubmitted,
     this.inputFormatters,
-    this.keyBoardType, this.hintTextStyle,
+    this.keyBoardType,
+    this.hintTextStyle,
+    this.suffix,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(minHeight: 46.w),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           10.wb,
           InkWell(
@@ -41,12 +45,15 @@ class ASEditTile extends StatelessWidget {
               child: title ?? Text(''),
             ),
           ),
-          prefix ?? SizedBox(),
+          Offstage(
+            offstage: prefix == null,
+            child: prefix,
+          ),
           Expanded(
             child: TextField(
               controller: controller,
               onChanged: onChange,
-              inputFormatters:inputFormatters,
+              inputFormatters: inputFormatters,
               keyboardType: keyBoardType,
               onSubmitted: onSubmitted,
               textAlign: TextAlign.end,
@@ -60,14 +67,19 @@ class ASEditTile extends StatelessWidget {
                 isDense: true,
                 contentPadding: EdgeInsets.zero,
                 hintText: hintText,
-                hintStyle:hintTextStyle?? TextStyle(
-                  color: kTextSubColor,
-                  fontSize: 14.sp,
-                ),
+                hintStyle: hintTextStyle ??
+                    TextStyle(
+                      color: kTextSubColor,
+                      fontSize: 14.sp,
+                    ),
               ),
             ),
           ),
           10.wb,
+          Offstage(
+            offstage: suffix == null,
+            child: suffix,
+          )
         ],
       ),
     );
