@@ -17,10 +17,13 @@ class _ExampleTextFiledState extends State<ExampleTextFiled> {
       backgroundColor: kForegroundColor,
       body: ListView(
         children: [
+          'ASSearchTextField'.text.size(18.sp).make(),
           ASSearchTextField(
             controller: _controller,
             hintText: '搜索',
           ),
+          40.w.heightBox,
+          'ASSearchTextField.button'.text.size(18.sp).black.make(),
           ASSearchTextField.button(
             hintText: '搜索',
             onPressed: () {},

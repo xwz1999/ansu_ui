@@ -36,7 +36,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
           // BEGIN picker
           ListTile(
             title: Text('日期选择器'),
-            subtitle: Text('DatePicker'),
+            subtitle: Text('DatePicker/asDatePicker'),
             trailing: ASButton(
               title: '日期选择器',
               onPressed: () async {
@@ -47,7 +47,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
           ),
           ListTile(
             title: Text('自定义选择器'),
-            subtitle: Text('CustomPicker'),
+            subtitle: Text('CustomPicker/ASPickerBox'),
             trailing: ASButton(
               title: '自定义选择器',
               onPressed: () async {
@@ -60,7 +60,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
           ),
           ListTile(
             title: Text('时间区间选择器'),
-            subtitle: Text('DateRangePicker'),
+            subtitle: Text('DateRangePicker/show2DatePicker'),
             trailing: ASButton(
               title: '时间区间选择器',
               onPressed: () async {
@@ -71,7 +71,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
           ),
           ListTile(
             title: Text('图片选择器'),
-            subtitle: Text('ImagePicker'),
+            subtitle: Text('ImagePicker/camView'),
             trailing: ASButton(
               title: '图片选择器',
               onPressed: () async {
@@ -82,7 +82,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
           ),
           ListTile(
             title: Text('图片选择器'),
-            subtitle: Text('ImagePicker'),
+            subtitle: Text('ImagePicker/pickImageFile'),
             trailing: ASButton(
               title: '图片选择器',
               onPressed: () async {

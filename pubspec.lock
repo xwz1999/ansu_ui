@@ -7,7 +7,7 @@ packages:
       path: "."
       ref: HEAD
       resolved-ref: d724abf91595f58ed58f6c722ebe60acdb750c67
-      url: "http://159.75.73.143:8080/laiiihz/animated_collection.git"
+      url: "https://git.oa00.com/flutter_pub/animated_collection.git"
     source: git
     version: "0.0.1"
   animator:
@@ -16,7 +16,7 @@ packages:
       name: animator
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.0.0"
+    version: "3.1.0"
   async:
     dependency: transitive
     description:
@@ -73,6 +73,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.15.0"
+  cross_file:
+    dependency: transitive
+    description:
+      name: cross_file
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.1+4"
   expandable:
     dependency: "direct main"
     description:
@@ -105,14 +112,14 @@ packages:
       name: flutter_plugin_android_lifecycle
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   flutter_screenutil:
     dependency: "direct main"
     description:
       name: flutter_screenutil
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.0.0"
+    version: "5.0.0+2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -136,7 +143,7 @@ packages:
       name: http
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.13.1"
+    version: "0.13.3"
   http_parser:
     dependency: transitive
     description:
@@ -150,21 +157,21 @@ packages:
       name: image_picker
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.7.4"
+    version: "0.7.5+4"
   image_picker_for_web:
     dependency: transitive
     description:
       name: image_picker_for_web
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.0"
+    version: "2.1.0"
   image_picker_platform_interface:
     dependency: transitive
     description:
       name: image_picker_platform_interface
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.1"
+    version: "2.2.0"
   intl:
     dependency: transitive
     description:
@@ -185,7 +192,7 @@ packages:
       name: lpinyin
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.3"
   matcher:
     dependency: transitive
     description:
@@ -213,14 +220,14 @@ packages:
       name: pedantic
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.11.0"
+    version: "1.11.1"
   plugin_platform_interface:
     dependency: transitive
     description:
       name: plugin_platform_interface
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.0"
+    version: "2.0.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -246,7 +253,7 @@ packages:
       name: states_rebuilder
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "4.0.0+1"
+    version: "4.3.0"
   stream_channel:
     dependency: transitive
     description:
@@ -302,7 +309,7 @@ packages:
       name: vxstate
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.1"
+    version: "2.1.0"
 sdks:
   dart: ">=2.12.0 <3.0.0"
   flutter: ">=2.0.0"

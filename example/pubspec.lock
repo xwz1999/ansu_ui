@@ -7,7 +7,7 @@ packages:
       path: "."
       ref: HEAD
       resolved-ref: d724abf91595f58ed58f6c722ebe60acdb750c67
-      url: "http://159.75.73.143:8080/laiiihz/animated_collection.git"
+      url: "https://git.oa00.com/flutter_pub/animated_collection.git"
     source: git
     version: "0.0.1"
   animator:

@@ -148,6 +148,7 @@ class _ASNumericButtonState extends State<ASNumericButton> {
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
                   border: InputBorder.none,
+                  contentPadding: EdgeInsets.zero,
                   isDense: true,
                   suffixText: widget.suffix,
                   suffixStyle: TextStyle(
