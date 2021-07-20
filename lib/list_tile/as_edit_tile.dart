@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
@@ -10,6 +11,9 @@ class ASEditTile extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String text)? onChange;
   final Function(String text)? onSubmitted;
+  final List<FilteringTextInputFormatter>? inputFormatters;
+  final TextInputType? keyBoardType;
+  final TextStyle? hintTextStyle;
   ASEditTile({
     Key? key,
     this.title,
@@ -18,6 +22,8 @@ class ASEditTile extends StatelessWidget {
     this.prefix,
     this.onChange,
     this.onSubmitted,
+    this.inputFormatters,
+    this.keyBoardType, this.hintTextStyle,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -40,6 +46,8 @@ class ASEditTile extends StatelessWidget {
             child: TextField(
               controller: controller,
               onChanged: onChange,
+              inputFormatters:inputFormatters,
+              keyboardType: keyBoardType,
               onSubmitted: onSubmitted,
               textAlign: TextAlign.end,
               style: TextStyle(
@@ -52,7 +60,7 @@ class ASEditTile extends StatelessWidget {
                 isDense: true,
                 contentPadding: EdgeInsets.zero,
                 hintText: hintText,
-                hintStyle: TextStyle(
+                hintStyle:hintTextStyle?? TextStyle(
                   color: kTextSubColor,
                   fontSize: 14.sp,
                 ),
