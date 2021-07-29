@@ -2,6 +2,7 @@ import 'package:example/widgets/example_bottom_button.dart';
 import 'package:example/widgets/example_box.dart';
 import 'package:example/widgets/example_button.dart';
 import 'package:example/widgets/example_dialog.dart';
+import 'package:example/widgets/example_divider.dart';
 import 'package:example/widgets/example_drawer.dart';
 import 'package:example/widgets/example_listtile.dart';
 import 'package:example/widgets/example_numeric_button.dart';
@@ -108,6 +109,10 @@ class _MainHomeState extends State<MainHome> {
         _innerButton(
           title: 'Toast',
           onPressed: () => Get.to(ExampleToast()),
+        ),
+         _innerButton(
+          title: 'Divider',
+          onPressed: () => Get.to(ExampleDivider()),
         ),
       ],
     );
