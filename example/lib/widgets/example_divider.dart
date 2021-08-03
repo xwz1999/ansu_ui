@@ -23,8 +23,9 @@ class _ExampleDividerState extends State<ExampleDivider> {
               color: Colors.red,
               child: 'ASDivider'.text.make(),
             ),
-            ASDivider(color: Colors.black,),
-           
+            ASDivider(
+              color: Colors.black,
+            ),
             Row(
               children: [
                 Container(
@@ -45,12 +46,25 @@ class _ExampleDividerState extends State<ExampleDivider> {
               color: Colors.red,
               child: 'ASDottedDivider'.text.make(),
             ),
-            ASDottedDivider.horizontal(color: Colors.black,),
+            ASDottedDivider.horizontal(
+              color: Colors.black,
+            ),
+            
             Container(
-              width: double.infinity,
-              height: 50.w,
-              color: Colors.red,
-              child: 'ASDottedDivider'.text.make(),
+              height: 100.w,
+              child: Row(
+                children: [
+                  Container(
+                    color: Colors.red,
+                  ).expand(),
+                  ASDottedDivider.vertical(
+                    color: Colors.black,
+                  ),
+                  Container(
+                    color: Colors.red,
+                  ).expand(),
+                ],
+              ),
             ),
           ],
         ),

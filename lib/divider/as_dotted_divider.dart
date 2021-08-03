@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ASDottedDivider extends StatelessWidget {
@@ -37,7 +38,8 @@ class ASDottedDivider extends StatelessWidget {
           : boxConstraints.constrainHeight();
       final _dashWidth = dashWidth ?? 10.w;
       final _dashPattern = (1 + dash![1] / dash![0]);
-      final int count = (boxWidth / (_dashWidth * _dashPattern)).floor();
+      final int count =
+          (( boxWidth) / (_dashWidth * _dashPattern)).floor();
       return Flex(
           direction: axis,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
