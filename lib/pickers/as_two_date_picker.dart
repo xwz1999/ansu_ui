@@ -8,9 +8,8 @@ import 'package:ansu_ui/buttons/as_long_button.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class AS2DatePicker extends StatefulWidget {
-  final bool? isAnHour;
   final RangeDate? date;
-  AS2DatePicker({Key? key, this.isAnHour, this.date}) : super(key: key);
+  AS2DatePicker({Key? key, this.date}) : super(key: key);
 
   @override
   _AS2DatePickerState createState() => _AS2DatePickerState();
@@ -28,7 +27,6 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
         end: now.add(Duration(hours: 1)),
       );
 
-  bool _inAnHour = false;
   Widget _buildDayButton(int index, String title) {
     bool sameDay = _selectedDay == index;
     return MaterialButton(
@@ -105,17 +103,14 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
           return _renderButton(
             '一小时内',
             () {
-              _inAnHour = true;
               setState(() => {_selectedDate = now});
             },
             sameItem,
           );
         }
-        _inAnHour = false;
         return _renderButton(
           '${startHour + index}:00-${startHour + index + 1}:00',
           () {
-            _inAnHour = false;
             setState(() => _selectedDate = DateTime(
                   now.year,
                   now.month,
@@ -139,7 +134,6 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
         return _renderButton(
           '$index\:00-${index + 1}:00',
           () {
-            _inAnHour = false;
             setState(() => _selectedDate = DateTime(
                   now.year,
                   now.month,
@@ -158,8 +152,6 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
   void initState() {
     super.initState();
     _pageController = PageController();
-    _selectedDate = now;
-    _inAnHour = widget.isAnHour ?? true;
     _selectedDate = widget.date?.start ?? now;
   }
 
@@ -213,8 +205,17 @@ class _AS2DatePickerState extends State<AS2DatePicker> {
               child: ASLongButton.solid(
                 title: '确认',
                 onPressed: () {
-                  if (_inAnHour)
-                    Navigator.pop(context, true);
+                  if (_selectedDate!.hour==now.hour)
+                    Navigator.pop(
+                        context,
+                        RangeDate(
+                          start: null,
+                          end: DateTime(
+                              _selectedDate!.year,
+                              _selectedDate!.month,
+                              _selectedDate!.day,
+                              _selectedDate!.hour + 1),
+                        ));
                   else
                     Navigator.pop(
                         context,
