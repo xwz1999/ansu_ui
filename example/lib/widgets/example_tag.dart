@@ -64,7 +64,7 @@ class _ExampaleTagState extends State<ExampleTag> {
         ),
         ListTile(
           onTap: () => setState(() => _checked = !_checked),
-          title: Text('ASCheckedTag'),
+          title: Text('ASCheckTag'),
           trailing: ASCheckTag(
             checked: _checked,
             text: 'TAG'.text.make(),

@@ -21,7 +21,7 @@ class ASLongButton extends StatelessWidget {
   final TextStyle? textStyle;
 
   ///内边距
-  final Padding? padding;
+  final EdgeInsetsGeometry? padding;
 
   ///是否有边框
   final bool outline;
@@ -98,10 +98,10 @@ class ASLongButton extends StatelessWidget {
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: onPressed,
       child: title is String
-          ? Text(title,
-              style: textStyle ?? TextStyle(fontSize: 20.sp))
+          ? Text(title, style: textStyle ?? TextStyle(fontSize: 20.sp))
           : title,
-      padding: padding as EdgeInsetsGeometry? ?? EdgeInsets.symmetric(vertical: 8.w),
+      padding:
+          padding as EdgeInsetsGeometry? ?? EdgeInsets.symmetric(vertical: 8.w),
       shape: RoundedRectangleBorder(
           side: outline
               ? BorderSide(color: outlineColor!, width: 1.w)

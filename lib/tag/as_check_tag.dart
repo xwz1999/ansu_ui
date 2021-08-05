@@ -5,11 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ASCheckTag extends StatelessWidget {
   final bool checked;
-  final Widget text;
+  final Widget? text;
   const ASCheckTag({
     Key? key,
     this.checked = false,
-    required this.text,
+    this.text,
   }) : super(key: key);
 
   @override
@@ -39,15 +39,16 @@ class ASCheckTag extends StatelessWidget {
             ),
           ),
         ),
-        6.wb,
-        AnimatedDefaultTextStyle(
-          duration: Duration(milliseconds: 300),
-          curve: Curves.easeInOutCubic,
-          style: TextStyle(
-            color: checked ? Color(0xFF00BF44) : Color(0xFFFF0000),
+        if (text != null) 6.wb,
+        if (text != null)
+          AnimatedDefaultTextStyle(
+            duration: Duration(milliseconds: 300),
+            curve: Curves.easeInOutCubic,
+            style: TextStyle(
+              color: checked ? Color(0xFF00BF44) : Color(0xFFFF0000),
+            ),
+            child: text!,
           ),
-          child: text,
-        ),
       ],
     );
   }
