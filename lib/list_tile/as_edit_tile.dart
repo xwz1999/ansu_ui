@@ -15,6 +15,8 @@ class ASEditTile extends StatelessWidget {
   final TextInputType? keyBoardType;
   final TextStyle? hintTextStyle;
   final Widget? suffix;
+  final bool? obscureText;
+  final String? obscuringCharacter;
   ASEditTile({
     Key? key,
     this.title,
@@ -27,6 +29,8 @@ class ASEditTile extends StatelessWidget {
     this.keyBoardType,
     this.hintTextStyle,
     this.suffix,
+    this.obscureText,
+    this.obscuringCharacter,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -55,6 +59,8 @@ class ASEditTile extends StatelessWidget {
               onChanged: onChange,
               inputFormatters: inputFormatters,
               keyboardType: keyBoardType,
+              obscureText: obscureText ?? false,
+              obscuringCharacter: obscuringCharacter ?? '*',
               onSubmitted: onSubmitted,
               textAlign: TextAlign.end,
               style: TextStyle(

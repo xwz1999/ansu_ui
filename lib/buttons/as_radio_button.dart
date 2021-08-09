@@ -5,7 +5,7 @@ import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASRadioButton<T> extends StatefulWidget {
   /// 选中的值
-  final T? groupValue;
+  final dynamic groupValue;
 
   ///按钮标题
   final String? title;
@@ -15,20 +15,37 @@ class ASRadioButton<T> extends StatefulWidget {
 
   ///按钮回调
   final Function(T value)? onTap;
+
+  /// 是否多选
+  final bool mulitpleChoice;
   ASRadioButton({
     Key? key,
     this.groupValue,
     this.title,
     this.value,
     this.onTap,
-  }) : super(key: key);
-
+  })  : this.mulitpleChoice = false,
+        super(key: key);
+  ASRadioButton.mult({
+    Key? key,
+    this.groupValue,
+    this.title,
+    this.value,
+    this.onTap,
+  })  : this.mulitpleChoice = true,
+        super(key: key);
   @override
   _ASRadioButtonState createState() => _ASRadioButtonState();
 }
 
 class _ASRadioButtonState extends State<ASRadioButton> {
-  bool get _selected => widget.value == widget.groupValue;
+  bool get _selected {
+    if (widget.mulitpleChoice) {
+      return (widget.groupValue as List).contains(widget.value);
+    } else {
+      return widget.value == widget.groupValue;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return InkWell(
