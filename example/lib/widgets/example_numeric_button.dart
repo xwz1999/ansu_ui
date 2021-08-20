@@ -19,6 +19,7 @@ class _ExampleNumericButtonState extends State<ExampleNumericButton> {
   }
 
   int _pickedValue = 0;
+
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
@@ -60,7 +61,6 @@ class _ExampleNumericButtonState extends State<ExampleNumericButton> {
                   },
                 ),
               ),
-
               // END
             ],
           );

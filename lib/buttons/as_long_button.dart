@@ -1,6 +1,6 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ansu_ui/styles/as_colors.dart';
 
 class ASLongButton extends StatelessWidget {
   ///按钮文字
@@ -100,8 +100,7 @@ class ASLongButton extends StatelessWidget {
       child: title is String
           ? Text(title, style: textStyle ?? TextStyle(fontSize: 20.sp))
           : title,
-      padding:
-          padding as EdgeInsetsGeometry? ?? EdgeInsets.symmetric(vertical: 8.w),
+      padding: padding ?? EdgeInsets.symmetric(vertical: 8.w),
       shape: RoundedRectangleBorder(
           side: outline
               ? BorderSide(color: outlineColor!, width: 1.w)
