@@ -1,7 +1,7 @@
+import 'package:ansu_ui/extension/num_extension.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASTag extends StatelessWidget {
   ///宽度
@@ -135,6 +135,7 @@ class ASTag extends StatelessWidget {
         style: textStyle ??
             TextStyle(
               color: textColor,
+              height: 1,
               fontSize: 10.sp,
             ),
       ),
