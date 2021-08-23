@@ -103,6 +103,17 @@ class _ExampleNumExtState extends State<ExampleNumExt> {
             child: Container(color: Colors.green),
           ),
         ),
+        ListTile(title: Text('add0')),
+        ListTile(
+          leading: Chip(label: Text('.add0')),
+          title: Text('1'),
+          subtitle: Text(1.add0(3)),
+        ),
+        ListTile(
+          leading: Chip(label: Text('.add0')),
+          title: Text('1000'),
+          subtitle: Text(1000.add0(3)),
+        ),
         // END
       ],
     );

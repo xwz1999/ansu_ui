@@ -17,12 +17,15 @@ extension NumExt on num {
   BorderRadius get topRadius => BorderRadius.vertical(
         top: Radius.circular(this.w),
       );
+
   BorderRadius get bottomRadius => BorderRadius.vertical(
         bottom: Radius.circular(this.w),
       );
+
   BorderRadius get leftRadius => BorderRadius.horizontal(
         left: Radius.circular(this.w),
       );
+
   BorderRadius get rightRadius => BorderRadius.horizontal(
         right: Radius.circular(this.w),
       );
@@ -54,6 +57,22 @@ extension NumExt on num {
         count++;
       }
       str = str + (_num.substring(_num.indexOf('.'), _num.length));
+      return str;
+    }
+  }
+
+  ///指定位数输出，不足补0，
+  ///整数部分如果位数大于需要的位数按实际位数输出
+  ///只适用于整数
+  String add0(int num) {
+    var str = this.toString();
+    if (str.length >= num) {
+      return str;
+    } else {
+      int dif = num - str.length;
+      for (var i = 0; i < dif; i++) {
+        str = '0' + str;
+      }
       return str;
     }
   }
