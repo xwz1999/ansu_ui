@@ -1,8 +1,9 @@
+import 'package:example/extension/example_list_ext.dart';
 import 'package:example/extension/example_num_ext.dart';
 import 'package:example/extension/example_string_ext.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class MainExtention extends StatefulWidget {
   MainExtention({Key key}) : super(key: key);
@@ -42,6 +43,11 @@ class _MainExtentionState extends State<MainExtention> {
         _innerButton(
           onPressed: () => Get.to(ExampleStringExt()),
           child: Text('String Ext'),
+          icon: Icon(Icons.text_fields),
+        ),
+        _innerButton(
+          onPressed: () => Get.to(ExampleListExt()),
+          child: Text('list Ext'),
           icon: Icon(Icons.text_fields),
         ),
       ],
