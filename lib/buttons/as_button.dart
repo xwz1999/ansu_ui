@@ -1,6 +1,6 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ansu_ui/styles/as_colors.dart';
 
 ///安速按钮
 class ASButton extends StatelessWidget {
@@ -43,6 +43,7 @@ class ASButton extends StatelessWidget {
   final Color? disableTextColor;
 
   final Color? splashColor;
+
   ASButton({
     Key? key,
     this.bgcolor,
@@ -110,6 +111,7 @@ class ASButton extends StatelessWidget {
         outline = false,
         this.splashColor = ColorTool.getSplashColor(kPrimaryColor),
         super(key: key);
+
   ASButton.operation(
       {Key? key,
       this.radius,
@@ -126,6 +128,7 @@ class ASButton extends StatelessWidget {
         textColor = kTextColor,
         outline = false,
         super(key: key);
+
   ASButton.order({
     Key? key,
     required this.title,
@@ -141,6 +144,23 @@ class ASButton extends StatelessWidget {
         disableColor = Color(0xFFFFDF9B),
         disableTextColor = kTextSubColor,
         padding = EdgeInsets.symmetric(vertical: 8.w),
+        super(key: key);
+
+  ASButton.yellowHollow(
+      {Key? key,
+      this.radius,
+      this.textStyle,
+      this.padding,
+      required this.title,
+      this.onPressed,
+      this.width,
+      this.disableColor,
+      this.splashColor})
+      : outline = true,
+        outlineColor = kPrimaryColor,
+        bgcolor = Colors.white,
+        textColor = kPrimaryColor,
+        disableTextColor = kPrimaryColor,
         super(key: key);
 
   @override

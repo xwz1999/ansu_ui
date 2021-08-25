@@ -1,6 +1,7 @@
 import 'package:example/widgets/example_bottom_button.dart';
 import 'package:example/widgets/example_box.dart';
 import 'package:example/widgets/example_button.dart';
+import 'package:example/widgets/example_chart.dart';
 import 'package:example/widgets/example_dialog.dart';
 import 'package:example/widgets/example_divider.dart';
 import 'package:example/widgets/example_drawer.dart';
@@ -16,9 +17,8 @@ import 'package:example/widgets/example_tag.dart';
 import 'package:example/widgets/example_text_field.dart';
 import 'package:example/widgets/example_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class MainHome extends StatefulWidget {
   MainHome({Key key}) : super(key: key);
@@ -110,9 +110,13 @@ class _MainHomeState extends State<MainHome> {
           title: 'Toast',
           onPressed: () => Get.to(ExampleToast()),
         ),
-         _innerButton(
+        _innerButton(
           title: 'Divider',
           onPressed: () => Get.to(ExampleDivider()),
+        ),
+        _innerButton(
+          title: 'chart',
+          onPressed: () => Get.to(ExampleChart()),
         ),
       ],
     );

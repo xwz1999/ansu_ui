@@ -69,6 +69,12 @@ class _ExampleButtonState extends State<ExampleButton> {
               trailing: ASButton.order(
                 title: '立即下单',
               )),
+          ListTile(
+              title: Text('yellowHollow'),
+              trailing: ASButton.yellowHollow(
+                title: '立即下单',
+                onPressed: () {},
+              )),
           SizedBox(height: 12.w),
           Row(
             children: [
