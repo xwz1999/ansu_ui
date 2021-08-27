@@ -1,7 +1,8 @@
+import 'package:ansu_ui/divider/as_divider.dart';
+import 'package:ansu_ui/extension/list_extension.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:ansu_ui/divider/as_divider.dart';
 
 ///菜单按钮Tile
 class ASOptionTile extends StatelessWidget {
@@ -27,6 +28,7 @@ class ASOptionTile extends StatelessWidget {
       {Key? key, required this.item, this.padding, this.leading})
       : items = [],
         super(key: key);
+
   int get length => items!.length;
 
   @override
@@ -38,15 +40,16 @@ class ASOptionTile extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: this.leading is String
                   ? Padding(
-                    padding:EdgeInsets.symmetric(vertical: 14.w,horizontal: 10.w),
-                    child: Text(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 14.w, horizontal: 10.w),
+                      child: Text(
                         this.leading,
                         style: TextStyle(
                             color: kTextColor,
                             fontSize: 16.sp,
                             fontWeight: FontWeight.bold),
                       ),
-                  )
+                    )
                   : this.leading,
             ),
           );
@@ -62,15 +65,13 @@ class ASOptionTile extends StatelessWidget {
           child: item ??
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: List.generate(length * 2 - 1, (index) {
-                  final displayIndex = index ~/ 2;
-                  if (index.isEven)
-                    return items![displayIndex];
-                  else
-                    return this.padding == null
-                        ? ASDivider(indent: 10.w, endIndent: 10.w)
-                        : ASDivider();
-                }),
+                children: items!.sepWidget(
+                    separate: this.padding == null
+                        ? ASDivider(
+                            indent: 10.w,
+                            endIndent: 10.w,
+                          )
+                        : ASDivider()),
               ),
         ));
   }
