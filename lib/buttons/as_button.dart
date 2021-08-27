@@ -44,6 +44,9 @@ class ASButton extends StatelessWidget {
 
   final Color? splashColor;
 
+  ///高度
+  final double? height;
+
   ASButton({
     Key? key,
     this.bgcolor,
@@ -59,6 +62,7 @@ class ASButton extends StatelessWidget {
     this.disableColor,
     this.disableTextColor,
     this.splashColor,
+    this.height,
   }) : super(key: key);
 
   ASButton.danger({
@@ -72,6 +76,7 @@ class ASButton extends StatelessWidget {
     this.width,
     this.disableColor,
     this.disableTextColor,
+    this.height,
   })  : outline = true,
         outlineColor = kDangerColor,
         textColor = kDangerColor,
@@ -89,7 +94,8 @@ class ASButton extends StatelessWidget {
       this.width,
       this.disableColor,
       this.disableTextColor,
-      this.splashColor})
+      this.splashColor,
+      this.height})
       : outline = true,
         outlineColor = kDarkColor,
         textColor = kTextColor,
@@ -106,6 +112,7 @@ class ASButton extends StatelessWidget {
     this.width,
     this.disableColor,
     this.disableTextColor,
+    this.height,
   })  : bgcolor = kLightPrimaryColor,
         textColor = kLightTextColor,
         outline = false,
@@ -123,7 +130,8 @@ class ASButton extends StatelessWidget {
       this.width,
       this.disableColor,
       this.disableTextColor,
-      this.splashColor})
+      this.splashColor,
+      this.height})
       : bgcolor = Color(0xFFF2F2F2),
         textColor = kTextColor,
         outline = false,
@@ -136,6 +144,7 @@ class ASButton extends StatelessWidget {
     this.outlineColor,
     this.width,
     this.splashColor,
+    this.height,
   })  : bgcolor = kLightPrimaryColor,
         textColor = kTextColor,
         textStyle = TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
@@ -155,7 +164,8 @@ class ASButton extends StatelessWidget {
       this.onPressed,
       this.width,
       this.disableColor,
-      this.splashColor})
+      this.splashColor,
+      this.height})
       : outline = true,
         outlineColor = kPrimaryColor,
         bgcolor = Colors.white,
@@ -170,6 +180,7 @@ class ASButton extends StatelessWidget {
       disabledTextColor: disableTextColor,
       textColor: textColor ?? kLightPrimaryColor,
       minWidth: width,
+      height: height,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onPressed: onPressed,
       child: title is String
