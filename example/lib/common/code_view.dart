@@ -5,9 +5,9 @@ import '../codeviewer/code_style.dart';
 typedef CodeBuilder = TextSpan Function(BuildContext context);
 
 class CodeView extends StatefulWidget {
-  final CodeBuilder text;
+  final CodeBuilder? text;
   final String title;
-  CodeView({Key key, @required this.text, this.title = 'Code'})
+  CodeView({Key? key, required this.text, this.title = 'Code'})
       : super(key: key);
 
   @override
@@ -33,7 +33,7 @@ class _CodeViewState extends State<CodeView> {
             classStyle: codeTheme.copyWith(color: Colors.yellow),
             constantStyle: codeTheme.copyWith(color: Colors.pink),
             child:
-                Builder(builder: (context) => Text.rich(widget.text(context))),
+                Builder(builder: (context) => Text.rich(widget.text!(context))),
           )),
     );
   }

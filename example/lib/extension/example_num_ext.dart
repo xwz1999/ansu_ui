@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ExampleNumExt extends StatefulWidget {
-  ExampleNumExt({Key key}) : super(key: key);
+  ExampleNumExt({Key? key}) : super(key: key);
 
   @override
   _ExampleNumExtState createState() => _ExampleNumExtState();

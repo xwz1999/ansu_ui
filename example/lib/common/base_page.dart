@@ -6,12 +6,12 @@ import 'code_view.dart';
 class BasePage extends StatelessWidget {
   final String title;
   final Widget body;
-  final List<Widget> actions;
-  final CodeBuilder codeBuilder;
+  final List<Widget>? actions;
+  final CodeBuilder? codeBuilder;
   const BasePage(
-      {Key key,
-      @required this.title,
-      @required this.body,
+      {Key? key,
+      required this.title,
+      required this.body,
       this.actions,
       this.codeBuilder})
       : super(key: key);

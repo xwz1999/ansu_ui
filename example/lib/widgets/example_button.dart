@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class ExampleButton extends StatefulWidget {
-  ExampleButton({Key key}) : super(key: key);
+  ExampleButton({Key? key}) : super(key: key);
 
   @override
   _ExampleButtonState createState() => _ExampleButtonState();
@@ -153,25 +153,25 @@ class _ExampleButtonState extends State<ExampleButton> {
                 groupValue: groupValue,
                 value: 0,
                 title: '候选0',
-                onTap: (_) => setState(() => groupValue = 0),
+                onTap: (dynamic _) => setState(() => groupValue = 0),
               ),
               ASRadioButton(
                 groupValue: groupValue,
                 value: 1,
                 title: '候选1',
-                onTap: (_) => setState(() => groupValue = 1),
+                onTap: (dynamic _) => setState(() => groupValue = 1),
               ),
               ASRadioButton(
                 groupValue: groupValue,
                 value: 2,
                 title: '候选2',
-                onTap: (_) => setState(() => groupValue = 2),
+                onTap: (dynamic _) => setState(() => groupValue = 2),
               ),
               ASRadioButton(
                 groupValue: groupValue,
                 value: 3,
                 title: '候选3',
-                onTap: (_) => setState(() => groupValue = 3),
+                onTap: (dynamic _) => setState(() => groupValue = 3),
               ),
             ],
           ),

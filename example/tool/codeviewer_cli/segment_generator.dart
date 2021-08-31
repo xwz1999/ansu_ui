@@ -4,6 +4,7 @@
 
 import 'dart:convert';
 import 'dart:io';
+
 import 'prehighlighter.dart';
 
 const _globalPrologue =
@@ -30,7 +31,7 @@ enum _FileReadStatus {
 
 /// Returns the new status of the scanner whose previous status was
 /// [oldStatus], after scanning the line [line].
-_FileReadStatus _updatedStatus(_FileReadStatus oldStatus, String line) {
+_FileReadStatus? _updatedStatus(_FileReadStatus? oldStatus, String line) {
   _FileReadStatus lineStatus;
   if (line.trim().startsWith('//')) {
     lineStatus = _FileReadStatus.comments;
@@ -40,7 +41,7 @@ _FileReadStatus _updatedStatus(_FileReadStatus oldStatus, String line) {
     lineStatus = _FileReadStatus.finished;
   }
 
-  _FileReadStatus newStatus;
+  _FileReadStatus? newStatus;
   switch (oldStatus) {
     case _FileReadStatus.comments:
       newStatus =
@@ -56,6 +57,8 @@ _FileReadStatus _updatedStatus(_FileReadStatus oldStatus, String line) {
     case _FileReadStatus.finished:
       newStatus = oldStatus;
       break;
+    default:
+      newStatus = oldStatus;
   }
   return newStatus;
 }
@@ -77,7 +80,7 @@ Map<String, String> _createSegments(String sourceDirectoryPath) {
     final content = file.readAsStringSync();
     final lines = const LineSplitter().convert(content);
 
-    var status = _FileReadStatus.comments;
+    _FileReadStatus? status = _FileReadStatus.comments;
 
     final prologue = StringBuffer();
 
@@ -135,7 +138,7 @@ Map<String, String> _createSegments(String sourceDirectoryPath) {
         // Simple line.
 
         for (final name in activeSubsegments) {
-          subsegments[name].writeln(line);
+          subsegments[name]!.writeln(line);
         }
       }
     }
@@ -146,7 +149,7 @@ Map<String, String> _createSegments(String sourceDirectoryPath) {
   }
 
   var segments = <String, List<TaggedString>>{};
-  var segmentPrologues = <String, String>{};
+  var segmentPrologues = <String, String?>{};
 
   // Sometimes a code segment is made up of subsegments. They are marked by
   // names with a "#" symbol in it, such as "bottomSheetDemoModal#1" and
@@ -168,7 +171,7 @@ Map<String, String> _createSegments(String sourceDirectoryPath) {
     if (!segments.containsKey(name)) {
       segments[name] = [];
     }
-    segments[name].add(
+    segments[name]!.add(
       TaggedString(
         text: value.toString(),
         order: order,
@@ -179,7 +182,7 @@ Map<String, String> _createSegments(String sourceDirectoryPath) {
   });
 
   segments.forEach((key, value) {
-    value.sort((ts1, ts2) => (ts1.order - ts2.order).sign.round());
+    value.sort((ts1, ts2) => (ts1.order! - ts2.order!).sign.round());
   });
 
   var answer = <String, String>{};
@@ -187,11 +190,11 @@ Map<String, String> _createSegments(String sourceDirectoryPath) {
   for (final name in segments.keys) {
     final buffer = StringBuffer();
 
-    buffer.write(segmentPrologues[name].trim());
+    buffer.write(segmentPrologues[name]!.trim());
     buffer.write('\n\n');
 
-    for (final ts in segments[name]) {
-      buffer.write(ts.text.trim());
+    for (final ts in segments[name]!) {
+      buffer.write(ts.text!.trim());
       buffer.write('\n\n');
     }
 
@@ -208,8 +211,8 @@ Map<String, String> _createSegments(String sourceDirectoryPath) {
 class TaggedString {
   TaggedString({this.text, this.order});
 
-  final String text;
-  final double order;
+  final String? text;
+  final double? order;
 }
 
 void _formatSegments(Map<String, String> segments, IOSink output) {
@@ -254,9 +257,11 @@ void _formatSegments(Map<String, String> segments, IOSink output) {
 ///
 /// The target file is overwritten.
 void writeSegments(
-    {String sourceDirectoryPath, String targetFilePath, bool isDryRun}) {
+    {required String sourceDirectoryPath,
+    String? targetFilePath,
+    required bool isDryRun}) {
   final segments = _createSegments(sourceDirectoryPath);
-  final output = isDryRun ? stdout : File(targetFilePath).openWrite();
+  final output = isDryRun ? stdout : File(targetFilePath!).openWrite();
   _formatSegments(segments, output);
 }
 

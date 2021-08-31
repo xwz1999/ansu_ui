@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ExampleCameraView extends StatefulWidget {
-  ExampleCameraView({Key key}) : super(key: key);
+  ExampleCameraView({Key? key}) : super(key: key);
 
   @override
   _ExampleCameraViewState createState() => _ExampleCameraViewState();
@@ -24,8 +24,8 @@ class _ExampleCameraViewState extends State<ExampleCameraView> {
         ListTile(
           title: 'CameraView'.text.make(),
           onTap: () async {
-            File file = await camView(context, title: 'TEST');
-            print(await file.length());
+            File? file = await camView(context, title: 'TEST');
+            print(await file?.length());
           },
         ),
         // END

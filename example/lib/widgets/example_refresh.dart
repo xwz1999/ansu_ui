@@ -2,7 +2,7 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 
 class ExampleRefresh extends StatefulWidget {
-  ExampleRefresh({Key key}) : super(key: key);
+  ExampleRefresh({Key? key}) : super(key: key);
 
   @override
   _ExampleRefreshState createState() => _ExampleRefreshState();

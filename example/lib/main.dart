@@ -37,14 +37,14 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+  MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-  TabController _tabController;
+  TabController? _tabController;
 
   @override
   void initState() {
@@ -56,9 +56,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    print(Theme.of(context).textTheme.headline1.fontFamily);
+    print(Theme.of(context).textTheme.headline1!.fontFamily);
     return ASScaffold(
-      leading: navigator.canPop()
+      leading: navigator!.canPop()
           ? IconButton(
               icon: Icon(Icons.backpack, color: Colors.black),
               onPressed: () {},
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         ],
       ),
       bottomNavigationBar: ASNavigationBar(
-        controller: _tabController,
+        controller: _tabController!,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

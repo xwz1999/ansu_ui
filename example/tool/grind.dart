@@ -63,7 +63,7 @@ Future<void> _runProcess(String executable, List<String> arguments) async {
 // Function to make sure we capture all of the stdout.
 // Reference: https://github.com/dart-lang/sdk/issues/31666
 Future<String> _startProcess(String executable,
-    {List<String> arguments = const [], String input}) async {
+    {List<String> arguments = const [], String? input}) async {
   final output = <int>[];
   final completer = Completer<int>();
   final process = await Process.start(executable, arguments);

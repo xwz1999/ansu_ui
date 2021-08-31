@@ -21,7 +21,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class MainHome extends StatefulWidget {
-  MainHome({Key key}) : super(key: key);
+  MainHome({Key? key}) : super(key: key);
 
   @override
   _MainHomeState createState() => _MainHomeState();
@@ -29,15 +29,15 @@ class MainHome extends StatefulWidget {
 
 class _MainHomeState extends State<MainHome> {
   _innerButton({
-    VoidCallback onPressed,
-    String title,
-    IconData icon,
+    VoidCallback? onPressed,
+    required String title,
+    IconData? icon,
   }) {
     return TextButton(
       onPressed: onPressed,
       child: Row(
         children: [
-          Expanded(child: Icon(icon) ?? SizedBox()),
+          Expanded(child: icon != null ? Icon(icon) : SizedBox()),
           Text(title),
           Spacer(),
         ],

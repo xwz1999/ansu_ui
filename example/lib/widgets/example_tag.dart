@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ExampleTag extends StatefulWidget {
-  ExampleTag({Key key}) : super(key: key);
+  ExampleTag({Key? key}) : super(key: key);
 
   @override
   _ExampaleTagState createState() => _ExampaleTagState();

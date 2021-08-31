@@ -3,7 +3,7 @@ import 'package:ansu_ui/divider/as_dotted_divider.dart';
 import 'package:flutter/material.dart';
 
 class ExampleDivider extends StatefulWidget {
-  ExampleDivider({Key key}) : super(key: key);
+  ExampleDivider({Key? key}) : super(key: key);
 
   @override
   _ExampleDividerState createState() => _ExampleDividerState();

@@ -3,7 +3,7 @@ import 'package:ansu_ui/chart/circle_chart_widget.dart';
 import 'package:flutter/material.dart';
 
 class ExampleChart extends StatefulWidget {
-  const ExampleChart({Key key}) : super(key: key);
+  const ExampleChart({Key? key}) : super(key: key);
 
   @override
   _ExampleChartState createState() => _ExampleChartState();

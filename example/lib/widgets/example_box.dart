@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ExampleBox extends StatefulWidget {
-  ExampleBox({Key key}) : super(key: key);
+  ExampleBox({Key? key}) : super(key: key);
 
   @override
   _ExampleBoxState createState() => _ExampleBoxState();

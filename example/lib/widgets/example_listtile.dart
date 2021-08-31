@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ExampleListTile extends StatefulWidget {
-  ExampleListTile({Key key}) : super(key: key);
+  ExampleListTile({Key? key}) : super(key: key);
 
   @override
   _ExampleListTileState createState() => _ExampleListTileState();

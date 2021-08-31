@@ -2,9 +2,9 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 
 class ColorObject {
-  Color color;
-  String name;
-  String codeName;
+  Color? color;
+  String? name;
+  String? codeName;
   ColorObject({
     this.color,
     this.name,

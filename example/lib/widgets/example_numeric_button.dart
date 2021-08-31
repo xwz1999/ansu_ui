@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ExampleNumericButton extends StatefulWidget {
-  ExampleNumericButton({Key key}) : super(key: key);
+  ExampleNumericButton({Key? key}) : super(key: key);
 
   @override
   _ExampleNumericButtonState createState() => _ExampleNumericButtonState();

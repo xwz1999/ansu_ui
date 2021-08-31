@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ExamplePicker extends StatefulWidget {
-  ExamplePicker({Key key}) : super(key: key);
+  ExamplePicker({Key? key}) : super(key: key);
 
   @override
   _ExamplePickerState createState() => _ExamplePickerState();
@@ -40,7 +40,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
             trailing: ASButton(
               title: '日期选择器',
               onPressed: () async {
-                DateTime date = await asDatePicker(context);
+                DateTime? date = await asDatePicker(context);
                 Get.snackbar(date.toString(), 'MESSAGE');
               },
             ),
@@ -75,8 +75,8 @@ class _ExamplePickerState extends State<ExamplePicker> {
             trailing: ASButton(
               title: '图片选择器',
               onPressed: () async {
-                File file = await camView(context, title: '图片选择器');
-                print(file.lengthSync());
+                File? file = await camView(context, title: '图片选择器');
+                print(file?.lengthSync());
               },
             ),
           ),
@@ -86,7 +86,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
             trailing: ASButton(
               title: '图片选择器',
               onPressed: () async {
-                File file = await pickImageFile();
+                File? file = await pickImageFile();
               },
             ),
           ),

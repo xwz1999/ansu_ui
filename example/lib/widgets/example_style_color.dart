@@ -4,7 +4,7 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ExampleStyleColor extends StatefulWidget {
-  ExampleStyleColor({Key key}) : super(key: key);
+  ExampleStyleColor({Key? key}) : super(key: key);
 
   @override
   _ExampleStyleColorState createState() => _ExampleStyleColorState();
@@ -26,7 +26,7 @@ class _ExampleStyleColorState extends State<ExampleStyleColor> {
           ],
         ),
       ),
-      subtitle: Text(object.codeName),
+      subtitle: Text(object.codeName!),
       trailing: Card(
         color: object.color,
         child: SizedBox(height: 50.w, width: 50.w),

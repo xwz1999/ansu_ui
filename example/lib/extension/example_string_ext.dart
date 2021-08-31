@@ -4,7 +4,7 @@ import 'package:example/component/example_scaffold.dart';
 import 'package:flutter/material.dart';
 
 class ExampleStringExt extends StatefulWidget {
-  ExampleStringExt({Key key}) : super(key: key);
+  ExampleStringExt({Key? key}) : super(key: key);
 
   @override
   _ExampleStringExtState createState() => _ExampleStringExtState();

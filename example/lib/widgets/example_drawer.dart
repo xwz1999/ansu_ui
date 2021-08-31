@@ -2,7 +2,7 @@ import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 
 class ExampleDrawer extends StatefulWidget {
-  ExampleDrawer({Key key}) : super(key: key);
+  ExampleDrawer({Key? key}) : super(key: key);
 
   @override
   _ExampleDrawerState createState() => _ExampleDrawerState();

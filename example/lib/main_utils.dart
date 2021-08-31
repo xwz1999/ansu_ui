@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainUtils extends StatefulWidget {
-  MainUtils({Key key}) : super(key: key);
+  MainUtils({Key? key}) : super(key: key);
 
   @override
   _MainUtilsState createState() => _MainUtilsState();
@@ -12,9 +12,9 @@ class MainUtils extends StatefulWidget {
 
 class _MainUtilsState extends State<MainUtils> {
   _innerButton({
-    VoidCallback onPressed,
-    Widget child,
-    Widget icon,
+    VoidCallback? onPressed,
+    required Widget child,
+    Widget? icon,
   }) {
     return TextButton(
       onPressed: onPressed,

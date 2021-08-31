@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ExampleScaffold extends StatefulWidget {
-  ExampleScaffold({Key key}) : super(key: key);
+  ExampleScaffold({Key? key}) : super(key: key);
 
   @override
   _ExampleScaffoldState createState() => _ExampleScaffoldState();
@@ -14,15 +14,15 @@ class ExampleScaffold extends StatefulWidget {
 
 class _ExampleScaffoldState extends State<ExampleScaffold>
     with TickerProviderStateMixin {
-  TabController _tabController;
-  List<String> tabs;
+  late TabController _tabController;
+  List<String>? tabs;
 
   @override
   void initState() {
     super.initState();
     tabs = List.generate(10, (index) => 'Tab $index');
     _tabController = TabController(
-      length: tabs.length,
+      length: tabs!.length,
       vsync: this,
     );
   }

@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 
 class ExampleBottomButton extends StatefulWidget {
-  ExampleBottomButton({Key key}) : super(key: key);
+  ExampleBottomButton({Key? key}) : super(key: key);
 
   @override
   _ExampleBottomButtonState createState() => _ExampleBottomButtonState();

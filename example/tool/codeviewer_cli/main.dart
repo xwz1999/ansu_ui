@@ -25,7 +25,7 @@ void main(List<String> arguments) {
 
   writeSegments(
     sourceDirectoryPath: path.join(Directory.current.path, 'lib'),
-    targetFilePath: argResults['target'] as String,
+    targetFilePath: argResults['target'] as String?,
     isDryRun: argResults['dry-run'] as bool,
   );
 }

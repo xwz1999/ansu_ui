@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ExamplePopUpMenu extends StatefulWidget {
-  ExamplePopUpMenu({Key key}) : super(key: key);
+  ExamplePopUpMenu({Key? key}) : super(key: key);
 
   @override
   _ExamplePopUpMenuState createState() => _ExamplePopUpMenuState();
 }
 
 class _ExamplePopUpMenuState extends State<ExamplePopUpMenu> {
-  int _value;
+  int? _value;
   @override
   Widget build(BuildContext context) {
     return ASScaffold(
@@ -25,7 +25,7 @@ class _ExamplePopUpMenuState extends State<ExamplePopUpMenu> {
                 return TextButton(
                   child: '$_value'.text.make(),
                   onPressed: () async {
-                    int result = await showASPopUpMenu<int>(
+                    int? result = await showASPopUpMenu<int>(
                       context: context,
                       initValue: _value,
                       items: List.generate(

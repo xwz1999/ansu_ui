@@ -5,13 +5,13 @@ import 'package:get/get.dart';
 
 class ExampleScaffold extends StatelessWidget {
   final String title;
-  final CodeBuilder text;
+  final CodeBuilder? text;
   final List<Widget> children;
   const ExampleScaffold({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.text,
-    @required this.children,
+    required this.children,
   }) : super(key: key);
 
   @override
