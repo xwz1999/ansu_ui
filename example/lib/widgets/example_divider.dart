@@ -1,6 +1,9 @@
 import 'package:ansu_ui/ansu_ui.dart';
 import 'package:ansu_ui/divider/as_dotted_divider.dart';
+import 'package:example/codeviewer/code_segments.dart';
+import 'package:example/common/code_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ExampleDivider extends StatefulWidget {
   ExampleDivider({Key? key}) : super(key: key);
@@ -14,6 +17,14 @@ class _ExampleDividerState extends State<ExampleDivider> {
   Widget build(BuildContext context) {
     return ASScaffold(
       title: '分割线',
+      actions: [
+        IconButton(
+          icon: Icon(Icons.code, color: Colors.black54),
+          onPressed: () => Get.to(CodeView(
+            text: (context) => CodeSegments.button(context),
+          )),
+        ),
+      ],
       body: Center(
         child: Column(
           children: [
@@ -49,7 +60,6 @@ class _ExampleDividerState extends State<ExampleDivider> {
             ASDottedDivider.horizontal(
               color: Colors.black,
             ),
-            
             Container(
               height: 100.w,
               child: Row(
