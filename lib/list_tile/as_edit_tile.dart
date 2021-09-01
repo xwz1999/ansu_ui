@@ -1,8 +1,8 @@
+import 'package:ansu_ui/extension/num_extension.dart';
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ansu_ui/styles/as_colors.dart';
-import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASEditTile extends StatelessWidget {
   final Widget? title;
@@ -17,6 +17,8 @@ class ASEditTile extends StatelessWidget {
   final Widget? suffix;
   final bool? obscureText;
   final String? obscuringCharacter;
+  final bool enableEdit;
+
   ASEditTile({
     Key? key,
     this.title,
@@ -31,7 +33,9 @@ class ASEditTile extends StatelessWidget {
     this.suffix,
     this.obscureText,
     this.obscuringCharacter,
+     this.enableEdit=true,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
@@ -56,6 +60,7 @@ class ASEditTile extends StatelessWidget {
           Expanded(
             child: TextField(
               controller: controller,
+              enabled: enableEdit,
               onChanged: onChange,
               inputFormatters: inputFormatters,
               keyboardType: keyBoardType,

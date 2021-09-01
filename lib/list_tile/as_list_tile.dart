@@ -17,6 +17,10 @@ class ASListTile extends StatelessWidget {
 
   ///对齐方式
   final CrossAxisAlignment? crossAxisAlignment;
+
+  ///是否显示
+  final bool visible;
+
   ASListTile({
     Key? key,
     this.title,
@@ -24,51 +28,56 @@ class ASListTile extends StatelessWidget {
     this.trail,
     this.height,
     this.crossAxisAlignment,
+    this.visible = true,
   }) : super(key: key);
+
   ASListTile.option({
     Key? key,
     this.title,
     this.text,
     this.trail,
+    this.visible = true,
   })  : height = 32.w,
         crossAxisAlignment = CrossAxisAlignment.center,
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: height == null
-          ? EdgeInsets.symmetric(vertical: 8.w, horizontal: 10.w)
-          : EdgeInsets.symmetric(horizontal: 10.w),
-      height: height,
-      alignment: Alignment.centerLeft,
-      child: Row(
-        crossAxisAlignment:
-            crossAxisAlignment ?? CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 85.w,
-            child: Text(
-              title!,
-              maxLines: 1,
-              overflow: TextOverflow.visible,
-              softWrap: false,
-              style: TextStyle(color: kTextColor, fontSize: 14.sp),
+    return Offstage(
+      offstage: !visible,
+      child: Container(
+        margin: height == null
+            ? EdgeInsets.symmetric(vertical: 8.w, horizontal: 10.w)
+            : EdgeInsets.symmetric(horizontal: 10.w),
+        height: height,
+        alignment: Alignment.centerLeft,
+        child: Row(
+          crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 85.w,
+              child: Text(
+                title!,
+                maxLines: 1,
+                overflow: TextOverflow.visible,
+                softWrap: false,
+                style: TextStyle(color: kTextColor, fontSize: 14.sp),
+              ),
             ),
-          ),
-          Expanded(
-            child: text == null
-                ? Text('')
-                : text is String
-                    ? Text(
-                        text,
-                        maxLines: 2,
-                        style: TextStyle(color: kTextSubColor, fontSize: 14.sp),
-                      )
-                    : text,
-          ),
-          trail ?? SizedBox()
-        ],
+            Expanded(
+              child: text == null
+                  ? Text('')
+                  : text is String
+                      ? Text(
+                          text,
+                          maxLines: 2,
+                          style: TextStyle(color: kTextSubColor, fontSize: 14.sp),
+                        )
+                      : text,
+            ),
+            trail ?? SizedBox()
+          ],
+        ),
       ),
     );
   }
