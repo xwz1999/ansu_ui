@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ansu_ui/extension/text_style_extension.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
-
+///间距稍大的list tile
 class ASListTileX extends StatelessWidget {
   final Widget title;
   final Widget? suffix;
