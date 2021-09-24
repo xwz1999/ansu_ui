@@ -1,12 +1,12 @@
+import 'package:ansu_ui/extension/num_extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ansu_ui/extension/num_extension.dart';
 
 class ASOptionTileItem extends StatelessWidget {
   final Widget? leading;
   final Widget? title;
-  final onPressed;
+  final VoidCallback? onPressed;
   const ASOptionTileItem({
     Key? key,
     this.leading,
