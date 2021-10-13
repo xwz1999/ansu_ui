@@ -1,12 +1,55 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:ansu_ui/extension/num_extension.dart';
+import 'package:flutter/material.dart';
 
 class PhotoViewer extends StatefulWidget {
   final File? file;
-  final String? tag;
-  PhotoViewer({Key? key, this.file, this.tag}) : super(key: key);
+  final String? net;
+  final String tag;
+
+  static fromFile(BuildContext context,
+      {required String tag, required File file}) {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondAnimation) {
+          return PhotoViewer.toFile(file: file, tag: tag);
+        },
+        opaque: false,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(opacity: animation, child: child);
+        },
+      ),
+    );
+  }
+
+  static fromNet(BuildContext context,
+      {required String tag, required String net}) {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondAnimation) {
+          return PhotoViewer.toNet(net: net, tag: tag);
+        },
+        opaque: false,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(opacity: animation, child: child);
+        },
+      ),
+    );
+  }
+
+  PhotoViewer.toFile({
+    Key? key,
+    this.file,
+    required this.tag,
+  })  : net = null,
+        super(key: key);
+
+  PhotoViewer.toNet({Key? key, required this.tag, this.net})
+      : file = null,
+        super(key: key);
 
   @override
   _PhotoViewerState createState() => _PhotoViewerState();
@@ -23,27 +66,14 @@ class _PhotoViewerState extends State<PhotoViewer> {
           child: InteractiveViewer(
             boundaryMargin: 100.edge,
             child: Hero(
-              tag: widget.tag!,
-              child: Image.file(widget.file!),
+              tag: widget.tag,
+              child: widget.file != null
+                  ? Image.file(widget.file!)
+                  : Image.network(widget.net!),
             ),
           ),
         ),
       ),
     );
   }
-}
-
-toPhotoViewer(BuildContext context, {String? tag, File? file}) {
-  Navigator.push(
-    context,
-    PageRouteBuilder(
-      pageBuilder: (context, animation, secondAnimation) {
-        return PhotoViewer(file: file, tag: tag);
-      },
-      opaque: false,
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        return FadeTransition(opacity: animation, child: child);
-      },
-    ),
-  );
 }

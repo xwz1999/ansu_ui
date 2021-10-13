@@ -40,7 +40,7 @@ class _ExamplePickerState extends State<ExamplePicker> {
             trailing: ASButton(
               title: '日期选择器',
               onPressed: () async {
-                DateTime? date = await asDatePicker(context);
+                DateTime? date = await showAsDatePicker(context);
                 Get.snackbar(date.toString(), 'MESSAGE');
               },
             ),
