@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:ansu_ui/ansu_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,9 +31,18 @@ class AsGridImageView extends StatelessWidget {
         shrinkWrap: true,
         children: files == null
             ? nets!
-                .map((e) => FadeInImage.assetNetwork(
-                    placeholder: placeholder ?? '', image: e))
+                .map((e) => Hero(
+                      tag: e,
+                      child: PhotoViewer.toNet(
+                        tag: e,
+                        net: e,
+                      ),
+                    ))
                 .toList()
-            : files!.map((e) => Image.file(e)).toList());
+            : files!
+                .map((e) => Hero(
+                    tag: e.path,
+                    child: PhotoViewer.toFile(tag: e.path, file: e)))
+                .toList());
   }
 }
