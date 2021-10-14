@@ -31,18 +31,23 @@ class AsGridImageView extends StatelessWidget {
         shrinkWrap: true,
         children: files == null
             ? nets!
-                .map((e) => Hero(
-                      tag: e,
-                      child: PhotoViewer.toNet(
+                .map((e) => GestureDetector(
+                      onTap: () => PhotoViewer.toNet(
                         tag: e,
                         net: e,
+                      ),
+                      child: Hero(
+                        tag: e,
+                        child: FadeInImage.assetNetwork(
+                            placeholder: placeholder ?? '', image: e),
                       ),
                     ))
                 .toList()
             : files!
-                .map((e) => Hero(
-                    tag: e.path,
-                    child: PhotoViewer.toFile(tag: e.path, file: e)))
+                .map((e) => GestureDetector(
+                      onTap: () => PhotoViewer.toFile(tag: e.path, file: e),
+                      child: Hero(tag: e.path, child: Image.file(e)),
+                    ))
                 .toList());
   }
 }
