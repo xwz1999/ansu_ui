@@ -31,29 +31,30 @@ class ASOptionTile extends StatelessWidget {
 
   int get length => items!.length;
 
+  List<Widget> get _widgets => leading == null
+      ? (items ?? [])
+      : <Widget>[
+          Container(
+            alignment: Alignment.centerLeft,
+            child: this.leading is String
+                ? Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 14.w, horizontal: 10.w),
+                    child: Text(
+                      this.leading,
+                      style: TextStyle(
+                          color: kTextColor,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  )
+                : this.leading,
+          ),
+          ...(items ?? []),
+        ];
+
   @override
   Widget build(BuildContext context) {
-    if (this.leading != null) {
-      this.items!.insert(
-            0,
-            Container(
-              alignment: Alignment.centerLeft,
-              child: this.leading is String
-                  ? Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: 14.w, horizontal: 10.w),
-                      child: Text(
-                        this.leading,
-                        style: TextStyle(
-                            color: kTextColor,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  : this.leading,
-            ),
-          );
-    }
     return Material(
         clipBehavior: Clip.antiAlias,
         color: kForegroundColor,
