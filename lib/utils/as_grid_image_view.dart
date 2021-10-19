@@ -32,7 +32,8 @@ class AsGridImageView extends StatelessWidget {
         children: files == null
             ? nets!
                 .map((e) => GestureDetector(
-                      onTap: () => PhotoViewer.toNet(
+                      onTap: () => PhotoViewer.fromNet(
+                        context,
                         tag: e,
                         net: e,
                       ),
@@ -45,7 +46,8 @@ class AsGridImageView extends StatelessWidget {
                 .toList()
             : files!
                 .map((e) => GestureDetector(
-                      onTap: () => PhotoViewer.toFile(tag: e.path, file: e),
+                      onTap: () =>
+                          PhotoViewer.fromFile(context, tag: e.path, file: e),
                       child: Hero(tag: e.path, child: Image.file(e)),
                     ))
                 .toList());
