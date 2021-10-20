@@ -1,4 +1,6 @@
 import 'package:ansu_ui/toast/as_toast.dart';
+import 'package:ansu_ui/utils/match_text.dart';
+import 'package:flutter/material.dart';
 
 extension PhoneExt on String {
   List get _parsePhone {
@@ -33,5 +35,9 @@ extension PhoneExt on String {
 
   get toast {
     ASToast.show(this);
+  }
+
+  MatchText matchStr(String match, {TextStyle? style}) {
+    return MatchText(matchText: match, text: this);
   }
 }

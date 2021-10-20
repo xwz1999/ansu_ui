@@ -17,6 +17,7 @@ dependencies:
   image_picker: ^0.7.2
   bot_toast: ^4.0.0+1
   velocity_x: ^3.3.0
+  auto_size_text_pk: ^3.0.0
   expandable: ^5.0.1
   animated_collection:
     git:

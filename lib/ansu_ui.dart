@@ -28,6 +28,7 @@ export 'dialog/as_dialog_button.dart';
 export 'dialog/as_show_bottom_dialog.dart';
 export 'divider/as_divider.dart';
 export 'drawer/as_drawer.dart';
+export 'extension/Text_extension.dart';
 export 'extension/image_extension.dart';
 export 'extension/list_extension.dart';
 export 'extension/num_extension.dart';
