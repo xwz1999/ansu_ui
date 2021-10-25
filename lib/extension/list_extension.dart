@@ -1,4 +1,5 @@
 import 'package:ansu_ui/extension/num_extension.dart';
+import 'package:ansu_ui/list_tile/as_list_tile.dart';
 import 'package:flutter/material.dart';
 
 extension SeparateExt on List<Widget> {
@@ -12,7 +13,10 @@ extension SeparateExt on List<Widget> {
       }
 
       if (element.runtimeType == Visibility) {
-        return (element as Visibility).visible;
+        return !(element as Visibility).visible;
+      }
+      if (element.runtimeType == ASListTile) {
+        return !(element as ASListTile).visible;
       }
       return false;
     });

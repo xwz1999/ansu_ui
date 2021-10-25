@@ -1,7 +1,8 @@
 import 'package:ansu_ui/painters/as_numeric_painter.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///## 数量选择组件
 class ASNumericButton extends StatefulWidget {
@@ -131,6 +132,7 @@ class _ASNumericButtonState extends State<ASNumericButton> {
             alignment: Alignment.center,
             child: IntrinsicWidth(
               child: TextField(
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 keyboardType: TextInputType.number,
                 controller: _controller,
                 onChanged: (text) {

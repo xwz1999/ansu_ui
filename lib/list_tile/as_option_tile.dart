@@ -31,27 +31,30 @@ class ASOptionTile extends StatelessWidget {
 
   int get length => items!.length;
 
-  List<Widget> get _widgets => leading == null
-      ? (items ?? [])
-      : <Widget>[
-          Container(
-            alignment: Alignment.centerLeft,
-            child: this.leading is String
-                ? Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 14.w, horizontal: 10.w),
-                    child: Text(
-                      this.leading,
-                      style: TextStyle(
-                          color: kTextColor,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  )
-                : this.leading,
-          ),
-          ...(items ?? []),
-        ];
+  List<Widget> get _widgets {
+    var list = <Widget>[];
+    if (leading == null) {
+      return list = items ?? [];
+    } else {
+      list.add(Container(
+        alignment: Alignment.centerLeft,
+        child: leading is String
+            ? Padding(
+                padding: EdgeInsets.symmetric(vertical: 14.w, horizontal: 10.w),
+                child: Text(
+                  this.leading,
+                  style: TextStyle(
+                      color: kTextColor,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.bold),
+                ),
+              )
+            : leading,
+      ));
+      list.addAll((items ?? []));
+      return list;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +69,7 @@ class ASOptionTile extends StatelessWidget {
           child: item ??
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: items!.sepWidget(
+                children: _widgets.sepWidget(
                     separate: this.padding == null
                         ? ASDivider(
                             indent: 10.w,
