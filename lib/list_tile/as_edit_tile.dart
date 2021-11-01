@@ -1,5 +1,6 @@
 import 'package:ansu_ui/extension/num_extension.dart';
 import 'package:ansu_ui/styles/as_colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +34,7 @@ class ASEditTile extends StatelessWidget {
     this.suffix,
     this.obscureText,
     this.obscuringCharacter,
-     this.enableEdit=true,
+    this.enableEdit = true,
   }) : super(key: key);
 
   @override
@@ -74,10 +75,11 @@ class ASEditTile extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
               decoration: InputDecoration(
+                suffix: 10.wb,
                 border: InputBorder.none,
                 isDense: true,
                 contentPadding: EdgeInsets.zero,
-                hintText: hintText,
+                hintText: '$hintText',
                 hintStyle: hintTextStyle ??
                     TextStyle(
                       color: kTextSubColor,
@@ -86,7 +88,6 @@ class ASEditTile extends StatelessWidget {
               ),
             ),
           ),
-          10.wb,
           Offstage(
             offstage: suffix == null,
             child: suffix,
