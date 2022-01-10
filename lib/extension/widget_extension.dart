@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'Text_extension.dart';
 
 extension WidgetExt on Widget {
-  Widget paddingExt(double horizontal, [double vertical = 0]) => Padding(
+  Widget paddingExt(double horizontal, [double vertical = 0]) =>
+      Padding(
         padding: EdgeInsets.symmetric(
           horizontal: horizontal,
           vertical: vertical,
@@ -14,12 +15,12 @@ extension WidgetExt on Widget {
       );
 
   Widget match(String match) {
-    var spans = (this as AutoSizeText).textSpan;
-    if (spans != null) {
-      spans = spans.match(match);
-      return Text.rich(spans);
-    }
     if (this.runtimeType == Text) {
+      // var spans = (this as Text).textSpan;
+      // if (spans != null) {
+      //   spans = spans.match(match);
+      //   return Text.rich(spans);
+      // }
       return MatchText(
         matchText: match,
         text: (this as Text).data ?? '',
