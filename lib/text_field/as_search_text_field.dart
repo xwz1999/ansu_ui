@@ -1,6 +1,6 @@
+import 'package:ansu_ui/styles/as_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ansu_ui/styles/as_colors.dart';
 
 ///TextFiled
 class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
@@ -14,6 +14,7 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
     this.margin,
     this.onPressed,
     this.height,
+    this.prefix,
   })  : button = false,
         super(key: key);
 
@@ -28,6 +29,7 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
     this.margin,
     this.onPressed,
     this.height,
+    this.prefix,
   })  : button = true,
         super(key: key);
 
@@ -56,6 +58,9 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
 
   ///高度
   final double? height;
+
+  ///搜索内容筛选
+  final Widget? prefix;
 
   @override
   _ASSearchTextFieldState createState() => _ASSearchTextFieldState();
@@ -150,10 +155,16 @@ class _ASSearchTextFieldState extends State<ASSearchTextField> {
           focusedErrorBorder: _border,
           prefixIcon: Padding(
             padding: EdgeInsets.only(left: 13.w, right: 8.w),
-            child: Icon(
-              Icons.search,
-              size: 16.w,
-              color: Colors.black,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.search,
+                  size: 16.w,
+                  color: Colors.black,
+                ),
+                widget.prefix ?? SizedBox(),
+              ],
             ),
           ),
           prefixIconConstraints: BoxConstraints(minWidth: 0, minHeight: 0),
