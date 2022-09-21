@@ -174,7 +174,7 @@ class _ASSearchTextFieldState extends State<ASSearchTextField> {
             ),
             prefixIconConstraints: BoxConstraints(minWidth: 0, minHeight: 0),
             contentPadding: EdgeInsets.zero,
-            suffix: widget.suffix,
+            suffixIcon: widget.suffix,
             suffixIconConstraints: BoxConstraints(minWidth: 0, minHeight: 0)),
       ),
     );
