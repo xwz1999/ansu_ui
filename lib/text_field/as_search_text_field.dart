@@ -15,6 +15,7 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
     this.onPressed,
     this.height,
     this.prefix,
+    this.suffix,
   })  : button = false,
         super(key: key);
 
@@ -30,6 +31,7 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
     this.onPressed,
     this.height,
     this.prefix,
+    this.suffix,
   })  : button = true,
         super(key: key);
 
@@ -61,6 +63,9 @@ class ASSearchTextField extends StatefulWidget implements PreferredSizeWidget {
 
   ///搜索内容筛选
   final Widget? prefix;
+
+  /// 后置widget 只有非button类型有效
+  final Widget? suffix;
 
   @override
   _ASSearchTextFieldState createState() => _ASSearchTextFieldState();
@@ -142,34 +147,35 @@ class _ASSearchTextFieldState extends State<ASSearchTextField> {
         cursorColor: kPrimaryColor,
         textInputAction: TextInputAction.search,
         decoration: InputDecoration(
-          fillColor: Color(0xFFF8F8F8),
-          filled: true,
-          hintText: widget.hintText,
-          hintStyle: TextStyle(
-            color: kTextSubColor,
-            fontSize: 14.sp,
-          ),
-          border: _border,
-          enabledBorder: _border,
-          focusedBorder: _border,
-          focusedErrorBorder: _border,
-          prefixIcon: Padding(
-            padding: EdgeInsets.only(left: 13.w, right: 8.w),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  Icons.search,
-                  size: 16.w,
-                  color: Colors.black,
-                ),
-                widget.prefix ?? SizedBox(),
-              ],
+            fillColor: Color(0xFFF8F8F8),
+            filled: true,
+            hintText: widget.hintText,
+            hintStyle: TextStyle(
+              color: kTextSubColor,
+              fontSize: 14.sp,
             ),
-          ),
-          prefixIconConstraints: BoxConstraints(minWidth: 0, minHeight: 0),
-          contentPadding: EdgeInsets.zero,
-        ),
+            border: _border,
+            enabledBorder: _border,
+            focusedBorder: _border,
+            focusedErrorBorder: _border,
+            prefixIcon: Padding(
+              padding: EdgeInsets.only(left: 13.w, right: 8.w),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.search,
+                    size: 16.w,
+                    color: Colors.black,
+                  ),
+                  widget.prefix ?? SizedBox(),
+                ],
+              ),
+            ),
+            prefixIconConstraints: BoxConstraints(minWidth: 0, minHeight: 0),
+            contentPadding: EdgeInsets.zero,
+            suffix: widget.suffix,
+            suffixIconConstraints: BoxConstraints(minWidth: 0, minHeight: 0)),
       ),
     );
   }
